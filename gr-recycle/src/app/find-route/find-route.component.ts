@@ -12,4 +12,8 @@ export class FindRouteComponent implements OnInit {
   ngOnInit() {
   }
 
+  locateUser(address: string, ZIP: string) {
+    
+  }
+
 }
