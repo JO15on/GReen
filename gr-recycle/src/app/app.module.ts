@@ -8,6 +8,8 @@ import { ResourcesComponent } from './components/resources/resources.component';
 import { ReportMissingComponent } from './components/report-missing/report-missing.component';
 import { FindRouteComponent } from './components/find-route/find-route.component';
 import { HomeComponent } from './components/home/home.component';
+import { FeedComponent } from './pages/home/components/feed/feed.component';
+import { NotificationComponent } from './pages/home/components/feed/notification/notification.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { HomeComponent } from './components/home/home.component';
     ResourcesComponent,
     ReportMissingComponent,
     FindRouteComponent,
-    HomeComponent
+    HomeComponent,
+    FeedComponent,
+    NotificationComponent
   ],
   imports: [
     BrowserModule,
