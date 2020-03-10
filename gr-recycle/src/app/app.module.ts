@@ -7,6 +7,7 @@ import { RecycleItemComponent } from './components/recycle-item/recycle-item.com
 import { ResourcesComponent } from './components/resources/resources.component';
 import { ReportMissingComponent } from './components/report-missing/report-missing.component';
 import { FindRouteComponent } from './components/find-route/find-route.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { FindRouteComponent } from './components/find-route/find-route.component
     RecycleItemComponent,
     ResourcesComponent,
     ReportMissingComponent,
-    FindRouteComponent
+    FindRouteComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
