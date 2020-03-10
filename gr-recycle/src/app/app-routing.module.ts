@@ -21,6 +21,10 @@ const routes: Routes = [
     component: RecycleItemComponent
   },
   {
+    path: 'locations',
+    component: LocationsComponent
+  },
+  {
     path: 'resources',
     component: ResourcesComponent
   }
