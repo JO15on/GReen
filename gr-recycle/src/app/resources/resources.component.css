@@ -1,0 +1,28 @@
+h1, h3, p, a {
+  display: flex;
+  justify-content: center;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  align-items: space-around;
+  border: 2px solid black;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+  width: 25%;
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  width: 40%;
+  padding: 10px 32px;
+  background-color: #4caf50;
+  color: white;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+}
