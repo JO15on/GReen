@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Inotification } from '../../inotification';
+import { FeedService } from '../../feed.service';
 
 @Component({
   selector: 'app-notification',
@@ -7,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NotificationComponent implements OnInit {
 
-  constructor() { }
+  @Input() notification : Inotification;
+
+  constructor(public service : FeedService) { }
 
   ngOnInit() {
   }

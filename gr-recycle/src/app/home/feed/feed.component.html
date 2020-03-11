@@ -1,2 +1,1 @@
-<a (click)="showNotification()">Notification</a>
-<router-outlet></router-outlet>
+<app-notification *ngFor="let notification of notifications" [notification]="notification"></app-notification>

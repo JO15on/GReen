@@ -1,25 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule, routingComponents } from './app-routing.module';
+import { AppRoutingModule, routingComponents } from './app-routing.module'; 
+//routingComponents holds all components declared in routing module
 
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-// import { RecycleItemComponent } from './recycle-item/recycle-item.component';
-// import { ResourcesComponent } from './resources/resources.component';
-// import { ReportMissingComponent } from './report-missing/report-missing.component';
 import { FindRouteComponent } from './find-route/find-route.component';
-// import { LocationsComponent } from './locations/locations.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     routingComponents,
-    // RecycleItemComponent,
-    // ResourcesComponent,
     FindRouteComponent,
-    // LocationsComponent
   ],
   imports: [
     BrowserModule,

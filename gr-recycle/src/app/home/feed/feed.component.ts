@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Inotification } from '../inotification';
+import { FeedService } from '../feed.service';
 
 
 @Component({
@@ -8,14 +9,12 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./feed.component.css']
 })
 export class FeedComponent implements OnInit {
+notifications : Inotification[];
 
-  constructor(private route: ActivatedRoute, private router: Router){}
+  constructor(public service : FeedService){}
 
   ngOnInit() {
-  }
-
-  showNotification() {
-    this.router.navigate(['notification'], {relativeTo: this.route});
+    this.notifications = this.service.getNotifications();
   }
 
 }
