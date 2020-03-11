@@ -32,7 +32,13 @@ const routes: Routes = [
   },
   {
     path: 'recycleitems',
-    component: RecycleItemComponent
+    component: RecycleItemComponent,
+    children: [
+      {
+        path: 'notification',
+        component: NotificationComponent
+      }
+    ]
   },
   {
     path: 'locations',
