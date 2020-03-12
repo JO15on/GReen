@@ -1,1 +1,10 @@
-<p>locations works!</p>
+
+<google-map
+  height="400px"
+  width="100%"
+  [zoom]="zoom"
+  [center]="center"
+  [options]="options"
+>
+  <map-marker [position]='center'></map-marker>
+</google-map>

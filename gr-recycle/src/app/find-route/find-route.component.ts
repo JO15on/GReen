@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { GetCoordsService } from '../services/get-coords.service';
+import { ShareService } from '../services/share.service';
 
 @Component({
   selector: 'app-find-route',
@@ -7,16 +9,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FindRouteComponent implements OnInit {
 
-  constructor() { }
-
   userAddress: string;
-  userZIP: string;
+
+  constructor(private _getCoords: GetCoordsService, private _share: ShareService) { }
 
   ngOnInit() {
   }
 
-  locateUser() {
-
+  geoLocateUser() {
+    navigator.geolocation.getCurrentPosition(position => {
+      this._share.setLocation({
+        coords: {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        },
+        zoom: 18
+      })
+    })
   }
 
+  locateUser() {
+    this._getCoords.addressToCoords(this.userAddress).subscribe((res: any) => {
+      const coords = res.results[0].geometry.location
+      this._share.setLocation({
+        coords,
+        zoom: 18
+      })
+    })
+  }
 }

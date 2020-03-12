@@ -10,6 +10,8 @@ import { FindRouteComponent } from './find-route/find-route.component';
 import { LocationsComponent } from './locations/locations.component';
 // import { DatePipePipe } from './date-pipe.pipe';
 // import { DatePipe } from './date.pipe';
+import { GoogleMapsModule } from '@angular/google-maps';
+import { HttpClientModule } from '@angular/common/http'
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { LocationsComponent } from './locations/locations.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    GoogleMapsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
