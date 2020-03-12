@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "gr-recycle"
+    }
+  },
+  "defaultProject": "gr-recycle",
+  "cli": {
+    "analytics": "82895c7d-adea-4369-a88d-61d5efa822a5"
+  }
 }

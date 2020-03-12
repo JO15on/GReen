@@ -1,1 +1,29 @@
-<p>report-missing works!</p>
+<h1>Report a missed pickup</h1>
+
+<div>
+    <div>
+        <p>Was the bin placed near the curb before 7am today?</p>
+        <button (click)="yes()">Yes</button>
+        <button (click)="no()">No</button>
+    </div>
+
+    <!-- <div>It's {{newDate | date:'medium'}}, there may still be collection crew out to get your trash later today</div> -->
+
+    <div *ngIf="hide">
+        <p>Name:</p>
+        <input/>
+        <p>Date:</p>
+        <input type='date'/>
+        <p>Address:</p>
+        <input/>
+        <p>Phone:</p>
+        <input type='tel'/>
+        <p>E-Mail:</p>
+        <input type='email'/>
+        <button (click)="submit()">Submit</button>
+    </div>
+
+    <div *ngIf="hidden">
+        <p>Your reported missing pickup has been submitted to whateverGR@email.com</p> 
+    </div>
+</div>
