@@ -123,10 +123,6 @@
   },
   "defaultProject": "gr-recycle",
   "cli": {
-<<<<<<< HEAD
-    "analytics": "82895c7d-adea-4369-a88d-61d5efa822a5"
-=======
     "analytics": "556a8ead-1c35-4d01-9dec-10fdc5b5683c"
->>>>>>> a425c06240a3dbaa4be853c10ef12e1d8e5b97dd
   }
 }
