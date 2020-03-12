@@ -21,6 +21,10 @@
         <button (click)="submit()">Submit</button>
     </div>
 
+    <div **ngIf="hideNo">
+        <p>Sorry, you missed your bin pickup!</p>
+    </div>
+
     <div *ngIf="hidden">
         <p>Your reported missing pickup has been submitted to whateverGR@email.com</p> 
     </div>
