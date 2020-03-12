@@ -11,6 +11,7 @@ export class ReportMissingComponent implements OnInit {
   hide : boolean = false;
   hidden : boolean = false;
   hideNo : boolean = false;
+  hideYes : boolean = false;
 
   newDate = Date.now();
 
@@ -28,6 +29,12 @@ export class ReportMissingComponent implements OnInit {
   no(){
     if(this.hideNo === false){
       this.hideNo = true;
+    }
+  }
+
+  yesDate() {
+    if(this.hideYes === false){
+      this.hideYes = true;
     }
   }
 

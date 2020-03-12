@@ -7,11 +7,17 @@
         <button (click)="no()">No</button>
     </div>
 
+    <div *ngIf="hide">
+        <p>It's {{newDate | date: 'medium'}}, is it after 3:30pm today? </p>
+        <button (click)="yesDate()">Yes</button>
+        <button (click)="no()">No</button>
+    </div>
+
     <div *ngIf="hideNo">
         <p>Sorry, you missed your bin pickup!</p>
     </div>
 
-    <div *ngIf="hide">
+    <div *ngIf="hideYes">
         <p>Name:</p>
         <input/>
         <p>Date:</p>
