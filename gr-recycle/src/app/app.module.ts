@@ -1,8 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule, routingComponents } from './app-routing.module'; 
-
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { FindRouteComponent } from './find-route/find-route.component';
@@ -16,7 +14,7 @@ import { HttpClientModule } from '@angular/common/http'
     AppComponent,
     routingComponents,
     FindRouteComponent,
-    LocationsComponent
+    LocationsComponent,
   ],
   imports: [
     BrowserModule,
