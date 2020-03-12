@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { API_KEY } from '../../../Secrets/api-key'
+
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +15,7 @@ export class GetCoordsService {
     const params = new HttpParams({
       fromObject: {
         address: `${userAddress}, Grand Rapids, MI`,
-        key: API_KEY
+        key: "AIzaSyA3d1mZztQ3DJXWy3x4OaVKjV0ilaFMLSk"
       }
     })
     return this.http.get(this.baseURL, { params })
