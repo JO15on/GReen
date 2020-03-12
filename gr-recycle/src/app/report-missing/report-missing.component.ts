@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-report-missing',
@@ -7,9 +7,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReportMissingComponent implements OnInit {
 
+  @Input()
+  hide : boolean = false;
+  hidden : boolean = false;
+
+  newDate = Date.now();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  yes(){
+    if(this.hide = false){
+      this.hide = true;
+    }
+
+  }
+
+  no(){
+    if(this.hidden = false){
+      this.hidden = true;
+    }
+  }
+
+  submit(){
+
   }
 
 }
