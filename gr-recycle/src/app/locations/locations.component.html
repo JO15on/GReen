@@ -1,1 +1,11 @@
-<p>locations works!</p>
+<app-find-route></app-find-route>
+
+<google-map
+  height="400px"
+  width="100%"
+  [zoom]="zoom"
+  [center]="center"
+  [options]="options"
+>
+  <map-marker [position]='center'></map-marker>
+</google-map>

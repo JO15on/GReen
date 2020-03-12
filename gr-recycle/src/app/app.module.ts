@@ -5,7 +5,8 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { FindRouteComponent } from './find-route/find-route.component';
 import { LocationsComponent } from './locations/locations.component';
-
+import { GoogleMapsModule } from '@angular/google-maps';
+import { HttpClientModule } from '@angular/common/http'
 
 
 @NgModule({
@@ -18,7 +19,9 @@ import { LocationsComponent } from './locations/locations.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    GoogleMapsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
