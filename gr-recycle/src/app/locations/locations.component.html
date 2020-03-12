@@ -1,6 +1,12 @@
 <app-find-route></app-find-route>
 
+
+
+<!-- Angular 9 -->
+
 <google-map
+  id = "mapID"
+  #map
   height="400px"
   width="100%"
   [zoom]="zoom"
@@ -9,3 +15,11 @@
 >
   <map-marker [position]='center'></map-marker>
 </google-map>
+
+
+
+
+<!-- JS -->
+
+<!-- <div id="mapID"></div> -->
+

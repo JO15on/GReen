@@ -1,17 +1,29 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, OnDestroy, AfterViewInit, ElementRef } from '@angular/core';
 import { ICoords, IMarker } from '../interfaces';
 import { ShareService } from '../services/share.service';
+import { GoogleMap } from '@angular/google-maps';
 
 @Component({
   selector: 'app-locations',
   templateUrl: './locations.component.html',
   styleUrls: ['./locations.component.css'],
 })
-export class LocationsComponent implements OnInit {
+export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
+
+  @ViewChild(GoogleMap, {static: false}) mapRef: GoogleMap
+  @ViewChild('map', {static: false}) map: google.maps.Map
 
   @Input() zoom: number;
   @Input() center: any;
   @Input() options: any;
+
+
+  testPath = [
+    {lat: 42.966002, lng: -85.680090},
+    {lat: 42.966002, lng: -85.702836},
+    {lat: 42.992423, lng: -85.702836},
+    {lat: 42.996035, lng: -85.690354}
+  ];
 
   constructor(private _share: ShareService) { }
 
@@ -20,6 +32,37 @@ export class LocationsComponent implements OnInit {
       this.center = res.coords;
       this.zoom = res.zoom;
     })
+  }
+
+
+  // Angular 9
+
+  ngAfterViewInit() {
+    console.log(this.map)
+    const testPoly = new google.maps.Polygon({
+      paths: this.testPath,
+      fillColor: '#FF0000'
+    })
+    testPoly.setMap(this.map)
+  }
+
+
+  // JS
+
+  // ngAfterViewInit() {
+  //   const map = new google.maps.Map(document.getElementById('mapID'), {
+  //     center: this.center,
+  //     zoom: this.zoom
+  //   })
+   
+  //   const testPoly = new google.maps.Polygon({
+  //     paths: this.testPath,
+  //     fillColor: '#FF0000'
+  //   })
+  //   testPoly.setMap(map)
+  // }
+
+  ngOnDestroy() {
   }
 }
 
