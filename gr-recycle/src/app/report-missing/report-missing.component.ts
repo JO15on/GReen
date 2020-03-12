@@ -10,6 +10,7 @@ export class ReportMissingComponent implements OnInit {
   @Input()
   hide : boolean = false;
   hidden : boolean = false;
+  hideNo : boolean = false;
 
   newDate = Date.now();
 
@@ -22,11 +23,12 @@ export class ReportMissingComponent implements OnInit {
     if(this.hide === false){
       this.hide = true;
     }
-
   }
 
   no(){
-
+    if(this.hideNo === false){
+      this.hideNo = true;
+    }
   }
 
   submit(){

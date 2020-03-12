@@ -1,10 +1,14 @@
-<h1>Report a missed pickup</h1>
+<h2>Report a missed pickup</h2>
 
-<div>
+<div class="form-wrapper">
     <div>
         <p>Was the bin placed near the curb before 7am today?</p>
         <button (click)="yes()">Yes</button>
         <button (click)="no()">No</button>
+    </div>
+
+    <div *ngIf="hideNo">
+        <p>Sorry, you missed your bin pickup!</p>
     </div>
 
     <div *ngIf="hide">
@@ -18,11 +22,7 @@
         <input type='tel'/>
         <p>E-Mail:</p>
         <input type='email'/>
-        <button (click)="submit()">Submit</button>
-    </div>
-
-    <div **ngIf="hideNo">
-        <p>Sorry, you missed your bin pickup!</p>
+        <button class="submit" (click)="submit()">Submit</button>
     </div>
 
     <div *ngIf="hidden">
