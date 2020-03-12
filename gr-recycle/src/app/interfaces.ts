@@ -5,3 +5,9 @@ export interface ICoords {
     }
     zoom: number
 }
+
+export interface IMarker {
+    title: string;
+    position: string;
+    label: string;
+}
