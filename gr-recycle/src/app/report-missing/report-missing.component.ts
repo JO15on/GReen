@@ -19,14 +19,14 @@ export class ReportMissingComponent implements OnInit {
   }
 
   yes(){
-    if(hide = false){
+    if(this.hide = false){
       this.hide = true;
     }
 
   }
 
   no(){
-    if(hidden = false){
+    if(this.hidden = false){
       this.hidden = true;
     }
   }
