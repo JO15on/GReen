@@ -2,7 +2,6 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 
@@ -13,7 +12,12 @@ input{
 .form-wrapper{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+}
+
+.form {
+    display: flex;
+    justify-content: flex-start;
 }
 
 button {

@@ -19,13 +19,6 @@ export class ReportMissingComponent implements OnInit {
   ngOnInit() {
   }
 
-  // date(){
-  //   let compareDate = this.Date.getHours(15, 30);
-  //   if(this.newDate === compareDate){
-
-  //   }
-  // }
-
   yes(){
     this.step = 'start-yes';
   }
@@ -43,9 +36,7 @@ export class ReportMissingComponent implements OnInit {
   }
 
   submit(){
-    if(this.hidden === false){
-      this.hidden = true;
-    }
+    this.step = 'end';
   }
 
 }
