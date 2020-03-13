@@ -56,6 +56,8 @@ button {
   height: 55px;
   padding: 10px 32px;
   font-size: 14px;
+  background-color: #4caf50;
+  color: white;
   border: none;
   border-radius: 5px;
   margin: 10px 0px 10px 0px;
@@ -75,4 +77,8 @@ button {
   button {
     width: 25%;
   }
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
 }
