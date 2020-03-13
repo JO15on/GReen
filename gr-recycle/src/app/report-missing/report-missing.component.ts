@@ -8,10 +8,9 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ReportMissingComponent implements OnInit {
 
   @Input()
-  hide : boolean = false;
   hidden : boolean = false;
-  hideNo : boolean = false;
-  hideYes : boolean = false;
+  step: string = 'start';
+
 
   newDate = Date.now();
 
@@ -20,22 +19,27 @@ export class ReportMissingComponent implements OnInit {
   ngOnInit() {
   }
 
+  // date(){
+  //   let compareDate = this.Date.getHours(15, 30);
+  //   if(this.newDate === compareDate){
+
+  //   }
+  // }
+
   yes(){
-    if(this.hide === false){
-      this.hide = true;
-    }
+    this.step = 'start-yes';
   }
 
   no(){
-    if(this.hideNo === false){
-      this.hideNo = true;
-    }
+    this.step = 'start-no';
+  }
+
+  noDate(){
+    this.step = 'end-no';
   }
 
   yesDate() {
-    if(this.hideYes === false){
-      this.hideYes = true;
-    }
+    this.step = 'end-yes';
   }
 
   submit(){

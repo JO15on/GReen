@@ -1,23 +1,27 @@
 <h2>Report a missed pickup</h2>
 
 <div class="form-wrapper">
-    <div>
+    <div *ngIf="step === 'start'">
         <p>Was the bin placed near the curb before 7am today?</p>
         <button (click)="yes()">Yes</button>
         <button (click)="no()">No</button>
     </div>
 
-    <div *ngIf="hide">
-        <p>It's {{newDate | date: 'medium'}}, is it after 3:30pm today? </p>
-        <button (click)="yesDate()">Yes</button>
-        <button (click)="no()">No</button>
-    </div>
-
-    <div *ngIf="hideNo">
+    <div *ngIf="step === 'start-no'">
         <p>Sorry, you missed your bin pickup!</p>
     </div>
 
-    <div *ngIf="hideYes">
+    <div *ngIf="step === 'start-yes'">
+        <p>It's {{newDate | date: 'shortTime'}}, is it after 3:00pm today? </p>
+        <button (click)="yesDate()">Yes</button>
+        <button (click)="noDate()">No</button>
+    </div>
+
+    <div *ngIf="step === 'end-no'">
+        <p>There's still time for your bin to get picked up! Wait until after 3:00pm to report your missed pickup.</p>
+    </div>
+
+    <div *ngIf="step === 'end-yes'">
         <p>Name:</p>
         <input/>
         <p>Date:</p>
