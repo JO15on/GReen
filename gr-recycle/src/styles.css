@@ -1,5 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
 
-body {
+body, h1, h2, h3, h4 {
     font-family: 'Montserrat', sans-serif;
+    color: #000000;
+}
+
+h1, h2, h3, h4 {
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+h2 {
+   font-size: 24px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+h4 {
+    font-size: 14px;
+}
+
+button {
+    background-color: #20B874;
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #178553;
+}
+
+a {
+    color: #1179CC;
 }
