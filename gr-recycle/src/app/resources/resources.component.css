@@ -1,35 +1,78 @@
-h1, h3, p, a {
+h1, h2, p, a {
   display: flex;
   justify-content: center;
+}
+
+h2 {
+  font-size: .95em;
+  padding: 5px;
+}
+
+body {
+  line-height: 1.2;
+}
+
+.head {
+  background-color: #DBDBDC;
+  width: 100%;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  font-weight: 900;
+  padding: 12px 0px 12px 0px;
+}
+
+p {
+  font-family: inherit;
+  font-size: 1em;
+  font-weight: normal;
+  color: #000;
+  margin: 0px 0px 20px 0px;
+  font-style: normal;
+}
+
+.full {
+  margin: 20px;
+  background-color: #EDF1F5;
+}
+
+.body {
+  padding: 30px 30px 30px 30px;
 }
 
 div {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 2px solid black;
+  text-align: center;
+  width: 86%;
   border-radius: 5px;
-  margin: 10px;
-  padding: 10px;
-  width: 100%;
 }
 
 button {
   display: flex;
   justify-content: center;
   align-self: center;
-  width: 40%;
+  width: 80%;
+  height: 55px;
   padding: 10px 32px;
-  color: white;
   font-size: 14px;
   border: none;
   border-radius: 5px;
+  margin: 10px 0px 10px 0px;
+  font-weight: bold;
+  font-size: .95em;
 }
 
 /* desktop styling below  */
 
 @media only screen and (min-width: 600px) {
   div {
+    justify-content: center;
+    flex-direction: column;
+    width: 96%;
+  }
+
+  button {
     width: 25%;
   }
 }
