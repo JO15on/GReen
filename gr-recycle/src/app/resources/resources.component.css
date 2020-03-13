@@ -77,8 +77,10 @@ button {
   button {
     width: 25%;
   }
-a {
+
+  a {
   text-decoration: none;
   color: white;
   font-size: 14px;
+  }
 }

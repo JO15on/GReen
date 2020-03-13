@@ -34,7 +34,6 @@ const routes: Routes = [
   {
     path: 'recycleitems',
     component: CategoryComponent,
-
   },
   {
     path: 'locations',
