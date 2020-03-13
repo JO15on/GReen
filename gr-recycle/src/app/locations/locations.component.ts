@@ -1,7 +1,8 @@
 import { Component, OnInit, Input, ViewChild, OnDestroy, AfterViewInit, ElementRef } from '@angular/core';
-import { ICoords, IMarker } from '../interfaces';
+import { ICoords } from '../interfaces';
 import { ShareService } from '../services/share.service';
 import { GoogleMap } from '@angular/google-maps';
+import { GetRoutesService } from '../services/get-routes.service';
 
 @Component({
   selector: 'app-locations',
@@ -25,42 +26,21 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
     {lat: 42.996035, lng: -85.690354}
   ];
 
-  constructor(private _share: ShareService) { }
+  constructor(private _share: ShareService, private _getRoutes: GetRoutesService) { }
 
   ngOnInit() {
     this._share.getLocation().subscribe((res: ICoords) => {
       this.center = res.coords;
       this.zoom = res.zoom;
     })
+    // this._getRoutes.getRoutes().subscribe(res => {
+    //   console.log(res);
+    // })
   }
-
-
-  // Angular 9
 
   ngAfterViewInit() {
-    console.log(this.map)
-    const testPoly = new google.maps.Polygon({
-      paths: this.testPath,
-      fillColor: '#FF0000'
-    })
-    testPoly.setMap(this.map)
   }
 
-
-  // JS
-
-  // ngAfterViewInit() {
-  //   const map = new google.maps.Map(document.getElementById('mapID'), {
-  //     center: this.center,
-  //     zoom: this.zoom
-  //   })
-   
-  //   const testPoly = new google.maps.Polygon({
-  //     paths: this.testPath,
-  //     fillColor: '#FF0000'
-  //   })
-  //   testPoly.setMap(map)
-  // }
 
   ngOnDestroy() {
   }

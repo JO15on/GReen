@@ -1,9 +1,5 @@
 <app-find-route></app-find-route>
 
-
-
-<!-- Angular 9 -->
-
 <google-map
   id = "mapID"
   #map
@@ -14,12 +10,10 @@
   [options]="options"
 >
   <map-marker [position]='center'></map-marker>
+  <map-polygon [paths]='testPath'></map-polygon>
 </google-map>
 
 
 
 
-<!-- JS -->
-
-<!-- <div id="mapID"></div> -->
 
