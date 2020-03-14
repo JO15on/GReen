@@ -34,6 +34,13 @@ const routes: Routes = [
   {
     path: 'recycleitems',
     component: CategoryComponent,
+    children: [
+      {
+        path: 'items',
+        component: RecycleItemComponent
+      }
+    ]
+
   },
   {
     path: 'locations',
@@ -52,6 +59,6 @@ const routes: Routes = [
 
 export class AppRoutingModule { }
 export const routingComponents = [HomeComponent, 
-  LocationsComponent, ReportMissingComponent, 
+  LocationsComponent, ReportMissingComponent, CategoryComponent,
   RecycleItemComponent, ResourcesComponent, FeedComponent,
  NotificationComponent];
