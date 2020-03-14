@@ -33,7 +33,30 @@ export class CategoryComponent implements OnInit {
       description: "Christmas light strands cannot be recycled through curbside recycling programs. They become tanglers in the machines during the recycling process.Decorative frames or metal sculptures with lights strung through them may be disassembled and discarded/recycled in separate pieces. Please locate electronics recycling programs or use the following companies to safely and responsibly dispose of your light strands.",
       dropOffLocations: "TBD"
     },
-  ],}
+  ],
+}, 
+  {"textiles": [
+    {
+      itemName: "Clothing & Textiles",
+      description: "Recycling and disposal of clothing and textiles may include linens, bed sheets, pillows, towels, shirts, pants, table cloths, clothes, curtains, other fabric, etc.",
+      dropOffLocations: "TBD"
+    },
+  ],
+  }, 
+  {"batteries": [
+    {
+      img: "/assets/batteries.png",
+      itemName: "Batteries (rechargeable), Household",
+      description: "Rechargeable batteries should always be recycled.  A rechargeable battery may contain heavy metals such as lead, cadmium, and nickel.  Examples of rechargeable batteries include nickel cadmium (Ni-Cd), lithium ion (Li-ion), nickel metal hydride (Ni-MH), small sealed lead acid (SSLA/PB, up to 11 pounds), and nickel zinc (Ni-Zn).",
+      dropOffLocations: "TBD", 
+    },
+    {
+      itemName: "Christmas & Holiday Lights",
+      description: "Christmas light strands cannot be recycled through curbside recycling programs. They become tanglers in the machines during the recycling process.Decorative frames or metal sculptures with lights strung through them may be disassembled and discarded/recycled in separate pieces. Please locate electronics recycling programs or use the following companies to safely and responsibly dispose of your light strands.",
+      dropOffLocations: "TBD"
+    },
+  ],
+}, 
   ];
 
  show : boolean = false; 
