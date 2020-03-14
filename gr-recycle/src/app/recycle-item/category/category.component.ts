@@ -51,12 +51,47 @@ export class CategoryComponent implements OnInit {
       dropOffLocations: "TBD", 
     },
     {
-      itemName: "Christmas & Holiday Lights",
-      description: "Christmas light strands cannot be recycled through curbside recycling programs. They become tanglers in the machines during the recycling process.Decorative frames or metal sculptures with lights strung through them may be disassembled and discarded/recycled in separate pieces. Please locate electronics recycling programs or use the following companies to safely and responsibly dispose of your light strands.",
+      itemName: "Automotive Batteries",
+      description: "Automotive batteries may be recycled when you purchase a new car battery.  If you are not purchasing a car battery but have scrap batteries you would like to dispose of, please take it to one of the following businesses for recycling.",
       dropOffLocations: "TBD"
     },
   ],
+},
+{"electronics_appliances": [
+  {
+    itemName: "Computers, TVs & Electronics",
+    description: "Most electronics contain valuable materials that can be recycled (at special drop-offs–NOT your recycling bin) such as copper, silver, and gold.  Some electronics even contain materials that are hazardous like lead and mercury and need to be kept out of landfills.",
+    dropOffLocations: "TBD", 
+  },
+  {
+    itemName: "Appliances",
+    description:
+    "Appliances include refrigerators, freezers, ovens, stove-tops, laundry machines, washing machines, dehumidifiers, air conditioner units, dishwashers, water heaters, water coolers, etc. If you are able to donate or sell a working appliance for someone else to reuse, please do so through Craig’s List, Facebook Marketplace, other online platforms, or through businesses or charities that accept appliances for donations. However if the appliance no longer functions, the best option is to recycle it where possible. For non-working appliances, always remove the doors before disposal to protect against entrapment. Appliances must have all food and other debris removed. Many appliances may be recycled for scrap metal however keep in mind that some appliances contain refrigerant gas (such as Freon/CFCs) that is hazardous and must be removed by a trained technician. Examples of common appliances that contain refrigerant gas are refrigerators, freezers, water coolers, air conditioner units, and some dehumidifiers. For disposal and recycling, check with your waste hauler, check the Yellow Pages under “scrap metal,” or donate working appliances." ,
+    dropOffLocations: "TBD"
+  },
+],
 }, 
+{"medications": [
+  {
+    itemName: "Medications",
+    description: "Twenty to sixty percent of prescription medications go unused and are eventually disposed. Nearly all unused pharmaceuticals enter either our solid waste system or our sewage system. Neither disposal method is environmentally sound. Pharmaceuticals flushed down the toilet pass through our sewage treatment plants, which are generally not designed to screen for these chemicals. Pharmaceuticals discarded in landfills can seep into the surrounding water table. Several studies, including a 2002 analysis by the US Geological Survey of 139 streams across 30 states found that 80 percent of waterways tested had measurable concentrations of prescription and nonprescription drugs, steroids, and reproductive hormones. The SafeChem program is a joint effort between local pharmacies, law enforcement, wastewater treatment facilities and Kent County to provide residents with safe, convenient access to proper medicine disposal. SafeChem participants include many local pharmacies and law enforcement agencies that will accept your unwanted medications. Disposing of your medicines at one of these locations will ensure that your medicines will not be stolen from the garbage, will not enter our environment and eliminates the potential for abuse at home.",
+    dropOffLocations: "TBD", 
+  },
+],
+},
+{"paint": [
+  {
+    itemName: "Latex Paint",
+    description: "To determine if your paint is latex, sometimes known as enamel paint, look at the label and find the ‘Cleanup Instructions’. For latex paint, you will be instructed to clean your brushes with ‘detergent and water’ or ‘soap and water’. See the sections below on donating/reusing or disposing of Latex Paint for further instructions. If you are instructed to use a solvent, like mineral spirits or paint thinner, to clean your brushes or if you find the words ‘alkyd’ or ‘combustible’ are on the label, your paints are not latex and will need to be disposed of through the Kent County Department of Public Work’s SafeChem Program. Leftover latex paint can be saved for future projects, used by family or friends, or needed by other residents of West Michigan. Instead of tossing usable latex paint, look at the business directory below for places to donate latex paint.",
+    dropOffLocations: "TBD", 
+  },
+  {
+    itemName: "Lead Paint Chips",
+    description:"Lead paint chips will not leach out of a landfill so landfilling of home-owner-generated lead paint chips is appropriate. If the paint chips are from your home, if you removed them yourself and if you live OUTSIDE the city limits of Grand Rapids, East Grand Rapids, Walker, Wyoming, Grandville or Kentwood, double bag the paint chips and put them in your trash so they can be disposed of in a landfill. If you live INSIDE the city limits of Grand Rapids, East Grand Rapids, Walker, Wyoming, Grandville or Kentwood, double bag the paint chips and take them to a landfill for disposal. Your trash goes to the Kent County Waste to Energy Facility for incineration and lead paint chips should not be incinerated.",
+    dropOffLocations: "TBD"
+  },
+],
+},
   ];
 
  show : boolean = false; 
@@ -92,4 +127,3 @@ category : string;
 }
 
 
-// this.values = {data : this.categories[index], category: catIndex };
