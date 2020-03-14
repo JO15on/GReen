@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
-body, h1, h2, h3, h4 {
+body, h1, h2, h3, h4, p {
     font-family: 'Montserrat', sans-serif;
     color: #000000;
 }
@@ -30,6 +30,7 @@ button {
     color: #ffffff;
     border-radius: 5px;
     border: none;
+    text-align: center;
 }
 
 button:hover {
@@ -37,5 +38,6 @@ button:hover {
 }
 
 a {
+    text-decoration: none;
     color: #1179CC;
 }
