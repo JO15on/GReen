@@ -77,6 +77,11 @@ export class CategoryComponent implements OnInit {
     description: "Twenty to sixty percent of prescription medications go unused and are eventually disposed. Nearly all unused pharmaceuticals enter either our solid waste system or our sewage system. Neither disposal method is environmentally sound. Pharmaceuticals flushed down the toilet pass through our sewage treatment plants, which are generally not designed to screen for these chemicals. Pharmaceuticals discarded in landfills can seep into the surrounding water table. Several studies, including a 2002 analysis by the US Geological Survey of 139 streams across 30 states found that 80 percent of waterways tested had measurable concentrations of prescription and nonprescription drugs, steroids, and reproductive hormones. The SafeChem program is a joint effort between local pharmacies, law enforcement, wastewater treatment facilities and Kent County to provide residents with safe, convenient access to proper medicine disposal. SafeChem participants include many local pharmacies and law enforcement agencies that will accept your unwanted medications. Disposing of your medicines at one of these locations will ensure that your medicines will not be stolen from the garbage, will not enter our environment and eliminates the potential for abuse at home.",
     dropOffLocations: "TBD", 
   },
+  {
+    itemName: "Sharps",
+    description: "Kent County residents now have an option for safe disposal of used needles, lancets, and epi-pens. The Kent County Department of Public Works (KCDPW) and the Kent County Health Department (KCHD) are teaming up to ensure safe, confidential and environmentally sound disposal of certain medical materials through the SafeSharps Program. Since 2016, KCDPW has administered the SafeSharps program allowing Kent County residents to request a free container from any KCHD facility. After completing a brief registration form, KCHD will issue a sterile approved container that users may take home. Once full, the container can be returned to any KCHD facility where it will be exchanged for a new one. KCHD will not accept sharps in any container that was not issued through this program.",
+    dropOffLocations: "TBD", 
+  },
 ],
 },
 {"paint": [
@@ -88,6 +93,20 @@ export class CategoryComponent implements OnInit {
   {
     itemName: "Lead Paint Chips",
     description:"Lead paint chips will not leach out of a landfill so landfilling of home-owner-generated lead paint chips is appropriate. If the paint chips are from your home, if you removed them yourself and if you live OUTSIDE the city limits of Grand Rapids, East Grand Rapids, Walker, Wyoming, Grandville or Kentwood, double bag the paint chips and put them in your trash so they can be disposed of in a landfill. If you live INSIDE the city limits of Grand Rapids, East Grand Rapids, Walker, Wyoming, Grandville or Kentwood, double bag the paint chips and take them to a landfill for disposal. Your trash goes to the Kent County Waste to Energy Facility for incineration and lead paint chips should not be incinerated.",
+    dropOffLocations: "TBD"
+  },
+],
+},
+{"plastics": [
+  {
+    img: "/assets/plastics_example.png",
+    itemName: "Plastics",
+    description: "Clean, empty hard plastics that are stamped with a recycling symbol (#1-7) can be placed in your bin. These items include plastic bottles, cups, containers, tubs, and jugs. Before you place any of these items in your bin, please be sure to rinse/clean the plastic item (labels can be left on) and put the cap back on.",
+    dropOffLocations: "TBD", 
+  },
+  {
+    itemName: "Foam & Packaging Materials",
+    description:"Foam products (Styrofoam) are not recyclable through the Kent County residential recycling program. While foam is a type of plastic, foam proves to be a difficult material to process in a sorting facility due to its tendency to crumble and cling to other material. Please use the listed drop-offs below for foam cups, plates, “to-go” containers, egg cartons, ice chests, rinsed meat trays, protective packaging foam, white-beaded style blocks & sheets, packing peanuts, or other packaging materials such as bubble wrap and bubble-lined envelopes.",
     dropOffLocations: "TBD"
   },
 ],
