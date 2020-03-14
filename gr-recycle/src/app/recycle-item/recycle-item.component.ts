@@ -8,10 +8,20 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class RecycleItemComponent implements OnInit {
 @Input() values : any;
+@Input() category: string;
+cat : any;
 
   constructor() { }
 
   ngOnInit() {
+    this.cat = this.values[this.category];
+console.log(this.values);
+console.log(this.category);
+console.log(this.cat);
+
+
+
+
   }
 
 }
