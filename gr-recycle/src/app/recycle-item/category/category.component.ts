@@ -24,21 +24,27 @@ export class CategoryComponent implements OnInit {
   },
   {"holiday": [
     {
-      itemName: "TREE",
-      description: "Automotive batteries may be recycled when you purchase a new car battery.  If you are not purchasing a car battery but have scrap batteries you would like to dispose of, please take it to one of the following businesses for recycling.",
+      itemName: "Christmas Trees",
+      description: "Do you have an artificial Christmas tree or real Christmas tree to dispose of?  Once artificial Christmas trees have outlived their usefulness and cannot be donated for reuse, they must be thrown away.  They are non-recyclable and non-biodegradable.Once undecorated and free of any plastics (do not bag your tree), metals, and other non-organic materials, real Christmas trees may be recycled or “treecycled”",
       dropOffLocations: "TBD"
     },
     {
-      itemName: "COAL BECAUSE YOU SUCK",
-      description: "Donate your old vehicle, car, truck, trailer, boat, jet-ski, motorcycle, RV, etc. to a non-profit organization listed below.  If you plan to recycle or disassemble your vehicle yourself, visit these two websites for more information about safely disposing of the mercury in your vehicle.",
+      itemName: "Christmas & Holiday Lights",
+      description: "Christmas light strands cannot be recycled through curbside recycling programs. They become tanglers in the machines during the recycling process.Decorative frames or metal sculptures with lights strung through them may be disassembled and discarded/recycled in separate pieces. Please locate electronics recycling programs or use the following companies to safely and responsibly dispose of your light strands.",
       dropOffLocations: "TBD"
     },
   ],}
   ];
 
-// values: { automotive: { itemName: string; description: string; dropOffLocations: string; }[]; }; 
+ show : boolean = false; 
+ 
+ toggle() {
+  this.show = !this.show;
+}
+
 values :any;
 category : string;
+
 
   catSelected(catIndex : string){
    const index = this.categories.findIndex(category => {

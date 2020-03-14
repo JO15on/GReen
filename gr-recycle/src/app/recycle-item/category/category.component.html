@@ -1,6 +1,6 @@
-<button (click)="catSelected('automotive')" class="automotive">TEST</button>
-<button (click)="catSelected('holiday')" class="holiday">TEST2</button>
-<div *ngIf="values"><app-recycle-item [values]="values" [category]="category"></app-recycle-item></div>
+<button (click)="catSelected('automotive'); toggle()" class="automotive">TEST</button>
+<button (click)="catSelected('holiday'); toggle()" class="holiday">TEST2</button>
+<div *ngIf="show"><app-recycle-item [values]="values" [category]="category"></app-recycle-item></div>
 
 
  <!-- <img class="holiday" style="width: 100px;" src="/assets/placeholder.png">
