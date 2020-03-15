@@ -10,7 +10,7 @@ h2 {
 
 a {
   text-decoration: none;
-  color: white;
+  color: #ffffff;
 }
 
 body {
@@ -60,8 +60,6 @@ button {
   width: 80%;
   height: 55px;
   padding: 10px 32px;
-  font-size: 14px;
-  background-color: #4caf50;
   color: white;
   border: none;
   border-radius: 5px;
@@ -83,9 +81,13 @@ button {
     width: 25%;
   }
 
+  button:hover {
+    background-color: #178553;
+}
+
   a {
-  text-decoration: none;
-  color: white;
-  font-size: 14px;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
   }
 }
