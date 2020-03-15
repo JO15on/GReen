@@ -45,7 +45,7 @@ export class CategoryComponent implements OnInit {
   }, 
   {"batteries": [
     {
-      img: "/assets/batteries.png",
+      img: "/assets/batteries.png", 
       itemName: "Batteries (rechargeable), Household",
       description: "Rechargeable batteries should always be recycled.  A rechargeable battery may contain heavy metals such as lead, cadmium, and nickel.  Examples of rechargeable batteries include nickel cadmium (Ni-Cd), lithium ion (Li-ion), nickel metal hydride (Ni-MH), small sealed lead acid (SSLA/PB, up to 11 pounds), and nickel zinc (Ni-Zn).",
       dropOffLocations: "TBD", 
