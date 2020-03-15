@@ -64,6 +64,11 @@ export class CategoryComponent implements OnInit {
     dropOffLocations: "TBD", 
   },
   {
+    itemName: "Light Bulbs",
+    description: "Incandescent, halogen and most other light bulbs contain no mercury and therefore may be placed in your trash. Fluorescent light bulbs contain a small amount of mercury, a toxic metal.  Fluorescent bulbs such as CFL bulbs, tube lights, and U-shaped lights must be disposed of at a Kent County SafeChem location.",
+    dropOffLocations: "TBD", 
+  },
+  {
     itemName: "Appliances",
     description:
     "Appliances include refrigerators, freezers, ovens, stove-tops, laundry machines, washing machines, dehumidifiers, air conditioner units, dishwashers, water heaters, water coolers, etc. If you are able to donate or sell a working appliance for someone else to reuse, please do so through Craig’s List, Facebook Marketplace, other online platforms, or through businesses or charities that accept appliances for donations. However if the appliance no longer functions, the best option is to recycle it where possible. For non-working appliances, always remove the doors before disposal to protect against entrapment. Appliances must have all food and other debris removed. Many appliances may be recycled for scrap metal however keep in mind that some appliances contain refrigerant gas (such as Freon/CFCs) that is hazardous and must be removed by a trained technician. Examples of common appliances that contain refrigerant gas are refrigerators, freezers, water coolers, air conditioner units, and some dehumidifiers. For disposal and recycling, check with your waste hauler, check the Yellow Pages under “scrap metal,” or donate working appliances." ,
@@ -111,6 +116,28 @@ export class CategoryComponent implements OnInit {
   },
 ],
 },
+{"glass": [
+  {
+    img: "/assets/glass.png",
+    itemName: "Glass Bottles & Jars",
+    description: "Clear and colored food or beverage glasses, bottles, or jars are all eligible for recycling. (This does not include glass bakeware, mirrors, windowpanes, lightbulbs, or auto glass). Separate the lid, cap or cork from the container. If the lids are plastic or metal and as large or larger than a milk jug cap, you can place the lid in the recycling bin as well. If not, discard in the trash. Make sure the bottles are rinsed well before you place them in your recycle bin. For these items, labels CAN be left on!",
+    dropOffLocations: "TBD", 
+  },
+  {
+    itemName: "Light Bulbs",
+    description: "Incandescent, halogen and most other light bulbs contain no mercury and therefore may be placed in your trash. Fluorescent light bulbs contain a small amount of mercury, a toxic metal.  Fluorescent bulbs such as CFL bulbs, tube lights, and U-shaped lights must be disposed of at a Kent County SafeChem location.",
+    dropOffLocations: "TBD", 
+  },
+],
+},
+{"organics": [
+  {
+    itemName: "Compost, Wood, Yard Waste",
+    description: "Since 1995, yard clippings have been banned from disposal in Michigan municipal solid waste landfills (Michigan Legislature).  The burning of yard clippings has also been banned in many municipalities unless specifically authorized by local ordinance (Michigan DEQ website). Compost, wood, and yard waste may be handled through backyard compost, through your local city/township office, through your private waste hauler, or through the various organizations listed below.  This may include trees, stumps, wood, grass clippings, soil, dirt, sod, etc.",
+    dropOffLocations: "TBD", 
+  },
+],
+},
   ];
 
  show : boolean = false; 
@@ -125,15 +152,10 @@ category : string;
 
   catSelected(catIndex : string){
    const index = this.categories.findIndex(category => {
-    console.log(typeof Object.keys(category)[0]);
-    console.log(typeof catIndex);
       return Object.keys(category)[0].trim() == catIndex;
-      
     })
-    console.log(index);
     this.values = this.categories[index];
     this.category = catIndex;
-    console.log(this.values);
     return this.values;
 
   }
