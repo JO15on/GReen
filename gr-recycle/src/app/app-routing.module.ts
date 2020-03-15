@@ -7,6 +7,7 @@ import { RecycleItemComponent } from './recycle-item/recycle-item.component';
 import { ResourcesComponent } from './resources/resources.component';
 import { FeedComponent } from './home/feed/feed.component';
 import { NotificationComponent } from './home/feed/notification/notification.component';
+import { CategoryComponent } from './recycle-item/category/category.component';
 
 
 const routes: Routes = [
@@ -15,7 +16,7 @@ const routes: Routes = [
     component: ReportMissingComponent
   },
   {
-    path: 'home',
+    path: '',
     component: HomeComponent,
     children: [
       {
@@ -32,13 +33,14 @@ const routes: Routes = [
   },
   {
     path: 'recycleitems',
-    component: RecycleItemComponent,
-    // children: [
-    //   {
-    //     path: 'notification',
-    //     component: NotificationComponent
-    //   }
-    // ]
+    component: CategoryComponent,
+    children: [
+      {
+        path: 'items',
+        component: RecycleItemComponent
+      }
+    ]
+
   },
   {
     path: 'locations',
@@ -57,6 +59,6 @@ const routes: Routes = [
 
 export class AppRoutingModule { }
 export const routingComponents = [HomeComponent, 
-  LocationsComponent, ReportMissingComponent, 
+  LocationsComponent, ReportMissingComponent, CategoryComponent,
   RecycleItemComponent, ResourcesComponent, FeedComponent,
  NotificationComponent];
