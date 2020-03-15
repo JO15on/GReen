@@ -1,15 +1,18 @@
-<button (click)="catSelected('automotive')" class="automotive">TEST</button>
-<button (click)="catSelected('holiday')" class="holiday">TEST2</button>
-<div *ngIf="values"><app-recycle-item [values]="values" [category]="category"></app-recycle-item></div>
+<div class="category-container">
+    <button (click)="catSelected('plastics'); toggle()" class="plastics"><img width= 100px; src="/assets/placeholder.png"></button>
+    <button (click)="catSelected('automotive'); toggle()" class="automotive"><img width= 100px; src="/assets/placeholder.png"></button>
+    <button (click)="catSelected('holiday'); toggle()" class="holiday"><img width= 100px; src="/assets/placeholder.png"></button>
+    <button (click)="catSelected('textiles'); toggle()" class="textiles"><img width= 100px; src="/assets/placeholder.png"></button>
+    <button (click)="catSelected('batteries'); toggle()" class="batteries"><img width= 100px; src="/assets/placeholder.png"></button>
+    <button (click)="catSelected('electronics_appliances'); toggle()" class="electronics"><img width= 100px; src="/assets/placeholder.png"></button>
+    <button (click)="catSelected('medications'); toggle()" class="medications"><img width= 100px; src="/assets/placeholder.png"></button>
+    <button (click)="catSelected('paint'); toggle()" class="paint"><img width= 100px; src="/assets/placeholder.png"></button>
+    <button (click)="catSelected('organics'); toggle()" class="organics"><img width= 100px; src="/assets/placeholder.png"></button>
+
+</div>
+
+<div *ngIf="show"><app-recycle-item [values]="values" [category]="category"></app-recycle-item></div>
 
 
- <!-- <img class="holiday" style="width: 100px;" src="/assets/placeholder.png">
-    <img class="textiles" style="width: 100px;" src="/assets/placeholder.png">
-    <img class="batteries" style="width: 100px;" src="/assets/placeholder.png">
-    <img class="electronics" style="width: 100px;" src="/assets/placeholder.png">
-    <img class="paint" style="width: 100px;" src="/assets/placeholder.png">
-    <img class="household" style="width: 100px;" src="/assets/placeholder.png">
-    <img class="organics" style="width: 100px;" src="/assets/placeholder.png">
-    <img class="locations" style="width: 100px;" src="/assets/placeholder.png"> -->
-
-
+   
+   

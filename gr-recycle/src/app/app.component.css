@@ -2,3 +2,7 @@ footer {
     display: flex;
     justify-content: space-evenly;
 }
+
+ .nav {
+     width: 80px;
+ }
