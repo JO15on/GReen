@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild, OnDestroy, AfterViewInit, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, OnDestroy, AfterViewInit } from '@angular/core';
 import { ICoords } from '../interfaces';
 import { ShareService } from '../services/share.service';
 import { GoogleMap } from '@angular/google-maps';
@@ -33,9 +33,9 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
       this.center = res.coords;
       this.zoom = res.zoom;
     })
-    this._getRoutes.getRoutes().subscribe(res => {
-      console.log(res);
-    })
+    // this._getRoutes.getRoutes().subscribe(res => {
+    //   console.log(res);
+    // })
   }
 
   ngAfterViewInit() {
