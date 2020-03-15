@@ -141,15 +141,12 @@ export class CategoryComponent implements OnInit {
 },
   ];
 
-<<<<<<< HEAD
-=======
  show : boolean = false; 
  
  toggle() {
   this.show = !this.show;
 }
 
->>>>>>> 41af1b34c136473bdfa7f426f40e86793f97a7c2
 values :any;
 category : string;
 
