@@ -15,13 +15,6 @@ cat : any;
 
   ngOnInit() {
     this.cat = this.values[this.category];
-console.log(this.values);
-console.log(this.category);
-console.log(this.cat);
-
-
-
-
   }
 
 }

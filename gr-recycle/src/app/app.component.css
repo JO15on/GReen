@@ -3,6 +3,34 @@ footer {
     justify-content: space-evenly;
 }
 
- .nav {
-     width: 80px;
- }
+.nav {
+    width: 80px;
+}
+
+div {
+    display: flex;
+    /*   background-color: #178553; */
+    background-color: green;
+    padding: 5px 15px 5px 15px;
+    justify-content: space-between;
+}
+
+span, h1 {
+    color: #ffffff;
+}
+
+span {
+    font-weight: 900;
+}
+
+h1 {
+    color: #ffffff;
+    font-weight: 200;
+}
+
+img {
+    height: 70px;
+    width: 70px;
+    padding-top: 5px;
+}
+  
