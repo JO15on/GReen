@@ -130,14 +130,6 @@ export class CategoryComponent implements OnInit {
   },
 ],
 },
-{"organics": [
-  {
-    itemName: "Compost, Wood, Yard Waste",
-    description: "Since 1995, yard clippings have been banned from disposal in Michigan municipal solid waste landfills (Michigan Legislature).  The burning of yard clippings has also been banned in many municipalities unless specifically authorized by local ordinance (Michigan DEQ website). Compost, wood, and yard waste may be handled through backyard compost, through your local city/township office, through your private waste hauler, or through the various organizations listed below.  This may include trees, stumps, wood, grass clippings, soil, dirt, sod, etc.",
-    dropOffLocations: "TBD", 
-  },
-],
-},
   ];
 
  show : boolean = false; 
