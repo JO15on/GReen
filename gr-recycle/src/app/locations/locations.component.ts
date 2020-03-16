@@ -1,25 +1,48 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ICoords, IMarker } from '../interfaces';
+import { Component, OnInit, Input, ViewChild, OnDestroy, AfterViewInit } from '@angular/core';
+import { ICoords } from '../interfaces';
 import { ShareService } from '../services/share.service';
+import { GoogleMap } from '@angular/google-maps';
+import { GetRoutesService } from '../services/get-routes.service';
 
 @Component({
   selector: 'app-locations',
   templateUrl: './locations.component.html',
   styleUrls: ['./locations.component.css'],
 })
-export class LocationsComponent implements OnInit {
+export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
+
+  @ViewChild(GoogleMap, {static: false}) mapRef: GoogleMap
+  @ViewChild('map', {static: false}) map: google.maps.Map
 
   @Input() zoom: number;
   @Input() center: any;
   @Input() options: any;
 
-  constructor(private _share: ShareService) { }
+
+  testPath = [
+    {lat: 42.966002, lng: -85.680090},
+    {lat: 42.966002, lng: -85.702836},
+    {lat: 42.992423, lng: -85.702836},
+    {lat: 42.996035, lng: -85.690354}
+  ];
+
+  constructor(private _share: ShareService, private _getRoutes: GetRoutesService) { }
 
   ngOnInit() {
     this._share.getLocation().subscribe((res: ICoords) => {
       this.center = res.coords;
       this.zoom = res.zoom;
     })
+    // this._getRoutes.getRoutes().subscribe(res => {
+    //   console.log(res);
+    // })
+  }
+
+  ngAfterViewInit() {
+  }
+
+
+  ngOnDestroy() {
   }
 }
 

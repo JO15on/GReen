@@ -1,5 +1,7 @@
 <app-find-route></app-find-route>
 <google-map
+  id = "mapID"
+  #map
   height="400px"
   width="100%"
   [zoom]="zoom"
@@ -7,4 +9,10 @@
   [options]="options"
 >
   <map-marker [position]='center'></map-marker>
+  <map-polygon [paths]='testPath'></map-polygon>
 </google-map>
+
+
+
+
+
