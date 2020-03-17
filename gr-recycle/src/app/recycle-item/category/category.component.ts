@@ -22,7 +22,8 @@ export class CategoryComponent implements OnInit {
       },
     ],  
   },
-  {"holiday": [
+  { 
+    "holiday": [
     {
       itemName: "Christmas Trees",
       description: "Do you have an artificial Christmas tree or real Christmas tree to dispose of?  Once artificial Christmas trees have outlived their usefulness and cannot be donated for reuse, they must be thrown away.  They are non-recyclable and non-biodegradable.Once undecorated and free of any plastics (do not bag your tree), metals, and other non-organic materials, real Christmas trees may be recycled or “treecycled”",
@@ -130,14 +131,6 @@ export class CategoryComponent implements OnInit {
   },
 ],
 },
-{"organics": [
-  {
-    itemName: "Compost, Wood, Yard Waste",
-    description: "Since 1995, yard clippings have been banned from disposal in Michigan municipal solid waste landfills (Michigan Legislature).  The burning of yard clippings has also been banned in many municipalities unless specifically authorized by local ordinance (Michigan DEQ website). Compost, wood, and yard waste may be handled through backyard compost, through your local city/township office, through your private waste hauler, or through the various organizations listed below.  This may include trees, stumps, wood, grass clippings, soil, dirt, sod, etc.",
-    dropOffLocations: "TBD", 
-  },
-],
-},
   ];
 
  show : boolean = false; 
@@ -157,7 +150,6 @@ category : string;
     this.values = this.categories[index];
     this.category = catIndex;
     return this.values;
-
   }
 
   constructor() { }

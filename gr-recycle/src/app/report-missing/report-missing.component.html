@@ -20,20 +20,21 @@
     <div *ngIf="step === 'end-no'">
         <p>There's still time for your bin to get picked up! Wait until after 3:00pm to report your missed pickup.</p>
     </div>
-
+ 
     <div *ngIf="step === 'end-yes'">
         <p class="form">Name:</p>
-        <input/>
+        <input required/>
         <p class="form">Date:</p>
-        <input type='date'/>
+        <input type='date' />
         <p class="form">Address:</p>
         <input/>
         <p class="form">Phone:</p>
         <input type='tel'/>
         <p class="form">E-Mail:</p>
         <input type='email'/>
-        <button class="submit" (click)="submit()">Submit</button>
-    </div>
+        <button class="submit" (click)="submit()">Submit</button>    
+    </div> 
+
 
     <div *ngIf="step === 'end'">
         <p>Your reported missing pickup has been submitted to whateverGR@email.com</p> 

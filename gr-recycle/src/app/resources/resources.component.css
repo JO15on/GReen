@@ -8,9 +8,12 @@ h2 {
   padding: 5px;
 }
 
+.title {
+  margin: 10px;
+}
+
 a {
-  text-decoration: none;
-  color: white;
+  color: #ffffff;
 }
 
 body {
@@ -82,9 +85,11 @@ button {
     width: 25%;
   }
 
+  button:hover {
+    background-color: #178553;
+  }
+
   a {
-  text-decoration: none;
-  color: white;
-  font-size: 14px;
+    font-size: 14px;
   }
 }
