@@ -1,6 +1,7 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { GetCoordsService } from '../services/get-coords.service';
 import { ShareService } from '../services/share.service';
+import { HomeComponent } from '../home/home.component'
 
 @Component({
   selector: 'app-find-route',
@@ -10,6 +11,9 @@ import { ShareService } from '../services/share.service';
 export class FindRouteComponent implements OnInit {
 
   userAddress: string;
+
+  @Output()
+  submitted = new EventEmitter<any>();
 
   constructor(private _getCoords: GetCoordsService, private _share: ShareService) { }
 
@@ -36,5 +40,9 @@ export class FindRouteComponent implements OnInit {
         zoom: 18
       })
     })
+  }
+
+  submitLocation(){
+    this.submitted.emit();
   }
 }
