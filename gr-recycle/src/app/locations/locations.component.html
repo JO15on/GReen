@@ -10,8 +10,11 @@
   [options]="options"
 >
   <map-marker [position]='center'></map-marker>
-  <map-polygon [paths]='testPath'></map-polygon>
+  <map-polygon [paths]="routes"></map-polygon>
+
 </google-map>
+
+<button (click)="cityApiResp()">Get Routes</button>
 
 
 

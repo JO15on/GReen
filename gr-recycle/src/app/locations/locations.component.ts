@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, ViewChild, OnDestroy, AfterViewInit } from '@angular/core';
 import { ICoords } from '../interfaces';
 import { ShareService } from '../services/share.service';
-import { GoogleMap } from '@angular/google-maps';
 import { GetRoutesService } from '../services/get-routes.service';
 
 @Component({
@@ -11,32 +10,38 @@ import { GetRoutesService } from '../services/get-routes.service';
 })
 export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
 
-  @ViewChild(GoogleMap, {static: false}) mapRef: GoogleMap
-  @ViewChild('map', {static: false}) map: google.maps.Map
-
   @Input() zoom: number;
   @Input() center: any;
   @Input() options: any;
-
-
-  testPath = [
-    {lat: 42.966002, lng: -85.680090},
-    {lat: 42.966002, lng: -85.702836},
-    {lat: 42.992423, lng: -85.702836},
-    {lat: 42.996035, lng: -85.690354}
-  ];
+  routes: any
 
   constructor(private _share: ShareService, private _getRoutes: GetRoutesService) { }
 
   ngOnInit() {
+    this.routes = this.cityApiResp()
     this._share.getLocation().subscribe((res: ICoords) => {
       this.center = res.coords;
       this.zoom = res.zoom;
     })
-    // this._getRoutes.getRoutes().subscribe(res => {
-    //   console.log(res);
-    // })
   }
+
+  cityApiResp() {
+    const res = this._getRoutes.tempGetRoutes();
+    const final = [];
+    let i = 0;
+    res.map( routes => {
+      final.push([])
+      routes.the_geom.coordinates[0][0].map( coords => {
+        final[i].push({
+          lat: coords[1],
+          lng: coords[0]
+        })
+      })
+      i++;
+    })
+    return final
+  }
+
 
   ngAfterViewInit() {
   }
@@ -45,6 +50,15 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
   ngOnDestroy() {
   }
 }
+
+
+
+
+
+
+
+
+
 
 
 
