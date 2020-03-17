@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -8,6 +8,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
+  openReminder1 : boolean = false;
+
   constructor(private route: ActivatedRoute, private router: Router){}
 
   ngOnInit() {
@@ -15,6 +17,12 @@ export class HomeComponent implements OnInit {
 
   showFeed() {
     this.router.navigate(['feed'], {relativeTo: this.route});
+  }
+
+  openReminder(){
+    if(this.openReminder1 === false){
+      this.openReminder1 = true;
+    };
   }
 
 }
