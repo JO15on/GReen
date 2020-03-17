@@ -9,9 +9,8 @@ footer {
 
 div {
     display: flex;
-    /*   background-color: #178553; */
-    background-color: green;
-    padding: 5px 15px 5px 15px;
+    background-color: #20B874;
+    padding: 0px 15px 0px 15px;
     justify-content: space-between;
 }
 
@@ -31,6 +30,6 @@ h1 {
 img {
     height: 70px;
     width: 70px;
-    padding-top: 5px;
+    padding-top: 15px;
 }
   
