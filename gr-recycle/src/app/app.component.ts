@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ICoords } from './interfaces';
 
 @Component({
@@ -8,4 +8,10 @@ import { ICoords } from './interfaces';
 })
 export class AppComponent {
   title = 'gr-recycle';
-}
+
+  constructor() {};
+
+  ngOnInit() {
+  }
+
+};
