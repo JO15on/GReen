@@ -1,12 +1,11 @@
-* {
-  box-sizing: border-box;
-}
-
+  
 body, html {
   height: 100%;
   margin: 0;
 }
-
+* {
+  box-sizing: border-box;
+}
 .content_container {
   z-index: 2;
   position: absolute;
@@ -26,12 +25,13 @@ body, html {
   background-size: cover;
   filter: blur(8px);
   -webkit-filter: blur(8px);
+
 }
 
 .top {
   flex: 1;
   align-self: center;
-} 
+}
 
 .notification-container {
   display: flex;
@@ -55,18 +55,17 @@ h2 {
 }
 
 .reportmissing {
-    display: flex;
-    justify-content: center;  
     background-color: #F7635C; /* Red */
     border: none;
-    color: #ffffff;
+    color: white;
     padding: 15px 32px;
+    text-align: center;
     text-decoration: none;
     font-size: 16px;
     border-radius: 5px;
     width: 60%;
+    margin: 5px;
 }
-
 .reportmissing:hover {
   background-color: #f44336; /* Red */
 }
@@ -100,4 +99,3 @@ a {
     margin-left: 1em;
   }
 }
-
