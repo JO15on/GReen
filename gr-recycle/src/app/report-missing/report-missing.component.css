@@ -1,8 +1,19 @@
 * {
-    height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: center;
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+h3 {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
 }
 
 input{
@@ -12,7 +23,7 @@ input{
 .form-wrapper{
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
 }
 
 .form {
@@ -39,4 +50,23 @@ button:hover {
 
 .submit {
     margin: 1em;
+}
+
+/* Desktop Only */
+
+@media only screen and (min-width: 1024px){
+    .form-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    p {
+        margin-left: 30%;
+    }
+
+    .placeBin {
+        display: flex;
+        flex-direction: row;
+    }
 }
