@@ -13,7 +13,6 @@ import { ShareService } from './services/share.service';
 
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,11 +25,12 @@ import { ShareService } from './services/share.service';
     AppRoutingModule,
     FormsModule,
     GoogleMapsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [GetCoordsService, ShareService],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
 
 
