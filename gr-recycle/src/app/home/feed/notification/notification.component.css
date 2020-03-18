@@ -25,6 +25,7 @@ a {
     display: flex;
     margin: 15px;
     border-radius: 5px;
+    background-color: #ffffff;
     border: 2px solid #D3D3D3;
     padding: 5px;
     flex-direction: row;
