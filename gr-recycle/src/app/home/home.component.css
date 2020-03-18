@@ -1,11 +1,12 @@
-  
-body, html {
+  body, html {
   height: 100%;
   margin: 0;
 }
+
 * {
   box-sizing: border-box;
 }
+
 .content_container {
   z-index: 2;
   position: absolute;
@@ -13,8 +14,8 @@ body, html {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
 .bg_img {
-  background-image: url('/assets/blue_bridge.JPG');
   width: 100%;
   top: 0; 
   left: 0;
@@ -63,7 +64,7 @@ h2 {
     text-decoration: none;
     font-size: 16px;
     border-radius: 5px;
-    width: 60%;
+    width: 55%;
     margin: 5px;
 }
 .reportmissing:hover {
@@ -82,13 +83,14 @@ a {
     }
     .bg_img {
       background-image: none;
+      
     }
     
-    .content_container {
+    /* .content_container {
      display: flex;
      flex-wrap: wrap;
      flex-direction: column;
-    }
+    } */
 
   }
 
@@ -97,5 +99,9 @@ a {
     display: flex;
     justify-content: center;
     margin-left: 1em;
+  }
+
+  .bg_img {
+    background-image: url('/assets/blue_bridge.JPG');
   }
 }
