@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild, OnDestroy, AfterViewInit } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy, AfterViewInit } from '@angular/core';
 import { ICoords } from '../interfaces';
 import { ShareService } from '../services/share.service';
 import { GetRoutesService } from '../services/get-routes.service';
@@ -27,20 +27,40 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
 
   cityApiResp() {
     const res = this._getRoutes.tempGetRoutes();
-    const final = [];
+    const routes = [];
     let i = 0;
-    res.map( routes => {
-      final.push([])
-      routes.the_geom.coordinates[0][0].map( coords => {
-        final[i].push({
+    res.map( route => {
+      routes.push([])
+      route.the_geom.coordinates[0][0].map( coords => {
+        routes[i].push({
           lat: coords[1],
           lng: coords[0]
         })
       })
       i++;
     })
-    return final
+    return routes
   }
+
+  // cityApiResp() {
+    // this._getRoutes.getRoutes().subscribe( (res: any) => {
+    //   console.log(res);
+      // const routes = [];
+      // let i = 0;
+      // res.map( route => {
+      //   routes.push([])
+      //   route.the_geom.coordinates[0][0].map( coords => {
+      //     routes[i].push({
+      //       lat: coords[1],
+      //       lng: coords[0]
+      //     })
+      //   })
+      //   i++;
+      // })
+      // return routes
+    // });
+  // }
+
 
 
   ngAfterViewInit() {

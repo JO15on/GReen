@@ -8,15 +8,35 @@ export class GetRoutesService {
 
   constructor(private http: HttpClient) { }
 
-  baseURL = 'https://data.grandrapidsmi.gov/resource/ykbs-97kp.json?$select=the_geom'
+  baseURL: string = 'https://data.grandrapidsmi.gov/resource/ykbs-97kp.json'
+  apiKey: string = 'Add API_KEY Here'
+  apiSecret: string = 'Add API_SECRET Here'
+  auth = btoa(`${this.apiKey}:${this.apiSecret}`)
+
+
 
   getRoutes() {
-    const headers = new HttpHeaders({
-        "X-App-Token": '52ya6j53n1mny7t841nkr3o1g'
-    })
-    
-    return this.http.get(this.baseURL, { headers })
+    // let headersObj = new HttpHeaders()
+    // headersObj = headersObj.append('Authorization', `Basic ${this.auth}`)
+    // headersObj = headersObj.append('Content-Type', 'application/json')
+    // const httpOptions = {
+    //   headers: headersObj
+    // }
+    // return this.http.get(this.baseURL, httpOptions)
   }
+
+  // let headers = new HttpHeaders({
+  //   'Authorization', `Basic ${this.auth}`,
+  //   'Content-Type', 'application/json'
+  // })
+  // return this.http.get(this.baseURL, { headers })
+
+  // let headers = new HttpHeaders();
+  // headers = headers.append('Authorization', `Basic ${this.auth}`)
+  // headers = headers.append('Content-Type', 'application/json')
+  // console.log(headers);
+  // return this.http.get(this.baseURL, { headers })
+  
 
   tempGetRoutes() {
     return this.tempData;
