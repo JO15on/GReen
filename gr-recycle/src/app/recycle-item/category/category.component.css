@@ -20,7 +20,114 @@ button {
 
   #bottles:hover, #bottles:focus{
     background-image: url('/assets/glass_icon_hover.png');
-
   }
 
- 
+  #paint{
+    background-image: url('/assets/paint_icon.png');
+    max-width: 100%;
+    top: 0; 
+    left: 0;
+    max-height: 100%;
+    background-repeat: no-repeat;
+    background-size: contain; 
+  }
+
+  #paint:hover, #paint:focus{
+    background-image: url('/assets/paint_icon_hover.png');
+  }
+
+  #meds{
+    background-image: url('/assets/meds_icon.png');
+    max-width: 100%;
+    top: 0; 
+    left: 0;
+    max-height: 100%;
+    background-repeat: no-repeat;
+    background-size: contain; 
+  }
+
+  #meds:hover, #meds:focus{
+    background-image: url('/assets/meds_icon_hover.png');
+  }
+
+  #electronics{
+    background-image: url('/assets/appliances_icon.png');
+    max-width: 100%;
+    top: 0; 
+    left: 0;
+    max-height: 100%;
+    background-repeat: no-repeat;
+    background-size: contain; 
+  }
+
+  #electronics:hover, #electronics:focus{
+    background-image: url('/assets/appliances_icon_hover.png');
+  }
+
+  #batteries{
+    background-image: url('/assets/batteries_icon.png');
+    max-width: 100%;
+    top: 0; 
+    left: 0;
+    max-height: 100%;
+    background-repeat: no-repeat;
+    background-size: contain; 
+  }
+
+  #batteries:hover, #batteries:focus{
+    background-image: url('/assets/batteries_icon_hover.png');
+  }
+  #textiles{
+    background-image: url('/assets/textiles_icon.png');
+    max-width: 100%;
+    top: 0; 
+    left: 0;
+    max-height: 100%;
+    background-repeat: no-repeat;
+    background-size: contain; 
+  }
+
+  #textiles:hover, #textiles:focus{
+    background-image: url('/assets/textiles_icon_hover.png');
+  }
+  
+  #holiday{
+    background-image: url('/assets/holiday_icon.png');
+    max-width: 100%;
+    top: 0; 
+    left: 0;
+    max-height: 100%;
+    background-repeat: no-repeat;
+    background-size: contain; 
+  }
+
+  #holiday:hover, #holiday:focus{
+    background-image: url('/assets/holiday_icon_hover.png');
+  }
+
+  #auto{
+    background-image: url('/assets/auto_icon.png');
+    max-width: 100%;
+    top: 0; 
+    left: 0;
+    max-height: 100%;
+    background-repeat: no-repeat;
+    background-size: contain; 
+  }
+
+  #auto:hover, #auto:focus{
+    background-image: url('/assets/auto_icon_hover.png');
+  }
+  #plastics{
+    background-image: url('/assets/plastics_icon.png');
+    max-width: 100%;
+    top: 0; 
+    left: 0;
+    max-height: 100%;
+    background-repeat: no-repeat;
+    background-size: contain; 
+  }
+
+  #plastics:hover, #plastics:focus{
+    background-image: url('/assets/plastics_icon_hover.png');
+  }
