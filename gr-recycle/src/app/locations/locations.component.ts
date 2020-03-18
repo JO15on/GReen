@@ -1,7 +1,8 @@
-import { Component, OnInit, Input, OnDestroy, AfterViewInit } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy, AfterViewInit, ViewChild, ViewChildren, ElementRef, QueryList } from '@angular/core';
 import { ICoords } from '../interfaces';
 import { ShareService } from '../services/share.service';
 import { GetRoutesService } from '../services/get-routes.service';
+import { MapInfoWindow } from '@angular/google-maps'
 
 @Component({
   selector: 'app-locations',
@@ -10,10 +11,19 @@ import { GetRoutesService } from '../services/get-routes.service';
 })
 export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
 
+  @ViewChild(MapInfoWindow, { static: false }) infoWindow: MapInfoWindow
+
   @Input() zoom: number;
   @Input() center: any;
   @Input() options: any;
+
   routes: any
+  routeNumber: string;
+  routeDay: string;
+  polyCenter: any;
+  userRouteInfo: any;
+  visited: number = -1;
+  
 
   constructor(private _share: ShareService, private _getRoutes: GetRoutesService) { }
 
@@ -22,6 +32,8 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
     this._share.getLocation().subscribe((res: ICoords) => {
       this.center = res.coords;
       this.zoom = res.zoom;
+      this.userRouteInfo = this.getUserPolygon();
+      this.visited++
     })
   }
 
@@ -30,9 +42,15 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
     const routes = [];
     let i = 0;
     res.map( route => {
-      routes.push([])
+      routes.push({
+        coords: [], 
+        info: {
+          route: route.route, 
+          day: route.route_day
+        }
+      })
       route.the_geom.coordinates[0][0].map( coords => {
-        routes[i].push({
+        routes[i].coords.push({
           lat: coords[1],
           lng: coords[0]
         })
@@ -42,26 +60,26 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
     return routes
   }
 
-  // cityApiResp() {
-    // this._getRoutes.getRoutes().subscribe( (res: any) => {
-    //   console.log(res);
-      // const routes = [];
-      // let i = 0;
-      // res.map( route => {
-      //   routes.push([])
-      //   route.the_geom.coordinates[0][0].map( coords => {
-      //     routes[i].push({
-      //       lat: coords[1],
-      //       lng: coords[0]
-      //     })
-      //   })
-      //   i++;
-      // })
-      // return routes
-    // });
-  // }
+  onPolygonClick(polygon: any, event: any, info: any) {
+    this.polyCenter = {
+      lat: event.latLng.lat(),
+      lng: event.latLng.lng()
+    }
+    this.routeNumber = info.route
+    this.routeDay = info.day
+    this.infoWindow.open(polygon)
+  }
 
-
+  getUserPolygon() {
+    let location = new google.maps.LatLng(this.center.lat, this.center.lng)
+    let userLocation = this.routes.filter(route => {
+      if (route.info.route) {
+        let poly = new google.maps.Polygon({paths: route.coords});
+        return google.maps.geometry.poly.containsLocation(location, poly);
+      }
+    })
+    return userLocation[0].info;
+  }
 
   ngAfterViewInit() {
   }
