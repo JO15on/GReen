@@ -9,8 +9,11 @@
   [options]="options"
 >
   <map-marker [position]='center'></map-marker>
-  <!-- <map-polygon #poly *ngFor="let route of routes" [paths]="route" (polygonClick)="onPolygonClick(poly, route.info)"></map-polygon>
-  <map-info-window>{{routeNumber}}</map-info-window> -->
+  <map-polygon #poly *ngFor="let route of routes" [paths]="route.coords" (polygonClick)="onPolygonClick(poly, $event, route.route, route.day)"></map-polygon>
+  <map-info-window [position]='polyCenter'>
+    <p><strong>Route</strong>: {{routeNumber}}</p>
+    <p><strong>Pick-Up Day</strong>: {{routeDay}}</p>
+  </map-info-window>
 
 </google-map>
 

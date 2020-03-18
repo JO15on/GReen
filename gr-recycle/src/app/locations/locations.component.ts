@@ -17,7 +17,9 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
   @Input() center: any;
   @Input() options: any;
   routes: any
-  routeNumber: any;
+  routeNumber: string;
+  routeDay: string;
+  polyCenter: any;
 
   constructor(private _share: ShareService, private _getRoutes: GetRoutesService) { }
 
@@ -34,23 +36,29 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
     const routes = [];
     let i = 0;
     res.map( route => {
-      routes.push([])
+      routes.push({coords: [], route: route.route, day: route.route_day})
       route.the_geom.coordinates[0][0].map( coords => {
-        routes[i].push({
+        routes[i].coords.push({
           lat: coords[1],
           lng: coords[0]
         })
       })
       i++;
     })
-    console.log(routes);
     return routes
   }
 
-  // onPolygonClick(polygon: any, info: any) {
-  //   this.routeNumber = info
-  //   console.log('Polygon Clicked!', polygon);
-  // }
+  onPolygonClick(polygon: any, event: any, info: any, day: any) {
+
+    this.polyCenter = {
+      lat: event.latLng.lat(),
+      lng: event.latLng.lng()
+    }
+    this.routeNumber = info
+    this.routeDay = day
+    this.infoWindow.open(polygon)
+  
+  }
 
   // cityApiResp() {
     // this._getRoutes.getRoutes().subscribe( (res: any) => {
