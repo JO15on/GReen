@@ -137,7 +137,8 @@ export class CategoryComponent implements OnInit {
  
  toggle() {
   this.show = !this.show;
-}
+  }
+ 
 
 values :any;
 category : string;
