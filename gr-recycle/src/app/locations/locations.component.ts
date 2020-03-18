@@ -2,7 +2,7 @@ import { Component, OnInit, Input, OnDestroy, AfterViewInit, ViewChild, ViewChil
 import { ICoords } from '../interfaces';
 import { ShareService } from '../services/share.service';
 import { GetRoutesService } from '../services/get-routes.service';
-import { MapInfoWindow, GoogleMap, MapPolygon } from '@angular/google-maps'
+import { MapInfoWindow } from '@angular/google-maps'
 
 @Component({
   selector: 'app-locations',
