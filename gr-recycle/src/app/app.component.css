@@ -1,10 +1,27 @@
+html {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 footer {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: stretch;
+    max-width: 100%;
+    font-size: 10px;
+    text-align: center;
+    padding: 10px;
 }
 
 .nav {
-    width: 80px;
+    display: flex;
+    width: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-evenly;
+    text-align: center;
 }
 
 div {
@@ -28,8 +45,18 @@ h1 {
 }
 
 img {
+    object-fit: contain; 
+}
+
+.GRlogo {
+    padding-top: 15px;
     height: 70px;
     width: 70px;
-    padding-top: 15px;
 }
   
+
+
+@media only screen and (max-width: 600px) {
+   
+
+}
