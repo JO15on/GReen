@@ -1,3 +1,17 @@
+.bg_img {
+  background-image: url('/assets/blue_bridge.JPG');
+  min-width: 100%;
+  top: 0; 
+  left: 0;
+  min-height: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+
+
 .button_container {
   display: flex;
   justify-content: center;
@@ -31,4 +45,9 @@ a {
       width: 90%;
       font-size: 12px;
     }
+    .bg_img {
+      background-image: none;
+    
+    }
   }
+
