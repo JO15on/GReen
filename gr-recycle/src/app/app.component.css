@@ -8,8 +8,9 @@ footer {
     display: flex;
     font-size: 10px;
     text-align: center;
-    padding: 10px;
+    margin: 10px;
     flex-direction: row;
+    justify-content: center;
 }
 
 .nav {
@@ -18,13 +19,12 @@ footer {
     padding-left: 10px;
     padding-right: 10px;
     align-items: baseline;
-    justify-content: center;
 }
 
 div {
     display: flex;
     background-color: #20B874;
-    padding: 0px 15px 0px 15px;
+    padding: 5px 15px 5px 15px;
     justify-content: space-between;
 }
 
