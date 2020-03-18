@@ -9,7 +9,8 @@
   [options]="options"
 >
   <map-marker [position]='center'></map-marker>
-  <map-polygon [paths]="routes"></map-polygon>
+  <!-- <map-polygon #poly *ngFor="let route of routes" [paths]="route" (polygonClick)="onPolygonClick(poly, route.info)"></map-polygon>
+  <map-info-window>{{routeNumber}}</map-info-window> -->
 
 </google-map>
 

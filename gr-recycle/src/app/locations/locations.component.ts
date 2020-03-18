@@ -1,7 +1,8 @@
-import { Component, OnInit, Input, OnDestroy, AfterViewInit } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy, AfterViewInit, ViewChild } from '@angular/core';
 import { ICoords } from '../interfaces';
 import { ShareService } from '../services/share.service';
 import { GetRoutesService } from '../services/get-routes.service';
+import { MapInfoWindow } from '@angular/google-maps'
 
 @Component({
   selector: 'app-locations',
@@ -10,10 +11,13 @@ import { GetRoutesService } from '../services/get-routes.service';
 })
 export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
 
+  @ViewChild(MapInfoWindow, { static: false }) infoWindow: MapInfoWindow
+
   @Input() zoom: number;
   @Input() center: any;
   @Input() options: any;
   routes: any
+  routeNumber: any;
 
   constructor(private _share: ShareService, private _getRoutes: GetRoutesService) { }
 
@@ -39,8 +43,14 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
       })
       i++;
     })
+    console.log(routes);
     return routes
   }
+
+  // onPolygonClick(polygon: any, info: any) {
+  //   this.routeNumber = info
+  //   console.log('Polygon Clicked!', polygon);
+  // }
 
   // cityApiResp() {
     // this._getRoutes.getRoutes().subscribe( (res: any) => {
