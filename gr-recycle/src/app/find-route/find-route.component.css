@@ -3,7 +3,6 @@ div {
     flex-direction: row;
     justify-content: center;
     margin: 1em;
-    /* position: absolute; */
 } 
 
 button {
@@ -15,9 +14,7 @@ input {
     border: 1px solid black;
     border-radius: 5px;
     height: 28px;
-    margin: 5px;
-    width: 360px;
-    margin: 0 auto;
+    margin: 1em;
 }
 
 input ::placeholder {

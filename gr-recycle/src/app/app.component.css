@@ -1,26 +1,33 @@
-html {
+body {
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
+}
+
+header {
+    display: flex;
+    background-color: #20B874;
+    padding: 5px 15px 5px 15px;
+    justify-content: space-between;
+    margin-bottom: 10px;
 }
 
 #footer {
     position: fixed;
-    width: 100vw;
-     
+    -webkit-box-flex: 1;
+    flex: 1;
     bottom: 0;
-    padding: 0;
-    margin: 0;
-    background: white; 
-    z-index: 2;
+    width: 100vw;
+    background: white
 }
 
 footer {
     display: flex;
     font-size: 10px;
     text-align: center;
-    margin: 10px;
+    margin-top: 10px;
     flex-direction: row;
     justify-content: space-between;
+    z-index: 5;
 }
 
 .nav {
@@ -29,13 +36,6 @@ footer {
     padding-left: 10px;
     padding-right: 10px;
     align-items: baseline;
-}
-
-div {
-    display: flex;
-    background-color: #20B874;
-    padding: 5px 15px 5px 15px;
-    justify-content: space-between;
 }
 
 span, h1 {

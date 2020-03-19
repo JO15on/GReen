@@ -1,7 +1,6 @@
 <div class="bg_img"></div>
     <div class="content_container">
         <app-find-route (submitted)="openReminder()"></app-find-route>
-        <div>
             <div *ngIf="openReminder1" class="notification-container">
                 <div class="top"> 
                     <img class="icon" src="">
@@ -12,7 +11,6 @@
                     <h2>Recyling Pickup: Every other </h2>
                 </div>
             </div>
-        </div>
         <section> 
             <app-feed></app-feed>
         </section>
