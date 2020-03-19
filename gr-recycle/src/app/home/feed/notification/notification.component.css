@@ -12,8 +12,6 @@ p, a {
     font-size: 10px;
 }
 
-
-
 .notification-container {
     display: flex;
     flex-direction: row;
@@ -22,13 +20,14 @@ p, a {
     background-color: #ffffff;
     border: 2px solid #D3D3D3;
     padding: 5px;
-   
 }
 
 @media only screen and (max-width: 600px) {
+
 .notification-container {
     flex-direction: column;
 }
+
 a {
     justify-content: flex-end;
 }
@@ -38,23 +37,23 @@ a {
     align-self: center;
 }
 
-    .notification-container {
-        display: flex;
-        margin: 15px;
-        padding: 5px;
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
+.notification-container {
+    display: flex;
+    margin: 15px;
+    padding: 5px;
+    flex-direction: row;
+}
 
-    .top {
-        flex: none;
-    }
+.top {
+    flex: none;
+}
 
-    .icon {
-        width: 100px;
-    }
+.icon {
+    width: 100px;
+}
 
-    .bottom {
-        font-size: 15px;
-    }
+.bottom {
+    font-size: 15px;
+}
+
 }
