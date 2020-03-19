@@ -1,6 +1,7 @@
 <div class="bg_img"></div>
     <div class="content_container">
-        <app-find-route (submitted)="openReminder()"></app-find-route>
+        <app-find-route class="find-route-component" (submitted)="openReminder()"></app-find-route>
+        <div>
             <div *ngIf="openReminder1" class="notification-container">
                 <div class="top"> 
                     <img class="icon" src="">

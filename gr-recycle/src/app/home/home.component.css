@@ -7,22 +7,18 @@
   box-sizing: border-box;
 }
 
-.content_container {
-  z-index: 2;
-  position: relative;
-  height: 105vh;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
 
 .bg_img {
   width: 100%;
   top: 0; 
   left: 0;
-  height: 50%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   filter: blur(8px);
   -webkit-filter: blur(8px);
+  display: none;
 }
 
 .top {
@@ -73,28 +69,30 @@ a {
     font-size: 12px;
 }
 
-@media only screen and (max-width: 600px) {
-    .reportmissing {
-      width: 90%;
-      font-size: 12px;
-    }
-    .bg_img {
-      background-image: none;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-position: center;
-      background-size: cover;
-    }
-    
-    /* .content_container {
-     display: flex;
-     flex-wrap: wrap;
-     flex-direction: column;
-    } */
-
+@media only screen and (min-width: 600px) {
+  .content_container {
+    top: 400px;
+  }
+  
+  .reportmissing {
+    width: 90%;
+    font-size: 12px;
   }
 
+  .bg_img {
+    background-image: none;
+    
+  }
+}
+
 @media only screen and (min-width: 1024px){
+  .content_container{
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
   .reportmissing {
     display: flex;
     justify-content: center;
@@ -102,6 +100,7 @@ a {
   }
 
   .bg_img {
+    display: block;
     background-image: url('/assets/blue_bridge.JPG');
   }
 }

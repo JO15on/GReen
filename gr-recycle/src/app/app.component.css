@@ -13,8 +13,7 @@ header {
 
 #footer {
     position: fixed;
-    -webkit-box-flex: 1;
-    flex: 1;
+    width: 100vw;
     bottom: 0;
     width: 100vw;
     background: white
@@ -28,6 +27,12 @@ footer {
     flex-direction: row;
     justify-content: space-between;
     z-index: 5;
+}
+
+.footer-space {
+    width: 100%;
+    height: 63px;
+    background-color: #ffffff;
 }
 
 .nav {
@@ -59,7 +64,7 @@ h1 {
   
 
 
-@media only screen and (max-width: 600px) {
+@media only screen and (min-width: 1024px) {
    
-
+   
 }
