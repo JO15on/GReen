@@ -3,13 +3,24 @@ html {
     justify-content: space-around;
 }
 
+#footer {
+    position: fixed;
+    width: 100vw;
+     
+    bottom: 0;
+    padding: 0;
+    margin: 0;
+    background: white; 
+    z-index: 2;
+}
+
 footer {
     display: flex;
     font-size: 10px;
     text-align: center;
     margin: 10px;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .nav {
