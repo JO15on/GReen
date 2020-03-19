@@ -3,7 +3,7 @@ div {
     flex-direction: row;
     justify-content: center;
     margin: 1em;
-    position: absolute;
+    /* position: absolute; */
 } 
 
 button {

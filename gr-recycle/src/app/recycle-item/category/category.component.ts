@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 
 })
 export class CategoryComponent implements OnInit {
-
+  show: boolean = false;
   categories = [{
     "automotive": [
       {
@@ -132,12 +132,11 @@ export class CategoryComponent implements OnInit {
 ],
 },
   ];
-
- show : boolean = false; 
  
- toggle() {
-  this.show = !this.show;
-  }
+ 
+//  toggle() {
+//   this.show = !this.show;
+//   }
  
 
 values :any;
@@ -150,6 +149,11 @@ category : string;
     })
     this.values = this.categories[index];
     this.category = catIndex;
+    console.log(this.category);
+    setTimeout( () => {
+      this.show = true;
+    }, 0)
+    this.show = false;
     return this.values;
   }
 
