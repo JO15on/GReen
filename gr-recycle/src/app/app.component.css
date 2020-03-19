@@ -3,15 +3,22 @@ html {
     justify-content: space-between;
 }
 
+.nav_text{
+    width: 68px;
+    text-align: center;
+    color: #000000;
+}
+
 #footer {
     position: fixed;
     width: 100vw;
-     
     bottom: 0;
     padding: 0;
     margin: 0;
     background: white; 
     z-index: 2;
+    box-shadow: 8px 0 6px -6px black;
+
 }
 
 footer {
