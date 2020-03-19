@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnDestroy, AfterViewInit, ViewChild, ViewChildren, ElementRef, QueryList } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy, AfterViewInit, ViewChild } from '@angular/core';
 import { ICoords } from '../interfaces';
 import { ShareService } from '../services/share.service';
 import { GetRoutesService } from '../services/get-routes.service';
@@ -20,25 +20,24 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
   routes: any
   routeNumber: string;
   routeDay: string;
-  polyCenter: any;
+  labelLocation: any;
   userRouteInfo: any;
-  visited: number = -1;
-  
+  isLocationSubmitted: boolean = false;
 
   constructor(private _share: ShareService, private _getRoutes: GetRoutesService) { }
 
   ngOnInit() {
-    this.routes = this.cityApiResp()
+    this.routes = this.getCityData()
     this._share.getLocation().subscribe((res: ICoords) => {
       this.center = res.coords;
       this.zoom = res.zoom;
+      this.isLocationSubmitted = this._share.userSubmittedLocation;
       this.userRouteInfo = this.getUserPolygon();
-      this.visited++
     })
   }
 
-  cityApiResp() {
-    const res = this._getRoutes.tempGetRoutes();
+  getCityData() {
+    let res = this._getRoutes.getRoutes()
     const routes = [];
     let i = 0;
     res.map( route => {
@@ -57,29 +56,39 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
       })
       i++;
     })
-    return routes
+    return routes   
   }
 
   onPolygonClick(polygon: any, event: any, info: any) {
-    this.polyCenter = {
+    this.labelLocation = {
       lat: event.latLng.lat(),
       lng: event.latLng.lng()
     }
-    this.routeNumber = info.route
-    this.routeDay = info.day
+    this.userRouteInfo.route = info.route
+    this.userRouteInfo.day = info.day
     this.infoWindow.open(polygon)
   }
 
   getUserPolygon() {
     let location = new google.maps.LatLng(this.center.lat, this.center.lng)
-    let userLocation = this.routes.filter(route => {
+    let userPolygon = []
+    let userRoute = this.routes.filter(route => {
       if (route.info.route) {
-        let poly = new google.maps.Polygon({paths: route.coords});
-        return google.maps.geometry.poly.containsLocation(location, poly);
+        let poly = new google.maps.Polygon({ paths: route.coords });
+        if (google.maps.geometry.poly.containsLocation(location, poly)){
+          return userPolygon.push(poly)
+        } 
       }
     })
-    return userLocation[0].info;
+    this.labelLocation = location;
+    if( this.isLocationSubmitted ) {
+      this.userRouteInfo.route = userRoute[0].info.route
+      this.userRouteInfo.day = userRoute[0].info.day
+      this.infoWindow.open(userPolygon[0]);
+    }
+    return userRoute[0].info;
   }
+
 
   ngAfterViewInit() {
   }
