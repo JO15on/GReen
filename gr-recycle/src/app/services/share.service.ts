@@ -8,18 +8,21 @@ import { ICoords } from '../interfaces';
 })
 export class ShareService {
 
+  userSubmittedLocation: boolean = false;
+  
   private userLocation = new BehaviorSubject({
     // default map view
     coords: {
       lat: 42.9634,
       lng: -85.6681
     },
-    zoom: 12
+    zoom: 11
   })
 
   constructor() { }
 
   setLocation(data: ICoords) {
+    this.userSubmittedLocation = true;
     this.userLocation.next(data)
   }
   getLocation(): Observable<ICoords> {
