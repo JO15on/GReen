@@ -1,6 +1,9 @@
-<div>
-    <button (click)="geoLocateUser()" (click)="submitLocation()">Use Current Location</button> <p>OR</p>
-    <input [(ngModel)]="userAddress" type="text" placeholder="Enter Street Address">
-    <button (click)="locateUser()" (click)="submitLocation()">Submit</button>
+<div class="find-route-container">
+    <button (click)="geoLocateUser()" (click)="submitLocation()">Use Current Location</button> 
+    <p>OR</p>
+    <div class="form-container">
+        <input [(ngModel)]="userAddress" type="text" placeholder="Enter Street Address">
+        <button (click)="locateUser()" (click)="submitLocation()">Submit</button>    
+    </div>
 </div>
 

@@ -1,38 +1,50 @@
-div {
+.find-route-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
-    margin: 1em;
-    /* position: absolute; */
-} 
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 
+}
 button {
+    display: flex;
     margin: 1em;
     height: 35px;
 }
 
 input {
+    display: flex;
     border: 1px solid black;
     border-radius: 5px;
-    height: 28px;
-    margin: 5px;
+    height: 23px;
+    padding: 5px;
     width: 360px;
-    margin: 0 auto;
-}
-
-input ::placeholder {
-    margin-left: 5px;
-}
-
-p {
-    padding: 10px;
     text-align: center;
 }
 
-@media only screen and (max-width: 600px){
-    
-    div {
-        flex-direction: column;
+p {
+    display: flex;
+    text-align: center;
+}
+
+@media only screen and (min-width: 600px){
+    .find-route-container {
+        flex-direction: row;
+        justify-content: space-around;
     }
 
+    .form-container {
+        flex-direction: row;
+    }
+
+    input {
+        text-align: left;
+    }
 }
