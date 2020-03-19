@@ -1,15 +1,24 @@
-<app-find-route (submitted)="openReminder()"></app-find-route>
-<div>
-    <div *ngIf="openReminder1">
-        <img class="icon" src="">
-        <p>Welcome! Your Address is part of </p>
-        <p>Refuse Pickup: </p>
-        <p>Recyling Pickup: Every other </p>
+<div class="bg_img"></div>
+    <div class="content_container">
+        <app-find-route (submitted)="openReminder()"></app-find-route>
+        <div>
+            <div *ngIf="openReminder1" class="notification-container">
+                <div class="top"> 
+                    <img class="icon" src="">
+                </div>
+                <div class="bottom">
+                    <h2>Welcome! Your Address is part of </h2>
+                    <h2>Refuse Pickup: </h2>
+                    <h2>Recyling Pickup: Every other </h2>
+                </div>
+            </div>
+        </div>
+        <section> 
+            <app-feed></app-feed>
+        </section>
+        <div  class="button_container">
+            <button class="reportmissing" routerLink="/reportmissing">Report Missed Pickup</button>
+        </div>
     </div>
-</div>
-<section> 
-    <app-feed></app-feed>
-</section>
-<div>
-    <button class="reportmissing" routerLink="/reportmissing">Report Missed Pickup</button>
-</div>
+
+

@@ -12,6 +12,22 @@ p, a {
     font-size: 10px;
 }
 
+.notification-container {
+    display: flex;
+    flex-direction: row;
+    margin: 15px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    border: 2px solid #D3D3D3;
+    padding: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+
+.notification-container {
+    flex-direction: column;
+}
+
 a {
     justify-content: flex-end;
 }
@@ -24,12 +40,20 @@ a {
 .notification-container {
     display: flex;
     margin: 15px;
-    border-radius: 5px;
-    border: 2px solid #D3D3D3;
     padding: 5px;
     flex-direction: row;
 }
 
-@media only screen and (min-width: 600px) {
+.top {
+    flex: none;
+}
+
+.icon {
+    width: 100px;
+}
+
+.bottom {
+    font-size: 15px;
+}
 
 }

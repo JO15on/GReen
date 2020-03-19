@@ -2,9 +2,11 @@
 
 <div class="form-wrapper">
     <div *ngIf="step === 'start'">
-        <p>Was the bin placed near the curb before 7am today?</p>
-        <button (click)="yes()">Yes</button>
-        <button (click)="no()">No</button>
+        <h3>Was the bin placed near the curb before 7am today?</h3>
+        <div class = "placeBin">
+            <button (click)="yes()">Yes</button>
+            <button (click)="no()">No</button>
+        </div>
     </div>
 
     <div *ngIf="step === 'start-no'">
@@ -12,13 +14,15 @@
     </div>
 
     <div *ngIf="step === 'start-yes'">
-        <p>It's {{newDate | date: 'shortTime'}}, is it after 3:00pm today? </p>
-        <button (click)="yesDate()">Yes</button>
-        <button (click)="noDate()">No</button>
+        <h3>It's {{newDate | date: 'shortTime'}}, is it after 3:00pm today? </h3>
+        <div class= "placeBin">
+            <button (click)="yesDate()">Yes</button>
+            <button (click)="noDate()">No</button>
+        </div>
     </div>
 
     <div *ngIf="step === 'end-no'">
-        <p>There's still time for your bin to get picked up! Wait until after 3:00pm to report your missed pickup.</p>
+        <h3>There's still time for your bin to get picked up! Wait until after 3:00pm to report your missed pickup.</h3>
     </div>
  
     <div *ngIf="step === 'end-yes'">
@@ -37,6 +41,6 @@
 
 
     <div *ngIf="step === 'end'">
-        <p>Your reported missing pickup has been submitted to whateverGR@email.com</p> 
+        <h3>Your reported missing pickup has been submitted to whateverGR@email.com</h3> 
     </div>
 </div>

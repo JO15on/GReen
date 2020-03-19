@@ -7,8 +7,10 @@ import { FindRouteComponent } from './find-route/find-route.component';
 import { LocationsComponent } from './locations/locations.component';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { HttpClientModule } from '@angular/common/http'
+
 import { GetCoordsService } from './services/get-coords.service';
 import { ShareService } from './services/share.service';
+
 
 
 @NgModule({
@@ -23,11 +25,12 @@ import { ShareService } from './services/share.service';
     AppRoutingModule,
     FormsModule,
     GoogleMapsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [GetCoordsService, ShareService],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
 
 

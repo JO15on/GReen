@@ -1,0 +1,38 @@
+div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 1em;
+    /* position: absolute; */
+} 
+
+button {
+    margin: 1em;
+    height: 35px;
+}
+
+input {
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 28px;
+    margin: 5px;
+    width: 360px;
+    margin: 0 auto;
+}
+
+input ::placeholder {
+    margin-left: 5px;
+}
+
+p {
+    padding: 10px;
+    text-align: center;
+}
+
+@media only screen and (max-width: 600px){
+    
+    div {
+        flex-direction: column;
+    }
+
+}
