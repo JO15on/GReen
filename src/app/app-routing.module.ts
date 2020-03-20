@@ -8,15 +8,20 @@ import { ResourcesComponent } from './resources/resources.component';
 import { FeedComponent } from './home/feed/feed.component';
 import { NotificationComponent } from './home/feed/notification/notification.component';
 import { CategoryComponent } from './recycle-item/category/category.component';
+import { LandingComponent } from './landing/landing.component';
 
 
 const routes: Routes = [
+  {
+    path: '',
+    component: LandingComponent
+  },
   {
     path: 'reportmissing',
     component: ReportMissingComponent
   },
   {
-    path: '',
+    path: 'home',
     component: HomeComponent,
     children: [
       {
@@ -40,7 +45,6 @@ const routes: Routes = [
         component: RecycleItemComponent
       }
     ]
-
   },
   {
     path: 'locations',
@@ -58,7 +62,7 @@ const routes: Routes = [
 })
 
 export class AppRoutingModule { }
-export const routingComponents = [HomeComponent, 
+export const routingComponents = [LandingComponent, HomeComponent, 
   LocationsComponent, ReportMissingComponent, CategoryComponent,
   RecycleItemComponent, ResourcesComponent, FeedComponent,
  NotificationComponent];
