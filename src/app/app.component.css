@@ -1,0 +1,75 @@
+body {
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header {
+    display: flex;
+    background-color: #20B874;
+    padding: 5px 15px 5px 15px;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+#footer {
+    position: fixed;
+    width: 100vw;
+    bottom: 0;
+    width: 100vw;
+    background: white
+}
+
+.footer-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer {
+    display: flex;
+    font-size: 10px;
+    text-align: center;
+    margin-top: 10px;
+    flex-direction: row;
+    justify-content: space-between;
+    z-index: 5;
+}
+
+.footer-space {
+    height: 80px;
+    background-color: #ffffff;
+}
+
+.nav {
+    display: flex;
+    width: 50px;
+    padding-left: 5px;
+    padding-right: 5px;
+    align-items: baseline;
+}
+
+span, h1 {
+    color: #ffffff;
+}
+
+span {
+    font-weight: 900;
+}
+
+h1 {
+    color: #ffffff;
+    font-weight: 100;
+}
+
+.GRlogo {
+    padding-top: 15px;
+    height: 70px;
+    width: 70px;
+}
+  
+
+
+@media only screen and (min-width: 1024px) {
+   
+   
+}
