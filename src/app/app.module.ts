@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http'
 
 import { GetCoordsService } from './services/get-coords.service';
 import { ShareService } from './services/share.service';
+import { ChangeBackgroundImgDirective } from './directives/change-background-img.directive';
 
 
 
@@ -19,6 +20,7 @@ import { ShareService } from './services/share.service';
     routingComponents,
     FindRouteComponent,
     LocationsComponent,
+    ChangeBackgroundImgDirective,
   ],
   imports: [
     BrowserModule,

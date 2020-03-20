@@ -33,7 +33,6 @@ export class FindRouteComponent implements OnInit {
 
   locateUser() {
     this._getCoords.addressToCoords(this.userAddress).subscribe((res: any) => {
-      console.log(res);
       const coords = res.results[0].geometry.location
       this._share.setLocation({
         coords,
