@@ -20,6 +20,7 @@ export class HomeComponent implements OnInit {
   }
 
   openReminder(){
+    
     if(this.openReminder1 === false){
       this.openReminder1 = true;
     };
