@@ -28,7 +28,6 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
 
   ngOnInit() {
     this.routes = this.getCityData()
-    console.log("in ngOnInit");
     this._share.getLocation().subscribe((res: ICoords) => {
       this.center = res.coords;
       this.zoom = res.zoom;
@@ -97,6 +96,13 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
 
   ngOnDestroy() {
   }
+
+  /* 
+  To Do: 
+    1. Get recycle items displaying in production.
+    2. Check if there is a close method on maps.
+    3. Get route displaying on home page.
+  */
 }
 
 

@@ -138,6 +138,7 @@ export class CategoryComponent implements OnInit {
 //   this.show = !this.show;
 //   }
  
+categoryNames: string[] = []
 
 values :any;
 category : string;
@@ -161,8 +162,19 @@ category : string;
   constructor() { }
 
   ngOnInit() {
+    this.categories.map(category => {
+      this.categoryNames.push(Object.keys(category)[0])
+    })
+    console.log(this.categoryNames);
   }
 
+  getPath(name: string) {
+    return `url('assets/${name}_icon.png')`
+  }
+
+  test(test){
+    console.log(test);
+  }
 }
 
 
