@@ -3,6 +3,10 @@ h1, h2, p, a {
   justify-content: center;
 }
 
+body {
+  height: 100vh;
+}
+
 h2 {
   font-size: .95em;
   padding: 5px;
