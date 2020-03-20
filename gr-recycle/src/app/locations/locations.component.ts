@@ -2,7 +2,7 @@ import { Component, OnInit, Input, OnDestroy, AfterViewInit, ViewChild } from '@
 import { ICoords } from '../interfaces';
 import { ShareService } from '../services/share.service';
 import { GetRoutesService } from '../services/get-routes.service';
-import { MapInfoWindow } from '@angular/google-maps'
+import { MapInfoWindow } from '@angular/google-maps';
 
 @Component({
   selector: 'app-locations',
@@ -28,6 +28,7 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
 
   ngOnInit() {
     this.routes = this.getCityData()
+    console.log("in ngOnInit");
     this._share.getLocation().subscribe((res: ICoords) => {
       this.center = res.coords;
       this.zoom = res.zoom;

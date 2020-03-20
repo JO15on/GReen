@@ -1,7 +1,6 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { GetCoordsService } from '../services/get-coords.service';
 import { ShareService } from '../services/share.service';
-import { HomeComponent } from '../home/home.component'
 
 @Component({
   selector: 'app-find-route',
@@ -34,6 +33,7 @@ export class FindRouteComponent implements OnInit {
 
   locateUser() {
     this._getCoords.addressToCoords(this.userAddress).subscribe((res: any) => {
+      console.log(res);
       const coords = res.results[0].geometry.location
       this._share.setLocation({
         coords,
