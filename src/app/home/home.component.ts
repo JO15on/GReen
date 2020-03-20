@@ -9,6 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class HomeComponent implements OnInit {
 
   openReminder1 : boolean = false;
+  imgPath = "url('assets/blue_bridge.JPG')"
 
   constructor(private route: ActivatedRoute, private router: Router){}
 
