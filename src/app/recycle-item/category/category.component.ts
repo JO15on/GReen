@@ -141,7 +141,8 @@ export class CategoryComponent implements OnInit {
 
 values :any;
 category : string;
-
+// plasticPNG = "url('assets/plastics_icon.png')"
+// get a hover state.
 
   catSelected(catIndex : string){
    const index = this.categories.findIndex(category => {

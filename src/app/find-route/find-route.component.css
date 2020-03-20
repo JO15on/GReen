@@ -26,9 +26,10 @@ input {
     border-radius: 5px;
     height: 23px;
     padding: 5px;
-    width: 90vw;
+    width: 80vw;
     text-align: center;
     margin-left: 1em;
+    max-width: 350px;
 }
 
 p {
