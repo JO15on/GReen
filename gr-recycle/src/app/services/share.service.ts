@@ -25,6 +25,7 @@ export class ShareService {
     this.userSubmittedLocation = true;
     this.userLocation.next(data)
   }
+  
   getLocation(): Observable<ICoords> {
     return this.userLocation.asObservable()
   }
