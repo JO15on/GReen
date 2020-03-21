@@ -2,16 +2,31 @@ button {
     background-color: transparent;
 }
 
+/*Holds ng-container, button, and title*/
 .category-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
+/*The specific category image*/
 .category {
     width: 100px;
     height: 100px;
 
+}
+
+/*Aligns the button and the category title together*/
+.button_title_container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  text-align: center;
+}
+
+/*The title of the category that displays below the icon*/
+.category_title {
+  font-size: 14px;
 }
 
 
