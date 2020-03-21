@@ -8,14 +8,17 @@
     <ng-container *ngFor="let categoryName of categoryNames">
         <div class="button_title_container">
             <button [style.background-image]="getPath(categoryName)" appChangeBackgroundImg
-                (click)="catSelected(categoryName)" [id]="categoryName" class="category">
+                (click)="catSelected(categoryName); scrollToElement(section)" [id]="categoryName" class="category">
             </button>
+       
+
             <span class="category_title">{{ categoryName | titlecase }}</span>
         </div>
 
     </ng-container>
 </div>
-
+<div #section>
 <div *ngIf="show">
     <app-recycle-item [values]="values" [category]="category"></app-recycle-item>
+</div>
 </div>
