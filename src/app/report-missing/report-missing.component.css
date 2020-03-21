@@ -57,6 +57,11 @@ button:hover {
     margin: 1em;
 }
 
+a {
+    text-decoration: none;
+    color: white;
+}
+
 /* Desktop Only */
 
 @media only screen and (min-width: 1024px){
