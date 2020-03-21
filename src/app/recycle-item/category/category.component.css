@@ -1,6 +1,29 @@
 .intro {
   padding: 15px;
 }
+ p {
+   font-size: 14px;
+ }
+
+ #section {
+   display: flex; 
+   flex-wrap: wrap;
+   justify-content: center;
+ }
+
+#to_top {
+  background-color: #20B874;
+    color: #ffffff;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+    width: 75%;
+}
+
+#to_top:hover {
+    background-color: #178553;
+}
+
 
 button {
     background-color: transparent;

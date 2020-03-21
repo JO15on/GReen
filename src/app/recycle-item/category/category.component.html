@@ -1,24 +1,27 @@
-<div class="intro">
+<div class="intro" #top>
     <h2>Recyclables</h2>
     <p>Not sure what you can and can't recycle? No problem! Our Recyclables Library details how to safely and
         responsibly dispose of common household items.</p>
-
 </div>
+
 <div class="category-container">
     <ng-container *ngFor="let categoryName of categoryNames">
         <div class="button_title_container">
             <button [style.background-image]="getPath(categoryName)" appChangeBackgroundImg
                 (click)="catSelected(categoryName); scrollToElement(section)" [id]="categoryName" class="category">
             </button>
-       
+
 
             <span class="category_title">{{ categoryName | titlecase }}</span>
         </div>
 
     </ng-container>
 </div>
+
 <div #section>
-<div *ngIf="show">
-    <app-recycle-item [values]="values" [category]="category"></app-recycle-item>
-</div>
+    <div *ngIf="show">
+        <app-recycle-item [values]="values" [category]="category"></app-recycle-item>
+        <div id="to_top" (click)="scrollToElement(top)">Return To Top</div>
+    </div>
+  
 </div>

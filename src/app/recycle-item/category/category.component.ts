@@ -31,8 +31,8 @@ export class CategoryComponent implements OnInit {
   getPath(name: string) {
     return `url('assets/${name}_icon.png')`
   }
+
   scrollToElement($element): void {
-    console.log($element);
     $element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
   }
 
