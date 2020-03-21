@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http'
 
 import { GetCoordsService } from './services/get-coords.service';
 import { ShareService } from './services/share.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material/material.module';
 
 
 
@@ -26,9 +28,12 @@ import { ShareService } from './services/share.service';
     FormsModule,
     GoogleMapsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [GetCoordsService, ShareService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: []
 })
 
 export class AppModule { }
