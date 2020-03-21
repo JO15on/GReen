@@ -11,6 +11,7 @@ import { CategoryComponent } from './recycle-item/category/category.component';
 
 
 const routes: Routes = [
+  
   {
     path: 'reportmissing',
     component: ReportMissingComponent
@@ -40,7 +41,6 @@ const routes: Routes = [
         component: RecycleItemComponent
       }
     ]
-
   },
   {
     path: 'locations',
