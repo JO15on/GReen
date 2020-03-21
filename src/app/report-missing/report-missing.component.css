@@ -20,7 +20,7 @@ h3 {
     align-items: center;
 }
 
-input{
+input {
     margin: 0 auto;
 }
 
@@ -74,5 +74,11 @@ button:hover {
     .submit {
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .alert-danger{
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }

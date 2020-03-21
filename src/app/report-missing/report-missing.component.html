@@ -15,6 +15,7 @@
 
     <div *ngIf="step === 'start-no'" class="title1">
         <h3>Sorry, you missed your bin pickup!</h3>
+        <button><a routerLink=''>Ok</a></button>
     </div>
 
     <div *ngIf="step === 'start-yes'">
@@ -29,24 +30,67 @@
 
     <div *ngIf="step === 'end-no'" class="title1">
         <h3 class="title1">There's still time for your bin to get picked up! Wait until after 3:00pm to report your missed pickup.</h3>
+        <button><a routerLink=''>Ok</a></button>
     </div>
  
-    <div *ngIf="step === 'end-yes'">
-        <p class="form">Name:</p>
-        <input required/>
-        <p class="form">Date:</p>
-        <input type='form' class="date"/>
-        <p class="form">Address:</p>
-        <input/>
-        <p class="form">Phone:</p>
-        <input type='tel'/>
-        <p class="form">E-Mail:</p>
-        <input type='email'/>
-        <button class="submit" (click)="submit()">Submit</button>    
+    <div *ngIf="step === 'end-yes'" [formGroup]="reportForm" novalidate>
+        <div>
+            <p class="form">Name:</p>
+            <input class="form-control" formControlName="name" required/>
+        </div>
+        <div *ngIf="reportForm.controls['name'].invalid && (reportForm.controls['name'].dirty || reportForm.controls['name'].touched)" class= "alert-danger">
+            <div *ngIf="reportForm.controls['name'].errors.required">
+                Name is required
+            </div>
+        </div>
+
+        <div>
+            <p class="form">Date:</p>
+            <input class="form-control" formControlName="date" required/>
+        </div>
+        <div *ngIf="reportForm.controls['date'].invalid && (reportForm.controls['date'].dirty || reportForm.controls['date'].touched)" class= "alert-danger">
+            <div *ngIf="reportForm.controls['date'].errors.required">
+                Date is required
+            </div>
+        </div>
+
+        <div>
+            <p class="form">Address:</p>
+            <input class="form-control" formControlName="address" required/>
+        </div>
+        <div *ngIf="reportForm.controls['address'].invalid && (reportForm.controls['address'].dirty || reportForm.controls['address'].touched)" class= "alert-danger">
+            <div *ngIf="reportForm.controls['address'].errors.required">
+                Address is required
+            </div>
+        </div>
+
+        <div>
+            <p class="form">Phone:</p>
+            <input class="form-control" formControlName="phone" type='tel' required/>
+        </div>
+        <div *ngIf="reportForm.controls['phone'].invalid && (reportForm.controls['phone'].dirty || reportForm.controls['phone'].touched)" class= "alert-danger">
+            <div *ngIf="reportForm.controls['phone'].errors.required">
+                Phone is required
+            </div>
+        </div>
+
+        <div>
+            <p class="form">E-Mail:</p>
+            <input class="form-control" formControlName="email" type='email' required/>
+        </div>
+        <div *ngIf="reportForm.controls['email'].invalid && (reportForm.controls['email'].dirty || reportForm.controls['email'].touched)" class= "alert-danger">
+            <div *ngIf="reportForm.controls['email'].errors.required">
+                E-Mail is required
+            </div>
+        </div>
+
+
+        <button class="submit" (click)="submit()" [disabled]="reportForm.pristine || reportForm.invalid">Submit</button>    
     </div> 
 
 
     <div *ngIf="step === 'end'" class="title1">
         <h3 class="title1">Your reported missing pickup has been submitted to whateverGR@email.com</h3> 
+        <button><a routerLink=''>Ok</a></button>
     </div>
 </div>
