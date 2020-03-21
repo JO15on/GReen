@@ -67,7 +67,7 @@ h1 {
     width: 70px;
 }
   
-a {
+.header_a {
     text-decoration: none;
     color: white;
 }
