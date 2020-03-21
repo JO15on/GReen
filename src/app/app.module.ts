@@ -7,12 +7,11 @@ import { FindRouteComponent } from './find-route/find-route.component';
 import { LocationsComponent } from './locations/locations.component';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { HttpClientModule } from '@angular/common/http'
-
+import { LandingComponent } from './landing/landing.component'
 import { GetCoordsService } from './services/get-coords.service';
 import { ShareService } from './services/share.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
-
 
 
 @NgModule({
@@ -29,11 +28,11 @@ import { MaterialModule } from './material/material.module';
     GoogleMapsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
   ],
   providers: [GetCoordsService, ShareService],
   bootstrap: [AppComponent],
-  entryComponents: []
+  entryComponents: [LandingComponent]
 })
 
 export class AppModule { }

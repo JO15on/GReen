@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { LandingComponent } from '../landing/landing.component';
 
 @Component({
   selector: 'app-home',
@@ -10,9 +12,12 @@ export class HomeComponent implements OnInit {
 
   openReminder1 : boolean = false;
 
-  constructor(private route: ActivatedRoute, private router: Router){}
+  constructor(private route: ActivatedRoute, private router: Router,
+    public dialog: MatDialog ){}
 
+    
   ngOnInit() {
+    this.dialog.open(LandingComponent);
   }
 
   showFeed() {
@@ -25,5 +30,6 @@ export class HomeComponent implements OnInit {
       this.openReminder1 = true;
     };
   }
+
 
 }
