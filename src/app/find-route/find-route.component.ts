@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
-import { GetCoordsService } from '../services/get-coords.service';
+import { GoogleMapsService } from '../services/google-maps.service';
 import { ShareService } from '../services/share.service';
 
 @Component({
@@ -10,11 +10,12 @@ import { ShareService } from '../services/share.service';
 export class FindRouteComponent implements OnInit {
 
   userAddress: string;
+  suggestions: any
 
   @Output()
   submitted = new EventEmitter<any>();
 
-  constructor(private _getCoords: GetCoordsService, private _share: ShareService) { }
+  constructor(private _googleMaps: GoogleMapsService, private _share: ShareService) { }
 
   ngOnInit() {
   }
@@ -32,12 +33,18 @@ export class FindRouteComponent implements OnInit {
   }
 
   locateUser() {
-    this._getCoords.addressToCoords(this.userAddress).subscribe((res: any) => {
+    this._googleMaps.addressToCoords(this.userAddress).subscribe((res: any) => {
       const coords = res.results[0].geometry.location
       this._share.setLocation({
         coords,
         zoom: 18
       })
+    })
+  }
+
+  autoComplete(location) {
+    this._googleMaps.autoComplete(location).subscribe((res: any) => {
+      this.suggestions = res.predictions
     })
   }
 
