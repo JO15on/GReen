@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-report-missing',
@@ -11,12 +13,24 @@ export class ReportMissingComponent implements OnInit {
   hidden : boolean = false;
   step: string = 'start';
 
-
+  reportForm : FormGroup;
   newDate = Date.now();
 
-  constructor() { }
+  constructor(private fb : FormBuilder) { 
+    this.createForm();
+  }
 
   ngOnInit() {
+  }
+
+  createForm() {
+    this.reportForm = this.fb.group({
+      name: ['', Validators.required],
+      date: ['', Validators.required],
+      address: ['', Validators.required],
+      phone: ['', Validators.required],
+      email: ['', Validators.required]
+    });
   }
 
   yes(){

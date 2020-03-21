@@ -2,16 +2,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule, routingComponents } from './app-routing.module'; 
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,  ReactiveFormsModule } from '@angular/forms';
 import { FindRouteComponent } from './find-route/find-route.component';
 import { LocationsComponent } from './locations/locations.component';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { HttpClientModule } from '@angular/common/http'
 import { LandingComponent } from './landing/landing.component'
-import { GetCoordsService } from './services/get-coords.service';
+// import { GetCoordsService } from './services';
 import { ShareService } from './services/share.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
+
+
+import { GoogleMapsService } from './services/google-maps.service';
+import { ChangeBackgroundImgDirective } from './directives/change-background-img.directive';
+
 
 
 @NgModule({
@@ -20,6 +25,7 @@ import { MaterialModule } from './material/material.module';
     routingComponents,
     FindRouteComponent,
     LocationsComponent,
+    ChangeBackgroundImgDirective,
   ],
   imports: [
     BrowserModule,
@@ -29,10 +35,14 @@ import { MaterialModule } from './material/material.module';
     HttpClientModule,
     BrowserAnimationsModule,
     MaterialModule,
+    ReactiveFormsModule
   ],
-  providers: [GetCoordsService, ShareService],
+  providers: [GoogleMapsService, ShareService],
   bootstrap: [AppComponent],
-  entryComponents: [LandingComponent]
+  entryComponents: [LandingComponent,
+    ReactiveFormsModule,
+    BrowserAnimationsModule 
+  ],
 })
 
 export class AppModule { }

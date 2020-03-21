@@ -4,6 +4,16 @@ html, body, app-root {
     margin: 0;
 }
 
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+}
+
+
+.mat-autocomplete-panel {
+    background-color: #FFF;
+}
+
 img {
     object-fit: contain; 
 }

@@ -28,7 +28,6 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
 
   ngOnInit() {
     this.routes = this.getCityData()
-    console.log("in ngOnInit");
     this._share.getLocation().subscribe((res: ICoords) => {
       this.center = res.coords;
       this.zoom = res.zoom;
@@ -83,8 +82,7 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
     })
     this.labelLocation = location;
     if( this.isLocationSubmitted ) {
-      this.userRouteInfo.route = userRoute[0].info.route
-      this.userRouteInfo.day = userRoute[0].info.day
+      this.userRouteInfo = userRoute[0].info
       this.infoWindow.open(userPolygon[0]);
     }
     return userRoute[0].info;
@@ -97,6 +95,11 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
 
   ngOnDestroy() {
   }
+
+  /* 
+  To Do: 
+    1. Get route displaying on home page.
+  */
 }
 
 
