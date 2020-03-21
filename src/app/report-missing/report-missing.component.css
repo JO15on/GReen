@@ -1,0 +1,78 @@
+* {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+}
+
+.title1 {
+    display: flex;
+    align-items: center;
+    margin-left: 1em;
+}
+
+h3 {
+    display: flex;
+    align-items: center;
+}
+
+input{
+    margin: 0 auto;
+}
+
+.form-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form {
+    display: flex;
+    align-items: center;
+    margin-right: 7em;
+}
+
+button {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    border-radius: 5px;
+    padding: 15px 32px;
+    margin: 1em;
+    color: white;
+    background: #20B874;
+}
+
+button:hover {
+    background: #178553;
+    color: white;
+}
+
+.submit {
+    margin: 1em;
+}
+
+/* Desktop Only */
+
+@media only screen and (min-width: 1024px){
+    .form-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .placeBin {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .submit {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

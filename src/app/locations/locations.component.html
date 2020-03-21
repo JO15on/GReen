@@ -1,0 +1,26 @@
+<app-find-route></app-find-route>
+<google-map
+  id = "mapID"
+  #map
+  height="400px"
+  width=auto
+  [zoom]="zoom"
+  [center]="center"
+  [options]="options"
+  >
+  <map-polygon 
+    #poly *ngFor="let route of routes" 
+    [paths]="route.coords" 
+    (polygonClick)="onPolygonClick(poly, $event, route.info)"
+    >
+  </map-polygon>
+  <map-info-window [position]='labelLocation'>
+    <p>Route: {{userRouteInfo.route}}</p>
+    <p>Pick-Up Day: {{userRouteInfo.day}}</p>
+  </map-info-window>
+</google-map>
+
+<div *ngIf="isLocationSubmitted">
+  <h2>Route: {{userRouteInfo.route}}</h2>
+  <h2>Pick-Up Day: {{userRouteInfo.day}}</h2>  
+</div>

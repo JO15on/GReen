@@ -1,0 +1,25 @@
+
+<div class="bg_img" [style.background-image]="imgPath"></div>
+
+<div class="content_container">
+    <app-find-route class="find-route-component" (submitted)="openReminder()"></app-find-route>
+    <div>
+        <div *ngIf="openReminder1" class="notification-container">
+            <div class="top"> 
+                <img class="icon" src="">
+            </div>
+            <div class="bottom">
+                <h2>Welcome! Your Address is part of </h2>
+                <h2>Refuse Pickup: </h2>
+                <h2>Recycling Pickup: Every other </h2>
+            </div>
+        </div>
+    <section> 
+        <app-feed></app-feed>
+    </section>
+    <div  class="button_container">
+        <button class="reportmissing" routerLink="/reportmissing">Report Missed Pickup</button>
+    </div>
+</div>
+
+
