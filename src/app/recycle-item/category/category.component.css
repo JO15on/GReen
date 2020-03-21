@@ -26,7 +26,7 @@ button {
   background-size: contain; 
 }
 
-#paint{
+#paints{
   max-width: 100%;
   top: 0; 
   left: 0;
@@ -44,7 +44,7 @@ button {
   background-size: contain; 
 }
 
-#electronics_appliances{
+#electronics{
   max-width: 100%;
   top: 0; 
   left: 0;

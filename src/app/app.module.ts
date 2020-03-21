@@ -14,7 +14,6 @@ import { GoogleMapsService } from './services/google-maps.service';
 import { ShareService } from './services/share.service';
 import { ChangeBackgroundImgDirective } from './directives/change-background-img.directive';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-// import { MaterialModule } from './material/material.module';
 
 
 

@@ -91,7 +91,7 @@ export class CategoryComponent implements OnInit {
     ]
     },
     {
-      "electronics_appliances": [
+      "electronics": [
       {
         itemName: "Computers, TVs & Electronics",
         description: "Most electronics contain valuable materials that can be recycled (at special drop-offs–NOT your recycling bin) such as copper, silver, and gold.  Some electronics even contain materials that are hazardous like lead and mercury and need to be kept out of landfills.",
@@ -125,7 +125,7 @@ export class CategoryComponent implements OnInit {
     ]
     },
     {
-      "paint": [
+      "paints": [
       {
         itemName: "Latex Paint",
         description: "To determine if your paint is latex, sometimes known as enamel paint, look at the label and find the ‘Cleanup Instructions’. For latex paint, you will be instructed to clean your brushes with ‘detergent and water’ or ‘soap and water’. See the sections below on donating/reusing or disposing of Latex Paint for further instructions. If you are instructed to use a solvent, like mineral spirits or paint thinner, to clean your brushes or if you find the words ‘alkyd’ or ‘combustible’ are on the label, your paints are not latex and will need to be disposed of through the Kent County Department of Public Work’s SafeChem Program. Leftover latex paint can be saved for future projects, used by family or friends, or needed by other residents of West Michigan. Instead of tossing usable latex paint, look at the business directory below for places to donate latex paint.",
