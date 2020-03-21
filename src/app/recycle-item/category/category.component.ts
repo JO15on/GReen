@@ -17,7 +17,7 @@ export class CategoryComponent implements OnInit {
 
   catSelected(catIndex : string){
    const index = this.categories.findIndex(category => {
-      return Object.keys(category)[0].trim() == catIndex;
+      return Object.keys(category)[0] === catIndex;
     })
     this.values = this.categories[index];
     this.category = catIndex;
@@ -75,7 +75,8 @@ export class CategoryComponent implements OnInit {
         }
       ]
     }, 
-    {"batteries": [
+    {
+      "batteries": [
       {
         img: "/assets/batteries.png", 
         itemName: "Batteries (rechargeable), Household",
@@ -89,7 +90,8 @@ export class CategoryComponent implements OnInit {
       }
     ]
     },
-    {"electronics_appliances": [
+    {
+      "electronics_appliances": [
       {
         itemName: "Computers, TVs & Electronics",
         description: "Most electronics contain valuable materials that can be recycled (at special drop-offs–NOT your recycling bin) such as copper, silver, and gold.  Some electronics even contain materials that are hazardous like lead and mercury and need to be kept out of landfills.",
@@ -108,7 +110,8 @@ export class CategoryComponent implements OnInit {
       }
     ]
     }, 
-    {"medications": [
+    {
+      "medications": [
       {
         itemName: "Medications",
         description: "Twenty to sixty percent of prescription medications go unused and are eventually disposed. Nearly all unused pharmaceuticals enter either our solid waste system or our sewage system. Neither disposal method is environmentally sound. Pharmaceuticals flushed down the toilet pass through our sewage treatment plants, which are generally not designed to screen for these chemicals. Pharmaceuticals discarded in landfills can seep into the surrounding water table. Several studies, including a 2002 analysis by the US Geological Survey of 139 streams across 30 states found that 80 percent of waterways tested had measurable concentrations of prescription and nonprescription drugs, steroids, and reproductive hormones. The SafeChem program is a joint effort between local pharmacies, law enforcement, wastewater treatment facilities and Kent County to provide residents with safe, convenient access to proper medicine disposal. SafeChem participants include many local pharmacies and law enforcement agencies that will accept your unwanted medications. Disposing of your medicines at one of these locations will ensure that your medicines will not be stolen from the garbage, will not enter our environment and eliminates the potential for abuse at home.",
@@ -121,7 +124,8 @@ export class CategoryComponent implements OnInit {
       }
     ]
     },
-    {"paint": [
+    {
+      "paint": [
       {
         itemName: "Latex Paint",
         description: "To determine if your paint is latex, sometimes known as enamel paint, look at the label and find the ‘Cleanup Instructions’. For latex paint, you will be instructed to clean your brushes with ‘detergent and water’ or ‘soap and water’. See the sections below on donating/reusing or disposing of Latex Paint for further instructions. If you are instructed to use a solvent, like mineral spirits or paint thinner, to clean your brushes or if you find the words ‘alkyd’ or ‘combustible’ are on the label, your paints are not latex and will need to be disposed of through the Kent County Department of Public Work’s SafeChem Program. Leftover latex paint can be saved for future projects, used by family or friends, or needed by other residents of West Michigan. Instead of tossing usable latex paint, look at the business directory below for places to donate latex paint.",
@@ -134,7 +138,8 @@ export class CategoryComponent implements OnInit {
       }
     ]
     },
-    {"plastics": [
+    {
+      "plastics": [
       {
         img: "/assets/plastics_example.png",
         itemName: "Plastics",
@@ -148,7 +153,8 @@ export class CategoryComponent implements OnInit {
       }
     ],
     },
-    {"glass": [
+    {
+      "glass": [
       {
         img: "/assets/glass.png",
         itemName: "Glass Bottles & Jars",

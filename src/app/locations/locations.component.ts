@@ -82,8 +82,7 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
     })
     this.labelLocation = location;
     if( this.isLocationSubmitted ) {
-      this.userRouteInfo.route = userRoute[0].info.route
-      this.userRouteInfo.day = userRoute[0].info.day
+      this.userRouteInfo = userRoute[0].info
       this.infoWindow.open(userPolygon[0]);
     }
     return userRoute[0].info;
@@ -99,9 +98,7 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
 
   /* 
   To Do: 
-    1. Get recycle items displaying in production.
-    2. Check if there is a close method on maps.
-    3. Get route displaying on home page.
+    1. Get route displaying on home page.
   */
 }
 

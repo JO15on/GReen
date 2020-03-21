@@ -2,8 +2,20 @@
     <button (click)="geoLocateUser()" (click)="submitLocation()">Use Current Location</button> 
     <p>OR</p>
     <div class="form-container">
-        <input [(ngModel)]="userAddress" type="text" placeholder="Enter Street Address">
-        <button (click)="locateUser()" (click)="submitLocation()">Submit</button>    
+        <input 
+            [(ngModel)]="userAddress" 
+            [matAutocomplete]='auto'
+            (keyup)="autoComplete(userAddress)" 
+            type="text" 
+            placeholder="Enter Street Address">
+            <mat-autocomplete #auto='matAutocomplete'>
+                <mat-option *ngFor="let suggestion of suggestions" 
+                    (click)='locateUser()'
+                    [value]='suggestion.description'>
+                        {{ suggestion.description }}
+                </mat-option>
+            </mat-autocomplete>
+        <button (click)="locateUser()" (click)="submitLocation()">Submit</button>
     </div>
 </div>
 
