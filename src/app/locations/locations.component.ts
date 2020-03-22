@@ -31,8 +31,7 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
 
   constructor(
     private _share: ShareService, 
-    private _getRoutes: GetRoutesService, 
-    private _recycleCenters: RecycleCentersService) { }
+    private _getRoutes: GetRoutesService, private _recycleCenters: RecycleCentersService) { }
 
   ngOnInit() {
     this.centerData = this._recycleCenters.getCenterData()

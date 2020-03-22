@@ -17,6 +17,11 @@ body {
     border-color: #20B874;
 }
 
+.mat-dialog-container {
+    padding: 24px;
+    border-radius: 16px;
+}
+
 img {
     object-fit: contain; 
 }
