@@ -58,3 +58,5 @@ a {
     text-decoration: none;
     color: #1179CC;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
