@@ -73,6 +73,11 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   toggleRoutes() {
+    
+    // time   <    15 is true until 2:59
+    // time  ===   15 is true from 3:00 until 3:59
+    // time   >    15 is true after 3:59
+
     this.getCityData()
     this._share.setRoutesView(this.wantsRefuse)
     this.ngOnInit()

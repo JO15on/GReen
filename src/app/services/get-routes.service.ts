@@ -33,7 +33,6 @@ export class GetRoutesService {
       })
       i++;
     })
-    console.log(routes);
     return routes   
   }
 
