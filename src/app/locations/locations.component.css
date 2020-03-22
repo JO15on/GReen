@@ -6,3 +6,18 @@
 .map-container{
     margin-bottom: 75px;
 }
+
+.route {
+    margin-right: 1.5em;
+}
+
+.route-info {
+    display: flex;
+}
+
+.route-info-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
