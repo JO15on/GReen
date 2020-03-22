@@ -1,7 +1,7 @@
 import { Directive, HostListener } from '@angular/core';
 
 @Directive({
-  selector: '[appChangeBackgroundImg]'
+  selector: '[changeBackgroundImg]'
 })
 export class ChangeBackgroundImgDirective {
 

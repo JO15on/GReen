@@ -3,6 +3,7 @@ import { ICoords } from '../interfaces';
 import { ShareService } from '../services/share.service';
 import { GetRoutesService } from '../services/get-routes.service';
 import { MapInfoWindow } from '@angular/google-maps';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-locations',
@@ -22,11 +23,13 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
   routeDay: string;
   labelLocation: any;
   userRouteInfo: any;
+  wantsRefuse: boolean;;
   isLocationSubmitted: boolean = false;
 
   constructor(private _share: ShareService, private _getRoutes: GetRoutesService) { }
 
   ngOnInit() {
+    this.wantsRefuse = this._share.viewRefuse
     this.routes = this.getCityData()
     this._share.getLocation().subscribe((res: ICoords) => {
       this.center = res.coords;
@@ -37,26 +40,7 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   getCityData() {
-    let res = this._getRoutes.getRoutes()
-    const routes = [];
-    let i = 0;
-    res.map( route => {
-      routes.push({
-        coords: [], 
-        info: {
-          route: route.route, 
-          day: route.route_day
-        }
-      })
-      route.the_geom.coordinates[0][0].map( coords => {
-        routes[i].coords.push({
-          lat: coords[1],
-          lng: coords[0]
-        })
-      })
-      i++;
-    })
-    return routes   
+    return this._getRoutes.getRoutes(this.wantsRefuse)
   }
 
   onPolygonClick(polygon: any, event: any, info: any) {
@@ -88,6 +72,11 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
     return userRoute[0].info;
   }
 
+  toggleRoutes() {
+    this.getCityData()
+    this._share.setRoutesView(this.wantsRefuse)
+    this.ngOnInit()
+  }
 
   ngAfterViewInit() {
   }
