@@ -23,6 +23,14 @@
   [center]="center"
   [options]="options"
   >
+  <ng-container *ngIf="markers[0]">
+    <map-marker 
+      *ngFor="let marker of markers"
+      [position]='marker.position'
+      [label]='marker.label'
+      [title]='marker.title'>
+    </map-marker>
+  </ng-container>
   <map-polygon 
     #poly *ngFor="let route of routes" 
     [paths]="route.coords" 
@@ -35,4 +43,10 @@
   </map-info-window>
 </google-map>
 
-
+<button 
+  *ngFor="let category of centerData" 
+  (click)='getMarkers(category)'
+  [id]='getCategoryName(category)'
+  > 
+  {{ getCategoryName(category) }} 
+</button>
