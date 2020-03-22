@@ -14,9 +14,10 @@
     background-color: #20B874;
     color: #ffffff;
     border-radius: 5px;
+    font-size: 1rem;
     border: none;
     text-align: center;
-    width: 75%;
+    width: 55%;
 }
 
 #to_top:hover {
@@ -137,4 +138,24 @@ button {
   max-height: 100%;
   background-repeat: no-repeat;
   background-size: contain; 
+}
+
+@media only screen and (min-width: 600px) {
+  .category {
+    width: 150px;
+    height: 150px;
+}
+.category_title {
+  font-size: 16px;
+}
+}
+
+@media only screen and (min-width: 1024px){
+  .category {
+    width: 150px;
+    height: 150px;
+}
+.category_title {
+  font-size: 18px;
+}
 }

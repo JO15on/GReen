@@ -3,7 +3,7 @@ img {
     
 }
 
-.item-1, .item-2 {
+.item-1, .item-2, .item-3 {
     display: flex;
     flex-direction: column;
     justify-content: center;
