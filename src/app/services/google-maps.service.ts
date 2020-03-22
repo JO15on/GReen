@@ -28,15 +28,15 @@ export class GoogleMapsService {
     return this.http.get(this.geoCodeURL, { params })
   }
 
-  autoComplete(searchTerm: string) {
+  autoComplete(search: string) {
     
     const params = new HttpParams({
       fromObject: {
-        input: searchTerm,
+        input: search,
         key: this.key,
         sessiontoken: uuidv4(),
         location: "42.9634,-85.6681",
-        radius: '5000'
+        radius: '20000'
       }
     })
     return this.http.get(this.autoCompleteURL, { params })

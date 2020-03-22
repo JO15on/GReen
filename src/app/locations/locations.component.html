@@ -1,4 +1,19 @@
-<app-find-route></app-find-route>
+
+
+<div class="route-info-container">
+  <div *ngIf="isLocationSubmitted" class="route-info">
+    <h2 class="route">Route: {{ userRouteInfo.route }}</h2>
+    <h2>Pick-Up Day: {{ userRouteInfo.day }}</h2>    
+  </div>
+  <div *ngIf="!isLocationSubmitted" class="route-info">
+    <h2>Enter a Location to See Route Info</h2>
+  </div>
+  <app-find-route></app-find-route>
+  <div>
+    <mat-checkbox name="refuse" id="refuse" [(ngModel)]="wantsRefuse" (change)='toggleRoutes()'>See Refuse Routes</mat-checkbox>
+  </div>
+</div>
+
 <google-map
   id = "mapID"
   #map
@@ -8,6 +23,14 @@
   [center]="center"
   [options]="options"
   >
+  <ng-container *ngIf="markers[0]">
+    <map-marker 
+      *ngFor="let marker of markers"
+      [position]='marker.position'
+      [label]='marker.label'
+      [title]='marker.title'>
+    </map-marker>
+  </ng-container>
   <map-polygon 
     #poly *ngFor="let route of routes" 
     [paths]="route.coords" 
@@ -15,12 +38,15 @@
     >
   </map-polygon>
   <map-info-window [position]='labelLocation'>
-    <p>Route: {{userRouteInfo.route}}</p>
-    <p>Pick-Up Day: {{userRouteInfo.day}}</p>
+    <p>Route: {{ userRouteInfo.route }}</p>
+    <p>Pick-Up Day: {{ userRouteInfo.day }}</p>
   </map-info-window>
 </google-map>
 
-<div *ngIf="isLocationSubmitted">
-  <h2>Route: {{userRouteInfo.route}}</h2>
-  <h2>Pick-Up Day: {{userRouteInfo.day}}</h2>  
-</div>
+<button 
+  *ngFor="let category of centerData" 
+  (click)='getMarkers(category)'
+  [id]='getCategoryName(category)'
+  > 
+  {{ getCategoryName(category) }} 
+</button>

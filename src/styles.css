@@ -13,6 +13,9 @@ body {
 .mat-autocomplete-panel {
     background-color: #FFF;
 }
+.mat-checkbox-frame {
+    border-color: #20B874;
+}
 
 img {
     object-fit: contain; 
