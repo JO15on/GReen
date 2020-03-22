@@ -10,7 +10,7 @@ import { ShareService } from '../services/share.service';
 export class FindRouteComponent implements OnInit {
 
   userAddress: string;
-  suggestions: any
+  suggestions: any[]
 
   @Output()
   submitted = new EventEmitter<any>();
@@ -42,8 +42,9 @@ export class FindRouteComponent implements OnInit {
     })
   }
 
-  autoComplete(location) {
+  getSuggestions(location) {
     this._googleMaps.autoComplete(location).subscribe((res: any) => {
+      console.log(res.predictions);
       this.suggestions = res.predictions
     })
   }

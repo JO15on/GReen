@@ -9,6 +9,7 @@ import { GoogleMapsModule } from '@angular/google-maps';
 import { HttpClientModule } from '@angular/common/http';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 import { GoogleMapsService } from './services/google-maps.service';
 import { ShareService } from './services/share.service';
@@ -34,6 +35,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ReactiveFormsModule,
     MatAutocompleteModule,
     MatFormFieldModule,
+    MatCheckboxModule,
     BrowserAnimationsModule 
   ],
   providers: [GoogleMapsService, ShareService],
