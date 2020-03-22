@@ -9,6 +9,7 @@ import { ICoords } from '../interfaces';
 export class ShareService {
 
   userSubmittedLocation: boolean = false;
+  viewRefuse: boolean = false;
   
   private userLocation = new BehaviorSubject({
     // default map view
@@ -28,6 +29,10 @@ export class ShareService {
   
   getLocation(): Observable<ICoords> {
     return this.userLocation.asObservable()
+  }
+
+  setRoutesView(isRefuse: boolean) {
+    this.viewRefuse = isRefuse;
   }
 
 }
