@@ -12,10 +12,10 @@ import { LandingComponent } from './landing/landing.component';
 
 
 const routes: Routes = [
-  {
-    path: '',
-    component: LandingComponent
-  },
+  // {
+  //   path: '',
+  //   component: LandingComponent
+  // },
   {
     path: 'reportmissing',
     component: ReportMissingComponent

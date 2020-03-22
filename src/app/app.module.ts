@@ -8,7 +8,6 @@ import { LocationsComponent } from './locations/locations.component';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { HttpClientModule } from '@angular/common/http'
 import { LandingComponent } from './landing/landing.component'
-// import { GetCoordsService } from './services';
 import { ShareService } from './services/share.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
@@ -37,9 +36,12 @@ import { ChangeBackgroundImgDirective } from './directives/change-background-img
     MaterialModule,
     ReactiveFormsModule
   ],
-  providers: [GoogleMapsService, ShareService],
+  providers: [
+    GoogleMapsService, 
+    ShareService],
   bootstrap: [AppComponent],
-  entryComponents: [LandingComponent,
+  entryComponents: [
+    LandingComponent,
     ReactiveFormsModule,
     BrowserAnimationsModule 
   ],

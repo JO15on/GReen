@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { LandingComponent } from '../landing/landing.component';
+import { DialogService } from '../services/dialog.service'
 
 @Component({
   selector: 'app-home',
@@ -13,9 +14,10 @@ export class HomeComponent implements OnInit {
   openReminder1 : boolean = false;
   imgPath = "url('assets/blue_bridge.JPG')"
 
-  constructor(private route: ActivatedRoute, 
+  constructor(
+    private route: ActivatedRoute, 
     private router: Router,
-    public dialog: MatDialog ){}
+    public dialog: MatDialog) {}
 
 
   ngOnInit() {
