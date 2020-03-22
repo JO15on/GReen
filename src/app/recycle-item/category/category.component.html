@@ -7,7 +7,7 @@
 <div class="category-container">
     <ng-container *ngFor="let categoryName of categoryNames">
         <div class="button_title_container">
-            <button [style.background-image]="getPath(categoryName)" appChangeBackgroundImg
+            <button [style.background-image]="getPath(categoryName)" changeBackgroundImg
                 (click)="scrollToElement(section); catSelected(categoryName)" [id]="categoryName" class="category">
             </button>
 
