@@ -21,7 +21,9 @@
 <div #section>
     <div *ngIf="show">
         <app-recycle-item [values]="values" [category]="category"></app-recycle-item>
-        <div id="to_top" (click)="scrollToElement(top)">Return To Top</div>
+        <div id="scroll_up">
+            <button id="to_top" (click)="scrollToElement(top)">Return To Top</button>
+        </div>
     </div>
   
 </div>
