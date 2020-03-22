@@ -33,7 +33,13 @@ export class ReportMissingComponent implements OnInit {
   }
 
   yes(){
-    this.step = 'start-yes';
+    let time = new Date().getHours();
+    if (time < 15){
+      this.step = 'end-no';
+    } else {
+      this.step = 'end-yes';
+    }
+    // this.step = 'start-yes';
   }
 
   no(){
