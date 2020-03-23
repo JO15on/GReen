@@ -10,6 +10,7 @@ export class ShareService {
 
   userSubmittedLocation: boolean = false;
   viewRefuse: boolean = false;
+  closeDialog: boolean = false;
   
   private userLocation = new BehaviorSubject({
     // default map view
@@ -21,6 +22,10 @@ export class ShareService {
   })
 
   constructor() { }
+
+  closingDialog() {
+    this.closeDialog = true;
+  }
 
   setLocation(data: ICoords) {
     this.userSubmittedLocation = true;
@@ -34,5 +39,7 @@ export class ShareService {
   setRoutesView(isRefuse: boolean) {
     this.viewRefuse = isRefuse;
   }
+
+  
 
 }

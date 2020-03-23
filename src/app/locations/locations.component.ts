@@ -29,7 +29,9 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
   isLocationSubmitted: boolean = false;
   markers: any[] = []
 
-  constructor(private _share: ShareService, private _getRoutes: GetRoutesService, private _recycleCenters: RecycleCentersService) { }
+  constructor(
+    private _share: ShareService, 
+    private _getRoutes: GetRoutesService, private _recycleCenters: RecycleCentersService) { }
 
   ngOnInit() {
     this.centerData = this._recycleCenters.getCenterData()
@@ -44,7 +46,7 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   getCityData() {
-    return this._getRoutes.getRoutes(this.wantsRefuse)
+    return this._getRoutes.getRoutes(this.wantsRefuse);
   }
 
   onPolygonClick(polygon: any, event: any, info: any) {

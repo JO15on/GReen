@@ -5,6 +5,7 @@ h1, h2, p, a {
 
 body {
   height: 100vh;
+  line-height: 1.2;
 }
 
 h2 {
@@ -18,10 +19,6 @@ h2 {
 
 a {
   color: #ffffff;
-}
-
-body {
-  line-height: 1.2;
 }
 
 .head {
@@ -79,6 +76,10 @@ button {
 /* desktop styling below  */
 
 @media only screen and (min-width: 600px) {
+body {
+  width: 90%;
+}
+
   div {
     justify-content: center;
     flex-direction: column;

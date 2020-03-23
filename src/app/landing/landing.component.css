@@ -1,0 +1,52 @@
+body {
+    height: 50vh;
+    text-align: center;
+}
+
+.main, .bottom {
+    background-color: #ffffff;
+    padding: 5px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.main {
+    flex-direction: column;
+}
+
+.bottom {
+    flex-direction: row;
+}
+
+.yesNo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.city {
+    color: green;
+}
+
+span {
+    font-weight: 900;
+}
+
+h3 {
+    text-align: center;
+    font-weight: 100;
+} 
+
+p {
+    padding-left: 5px;
+}
+
+button {
+    height: 40px;
+    border-radius: 5px;
+    width: 90px;
+}
+
+img {
+    width: 100px;
+}
