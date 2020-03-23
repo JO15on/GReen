@@ -17,7 +17,6 @@ export class RecycleCentersService {
         [category]: recycleCenters[category] 
       })
     })
-    console.log(centers);
     return centers
   }
 }

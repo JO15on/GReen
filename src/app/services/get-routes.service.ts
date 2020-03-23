@@ -54,7 +54,6 @@ export class GetRoutesService {
           day: currentRoute.route_day
         }
       }
-
     }    
     return template;
   }

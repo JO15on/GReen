@@ -34,13 +34,14 @@
   <map-polygon 
     #poly *ngFor="let route of routes" 
     [paths]="route.coords" 
-    (polygonClick)="onPolygonClick(poly, $event, route.info)"
-    >
+    (polygonClick)="onPolygonClick(poly, $event, route.info)">
   </map-polygon>
+  
   <map-info-window [position]='labelLocation'>
     <p>Route: {{ userRouteInfo.route }}</p>
     <p>Pick-Up Day: {{ userRouteInfo.day }}</p>
-  </map-info-window>
+  </map-info-window>  
+  
 </google-map>
 
 <button 
