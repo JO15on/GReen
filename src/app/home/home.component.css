@@ -17,7 +17,7 @@
   background-position: center;
   background-size: cover;
   filter: blur(5px);
-  -webkit-filter: blur(8px);
+  -webkit-filter: blur(5px);
   display: none;
 }
 
@@ -100,7 +100,7 @@ a {
   .reportmissing {
     display: flex;
     justify-content: center;
-    margin-left: 1em;
+    width: 65%;
   }
 
   .bg_img {
