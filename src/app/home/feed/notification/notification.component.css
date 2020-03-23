@@ -22,7 +22,7 @@ p, a {
     padding: 5px;
 }
 
-@media only screen and (max-width: 600px) {
+/* @media only screen and (max-width: 600px) {
 
 .notification-container {
     flex-direction: column;
@@ -41,7 +41,7 @@ a {
     display: flex;
     margin: 15px;
     padding: 5px;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .top {
@@ -54,6 +54,14 @@ a {
 
 .bottom {
     font-size: 15px;
-}
+} 
 
-}
+}*/
+
+@media only screen and (min-width: 600px) {
+  
+   }
+   
+   @media only screen and (min-width: 1024px){
+    
+   }
