@@ -36,7 +36,7 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
   ngOnInit() {
     this.centerData = this._recycleCenters.getCenterData()
     this.wantsRefuse = this._share.viewRefuse
-    // this.routes = this.getCityData()
+    this.routes = this.getCityData()
     this._share.getLocation().subscribe((res: ICoords) => {
       this.center = res.coords;
       this.zoom = res.zoom;
@@ -46,7 +46,7 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   getCityData() {
-    // return this._getRoutes.getRoutes(this.wantsRefuse);
+    return this._getRoutes.getRoutes(this.wantsRefuse);
   }
 
   onPolygonClick(polygon: any, event: any, info: any) {
@@ -79,7 +79,7 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   toggleRoutes() {
-    // this.getCityData()
+    this.getCityData()
     this._share.setRoutesView(this.wantsRefuse)
     this.ngOnInit()
   }
