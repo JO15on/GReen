@@ -109,7 +109,9 @@ h1 {
             justify-content: space-between;
             z-index: 5;
         }
-    
+        .footer-space {
+        display: none;
+        }
   }
   
   
