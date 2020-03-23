@@ -64,7 +64,7 @@ a {
 
 /* Desktop Only */
 
-@media only screen and (min-width: 1024px){
+@media only screen and (min-width: 600px){
     .form-wrapper {
         display: flex;
         flex-direction: column;
@@ -85,5 +85,8 @@ a {
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+    .content_container {
+width: 90%;
     }
 }
