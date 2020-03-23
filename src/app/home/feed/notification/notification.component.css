@@ -22,6 +22,8 @@ p, a {
     padding: 5px;
 }
 
+
+
 /* @media only screen and (max-width: 600px) {
 
 .notification-container {
@@ -59,9 +61,40 @@ a {
 }*/
 
 @media only screen and (min-width: 600px) {
+    .notification-container {
+        display: flex;
+        flex-direction: column;
+        border-radius: 5px;
+        background-color: #ffffff;
+        border: 2px solid #D3D3D3;
+        padding: 5px;  
+        width: 75%;
+        height: 85%;
+    }
+    .top {
+        flex: 1;
+        align-self: center;
+    }
   
    }
    
    @media only screen and (min-width: 1024px){
-    
+    .notification-container {
+        display: flex;
+        flex-direction: column;
+        border-radius: 5px;
+        background-color: #ffffff;
+        border: 2px solid #D3D3D3;
+        padding: 5px;
+        height: 40%;
+    }
+
+    .top {
+        flex: 1;
+        align-self: center;
+    }
+
+    .bottom {
+  
+    }
    }

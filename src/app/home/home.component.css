@@ -16,7 +16,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  filter: blur(8px);
+  filter: blur(5px);
   -webkit-filter: blur(8px);
   display: none;
 }
@@ -72,8 +72,12 @@ a {
 @media only screen and (min-width: 600px) {
   .content_container {
     top: 400px;
+    width: 90%;
   }
 
+  .button_container{
+    width: 95%;
+  }
   .reportmissing {
     width: 90%;
     font-size: 12px;
