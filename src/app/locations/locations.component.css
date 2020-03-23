@@ -21,3 +21,9 @@
     align-items: center;
     flex-direction: column;
 }
+
+@media only screen and (min-width: 600px) {
+    .content_container {
+        width: 90%;
+      }
+}
