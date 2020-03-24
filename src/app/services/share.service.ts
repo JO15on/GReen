@@ -28,6 +28,9 @@ export class ShareService {
   }
 
   setLocation(data: ICoords) {
+
+    // HERE NEEDS TO COMMUNICATE WITH PICK UP
+    
     this.userSubmittedLocation = true;
     this.userLocation.next(data)
   }

@@ -1,6 +1,12 @@
 body {
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 100vh;
+}
+
+main {
+    flex: 1;
 }
 
 .title {
@@ -84,37 +90,38 @@ h1 {
 
 @media only screen and (min-width: 600px) {
     #footer {
-        position: sticky;
-        width: 80px;
-        top: 0;
+        position: fixed;
+        width: 1em;
+        top: 14em;
         bottom: 30%;
         left: 95%;
         padding: 0;
         margin: 0;
         background-color: transparent;
         box-shadow: 0px 0px 0px 0px;
+    }
+    
+    footer {
+        display: flex;
+        font-size: 10px;
+        text-align: center;
+        margin-top: 10px;
+        flex-direction: column;
+        justify-content: space-between;
+        z-index: 5;
+    }
 
-
-        }
-     footer {
-            display: flex;
-            text-align: center;
-            margin-top: 10px;
-            flex-direction: column;
-            justify-content: space-between;
-            z-index: 5;
-        }
-        .footer-space {
+    .footer-space {
         display: none;
-        }
+    }
 
-        .nav {
-            width: 65px;
-        }
+     .nav {
+        width: 75px;
+    }
 
-        .footer-link {
-            font-size: .75rem;
-        }
+    .footer-link {
+        font-size: .75rem;
+    }
   }
   
   
