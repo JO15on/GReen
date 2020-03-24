@@ -29,7 +29,6 @@ export class GoogleMapsService {
   }
 
   autoComplete(search: string) {
-    
     const params = new HttpParams({
       fromObject: {
         input: search,
