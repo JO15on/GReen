@@ -4,6 +4,7 @@ import { ShareService } from '../services/share.service';
 import { GetRoutesService } from '../services/get-routes.service';
 import { MapInfoWindow } from '@angular/google-maps';
 import { RecycleCentersService } from '../services/recycle-centers.service';
+import { FormGroup, FormControl } from '@angular/forms';
 
 
 @Component({
@@ -27,11 +28,13 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
   centerData: any;
   wantsRefuse: boolean;
   isLocationSubmitted: boolean = false;
-  markers: any[] = []
-
+  markers: any[] = [];
+  
+   
   constructor(
     private _share: ShareService, 
-    private _getRoutes: GetRoutesService, private _recycleCenters: RecycleCentersService) { }
+    private _getRoutes: GetRoutesService, 
+    private _recycleCenters: RecycleCentersService) { }
 
   ngOnInit() {
     this.centerData = this._recycleCenters.getCenterData()
@@ -58,21 +61,6 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
     this.userRouteInfo.day = info.day
     this.infoWindow.open(polygon)
   }
-  /* 
-  getNextPickUp(routeInfo: any) {
-    const days = ["sunday","monday","tuesday","wednesday","thursday","friday","saturday"]
-    const today = new Date()
-    if (this.wantsRefuse) {
-      const index = days.findIndex(day => routeInfo_day.toLowerCase() === day)
-      today.setDate(today.getDate() + (0 + 7 - today.getDay()) % 7);
-
-
-      return nextTrashPickup
-    } else {
-      return nextRecyclePickup
-    }
-  }
-  */
 
   getUserPolygon() {
     let location = new google.maps.LatLng(this.center.lat, this.center.lng)
@@ -81,8 +69,6 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
       if (route.info.route) {
         let poly = new google.maps.Polygon({ paths: route.coords });
         if (google.maps.geometry.poly.containsLocation(location, poly)){
-          // return this.getNextPickUp(route.info)
-          console.log(this.wantsRefuse);
           return userPolygon.push(poly)
         } 
       }
