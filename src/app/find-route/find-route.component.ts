@@ -44,7 +44,6 @@ export class FindRouteComponent implements OnInit {
 
   getSuggestions(location) {
     this._googleMaps.autoComplete(location).subscribe((res: any) => {
-      console.log(res.predictions);
       this.suggestions = res.predictions
     })
   }

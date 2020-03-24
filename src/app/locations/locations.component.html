@@ -10,7 +10,14 @@
   </div>
   <app-find-route></app-find-route>
   <div>
-    <mat-checkbox name="refuse" id="refuse" [(ngModel)]="wantsRefuse" (change)='toggleRoutes()'>See Refuse Routes</mat-checkbox>
+    <mat-checkbox 
+      name="wantsRefuse" 
+      id="wantsRefuse" 
+      [(ngModel)]="wantsRefuse" 
+      (change)='toggleRoutes()'
+      >
+      See Refuse Routes
+    </mat-checkbox>
   </div>
 </div>
 
@@ -32,15 +39,17 @@
     </map-marker>
   </ng-container>
   <map-polygon 
-    #poly *ngFor="let route of routes" 
+    #poly 
+    *ngFor="let route of routes" 
     [paths]="route.coords" 
-    (polygonClick)="onPolygonClick(poly, $event, route.info)"
-    >
+    (polygonClick)="onPolygonClick(poly, $event, route.info)">
   </map-polygon>
+  
   <map-info-window [position]='labelLocation'>
     <p>Route: {{ userRouteInfo.route }}</p>
     <p>Pick-Up Day: {{ userRouteInfo.day }}</p>
-  </map-info-window>
+  </map-info-window>  
+  
 </google-map>
 
 <button 

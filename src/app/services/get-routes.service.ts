@@ -12,11 +12,16 @@ export class GetRoutesService {
 
   // baseURL: string = 'http://grand-rapids-proxy.herokuapp.com/proxy/resource/ykbs-97kp.json'
 
+  refuseRoutes: any
+  recycleRoutes: any
+
   getRoutes(wantsRefuse: boolean) {
     if (wantsRefuse) {
-      return this.makeUsableToGoogle(cityRefuseData, wantsRefuse);
+      this.refuseRoutes = this.makeUsableToGoogle(cityRefuseData, wantsRefuse);
+      return this.refuseRoutes
     } else {
-      return this.makeUsableToGoogle(cityRecycleData, wantsRefuse);
+      this.recycleRoutes = this.makeUsableToGoogle(cityRecycleData, wantsRefuse)
+      return this.recycleRoutes
     }
   }
 
@@ -54,8 +59,9 @@ export class GetRoutesService {
           day: currentRoute.route_day
         }
       }
-
     }    
     return template;
   }
 }
+
+
