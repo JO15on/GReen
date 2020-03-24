@@ -33,9 +33,8 @@ p, a {
         background-color: #ffffff;
         border: 2px solid #D3D3D3;
         padding: 5px;  
-        /* width: 75%; */
         height: 85%;
-        width: 33%;
+        width: 75%;
     }
     .top {
         flex: 1;
