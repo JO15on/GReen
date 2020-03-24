@@ -34,6 +34,10 @@ export class CategoryComponent implements OnInit {
     return this._category.getPath(name)
   }
 
+  scrollToElement($element): void {
+    $element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+  }
+
   ngOnInit() {
     this.categories = this._category.getCategories()
     this.categories.map(category => {

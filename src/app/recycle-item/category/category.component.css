@@ -1,17 +1,59 @@
+.intro {
+  padding: 15px;
+}
+ p {
+   font-size: 14px;
+ }
+
+  #scroll_up {
+  display: flex; 
+  flex-wrap: wrap;
+  justify-content: center;  }
+
+#to_top {
+    background-color: #20B874;
+    color: #ffffff;
+    border-radius: 5px;
+    font-size: 1rem;
+    border: none;
+    text-align: center;
+    width: 55%;
+}
+
+#to_top:hover {
+    background-color: #178553;
+}
+
+
 button {
     background-color: transparent;
 }
 
+/*Holds ng-container, button, and title*/
 .category-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
+/*The specific category image*/
 .category {
     width: 100px;
     height: 100px;
 
+}
+
+/*Aligns the button and the category title together*/
+.button_title_container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  text-align: center;
+}
+
+/*The title of the category that displays below the icon*/
+.category_title {
+  font-size: 14px;
 }
 
 
@@ -26,7 +68,7 @@ button {
   background-size: contain; 
 }
 
-#paint{
+#paints{
   max-width: 100%;
   top: 0; 
   left: 0;
@@ -44,7 +86,7 @@ button {
   background-size: contain; 
 }
 
-#electronics_appliances{
+#electronics{
   max-width: 100%;
   top: 0; 
   left: 0;
@@ -96,4 +138,28 @@ button {
   max-height: 100%;
   background-repeat: no-repeat;
   background-size: contain; 
+}
+
+@media only screen and (min-width: 600px) {
+  .category {
+    width: 150px;
+    height: 150px;
+}
+.category_title {
+  font-size: 16px;
+}
+
+.content_container {
+  width: 90%;
+}
+}
+
+@media only screen and (min-width: 1024px){
+  .category {
+    width: 150px;
+    height: 150px;
+}
+.category_title {
+  font-size: 18px;
+}
 }

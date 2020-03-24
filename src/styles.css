@@ -4,11 +4,22 @@ html, body, app-root {
     margin: 0;
 }
 
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+}
+
+
 .mat-autocomplete-panel {
     background-color: #FFF;
 }
 .mat-checkbox-frame {
     border-color: #20B874;
+}
+
+.mat-dialog-container {
+    padding: 24px;
+    border-radius: 16px;
 }
 
 img {

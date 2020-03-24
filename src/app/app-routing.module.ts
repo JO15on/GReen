@@ -40,7 +40,6 @@ const routes: Routes = [
         component: RecycleItemComponent
       }
     ]
-
   },
   {
     path: 'locations',

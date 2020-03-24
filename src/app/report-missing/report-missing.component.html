@@ -1,3 +1,5 @@
+<div class="content_container">
+
 <div class="title">
     <h2>Report a missed pickup</h2>
 </div>
@@ -29,7 +31,7 @@
     </div>
 
     <div *ngIf="step === 'end-no'" class="title1">
-        <h3 class="title1">There's still time for your bin to get picked up! Wait until after 3:00pm to report your missed pickup.</h3>
+        <h3 class="title1">It's {{newDate | date: 'shortTime'}}, there's still time for your bin to get picked up! Wait until after 3:00pm to report your missed pickup.</h3>
         <button><a routerLink=''>OK</a></button>
     </div>
  
@@ -93,4 +95,6 @@
         <h3 class="title1">Your reported missing pickup has been submitted to whateverGR@email.com</h3> 
         <button><a routerLink=''>OK</a></button>
     </div>
+</div>
+    
 </div>
