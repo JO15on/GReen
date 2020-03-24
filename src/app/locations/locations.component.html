@@ -39,7 +39,8 @@
     </map-marker>
   </ng-container>
   <map-polygon 
-    #poly *ngFor="let route of routes" 
+    #poly 
+    *ngFor="let route of routes" 
     [paths]="route.coords" 
     (polygonClick)="onPolygonClick(poly, $event, route.info)">
   </map-polygon>

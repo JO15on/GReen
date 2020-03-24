@@ -37,14 +37,14 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
     private _recycleCenters: RecycleCentersService) { }
 
   ngOnInit() {
-    this.centerData = this._recycleCenters.getCenterData()
+    this.centerData  = this._recycleCenters.getCenterData()
     this.wantsRefuse = this._share.viewRefuse
-    this.routes = this.getCityData()
+    this.routes      = this.getCityData()
     this._share.getLocation().subscribe((res: ICoords) => {
-      this.center = res.coords;
-      this.zoom = res.zoom;
+      this.center              = res.coords;
+      this.zoom                = res.zoom;
       this.isLocationSubmitted = this._share.userSubmittedLocation;
-      this.userRouteInfo = this.getUserPolygon();
+      this.userRouteInfo       = this.getUserPolygon();
     })
   }
 
@@ -63,9 +63,9 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   getUserPolygon() {
-    let location = new google.maps.LatLng(this.center.lat, this.center.lng)
+    let location    = new google.maps.LatLng(this.center.lat, this.center.lng)
     let userPolygon = []
-    let userRoute = this.routes.filter(route => {
+    let userRoute   = this.routes.filter(route => {
       if (route.info.route) {
         let poly = new google.maps.Polygon({ paths: route.coords });
         if (google.maps.geometry.poly.containsLocation(location, poly)){
