@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { GetRoutesService } from './get-routes.service';
+import { ShareService } from './share.service';
 
 
 @Injectable({
@@ -7,13 +8,15 @@ import { GetRoutesService } from './get-routes.service';
 })
 export class GetPickupDateService {
 
-  constructor(private _getRoutes: GetRoutesService) { }
+  constructor(private _getRoutes: GetRoutesService, private _share: ShareService) { }
 
   refuseRouteInfo: any
   refusePickupDate: Date
 
   recycleRouteInfo: any
   recyclePickupDate: Date
+
+  userCoords: any
   
 
   getRoute(coords: any, isRefuse: boolean) {
@@ -35,6 +38,7 @@ export class GetPickupDateService {
       this.recycleRouteInfo = userRouteInfo
       this.recyclePickupDate = userPickUp;
     }
+    return userPickUp
   }
 
   getNextPickUp (routeInfo, isRefuseData) {

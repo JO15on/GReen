@@ -5,6 +5,7 @@ import { GetRoutesService } from '../services/get-routes.service';
 import { MapInfoWindow } from '@angular/google-maps';
 import { RecycleCentersService } from '../services/recycle-centers.service';
 import { CategoriesService } from '../services/categories.service';
+import { GetPickupDateService } from '../services/get-pickup-date.service';
 
 
 @Component({
@@ -29,6 +30,7 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
   wantsRefuse: boolean;
   userPolygon: any;
   subscription: any;
+  userNextPickup: Date;
   isLocationSubmitted: boolean = false;
   markers: any[] = [];
   
@@ -37,7 +39,8 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
     private _share: ShareService, 
     private _getRoutes: GetRoutesService, 
     private _recycleCenters: RecycleCentersService,
-    private _category: CategoriesService) { }
+    private _category: CategoriesService,
+    private _pickupDate: GetPickupDateService) { }
 
   ngOnInit() {
     this.wantsRefuse = this._share.viewRefuse
@@ -54,12 +57,9 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
       this.zoom                = res.zoom;
       this.isLocationSubmitted = this._share.userSubmittedLocation;
       this.userRouteInfo       = this.getUserPolygon();
+      this.userNextPickup      = this._pickupDate.getRoute(this.center, this.wantsRefuse)
     })
   }
-
-  // getCityData() {
-  //   return this._getRoutes.getRoutes(this.wantsRefuse);
-  // }
 
   onPolygonClick(polygon: any, event: any, info: any) {
     this.labelLocation = {
@@ -84,6 +84,8 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
     })
     this.labelLocation = location;
     if( this.isLocationSubmitted && this.infoWindow) {
+      // this.userRouteInfo = this.wantsRefuse ? this._pickupDate.refuseRouteInfo : this._pickupDate.recycleRouteInfo
+      this.userNextPickup = this.wantsRefuse ? this._pickupDate.refusePickupDate : this._pickupDate.recyclePickupDate
       this.userRouteInfo = userRoute[0].info
       this.userPolygon = userPolygon[0]
       this.infoWindow.open(userPolygon[0]);
@@ -133,10 +135,9 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
 
   /* 
   To Do: 
-    1. Clickable markers
-    2. Lighten opacity/stroke color.
+    1. Get Next Pick up date displaying instead of route day
+    2. Clickable markers
     3. Get a different automotive location.
-    4. Use geometry library to determine font color.
-    5. Get route displaying on home page.
+    4. Get route displaying on home page.
   */
 }
