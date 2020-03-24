@@ -15,12 +15,6 @@ header {
   
 }
 
-.nav_text{
-    width: 68px;
-    text-align: center;
-    color: #000000;
-}
-
 #footer {
     position: fixed;
     width: 100vw;
@@ -29,13 +23,15 @@ header {
     margin: 0;
     z-index: 2;
     box-shadow: 8px 0 6px -6px black;
-    background: white
+    background: white;
+  
 }
 
 .footer-link {
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: black;
 }
 
 footer {
@@ -90,8 +86,9 @@ h1 {
     #footer {
         position: sticky;
         width: 80px;
-        bottom: 25%;
-        left: 100%;
+        top: 0;
+        bottom: 30%;
+        left: 95%;
         padding: 0;
         margin: 0;
         z-index: 2;
@@ -111,6 +108,14 @@ h1 {
         }
         .footer-space {
         display: none;
+        }
+
+        .nav {
+            width: 75px;
+        }
+
+        .footer-link {
+            font-size: .75rem;
         }
   }
   
