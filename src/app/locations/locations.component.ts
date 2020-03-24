@@ -4,7 +4,6 @@ import { ShareService } from '../services/share.service';
 import { GetRoutesService } from '../services/get-routes.service';
 import { MapInfoWindow } from '@angular/google-maps';
 import { RecycleCentersService } from '../services/recycle-centers.service';
-import { FormGroup, FormControl } from '@angular/forms';
 
 
 @Component({
@@ -27,6 +26,8 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
   userRouteInfo: any;
   centerData: any;
   wantsRefuse: boolean;
+  userPolygon: any;
+  subscription: any;
   isLocationSubmitted: boolean = false;
   markers: any[] = [];
   
@@ -37,20 +38,27 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
     private _recycleCenters: RecycleCentersService) { }
 
   ngOnInit() {
-    this.centerData  = this._recycleCenters.getCenterData()
     this.wantsRefuse = this._share.viewRefuse
-    this.routes      = this.getCityData()
-    this._share.getLocation().subscribe((res: ICoords) => {
+    this.centerData  = this._recycleCenters.getCenterData()
+
+    if (this._share.userSubmittedLocation) {
+      this.routes = this.wantsRefuse ? this._getRoutes.refuseRoutes : this._getRoutes.recycleRoutes
+    } else {
+      this.routes = this._getRoutes.getRoutes(this.wantsRefuse)
+    }
+
+    this.subscription = this._share.getLocation().subscribe((res: ICoords) => {
       this.center              = res.coords;
       this.zoom                = res.zoom;
       this.isLocationSubmitted = this._share.userSubmittedLocation;
+      console.log(this.infoWindow)
       this.userRouteInfo       = this.getUserPolygon();
     })
   }
 
-  getCityData() {
-    return this._getRoutes.getRoutes(this.wantsRefuse);
-  }
+  // getCityData() {
+  //   return this._getRoutes.getRoutes(this.wantsRefuse);
+  // }
 
   onPolygonClick(polygon: any, event: any, info: any) {
     this.labelLocation = {
@@ -74,15 +82,16 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
       }
     })
     this.labelLocation = location;
-    if( this.isLocationSubmitted ) {
+    if( this.isLocationSubmitted && this.infoWindow) {
       this.userRouteInfo = userRoute[0].info
+      this.userPolygon = userPolygon[0]
       this.infoWindow.open(userPolygon[0]);
     }
     return userRoute[0].info;
   }
 
   toggleRoutes() {
-    this.getCityData()
+    this._getRoutes.getRoutes(this.wantsRefuse)
     this._share.setRoutesView(this.wantsRefuse)
     this.ngOnInit()
   }
@@ -107,10 +116,14 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   ngAfterViewInit() {
+    if (this.isLocationSubmitted) {
+      this.infoWindow.open(this.userPolygon)
+    }
   }
 
 
   ngOnDestroy() {
+    this.subscription.unsubscribe()
   }
 
   /* 

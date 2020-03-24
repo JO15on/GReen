@@ -20,17 +20,7 @@ export class FindRouteComponent implements OnInit {
   ngOnInit() {
   }
 
-  geoLocateUser() {
-    navigator.geolocation.getCurrentPosition(position => {
-      this._share.setLocation({
-        coords: {
-          lat: position.coords.latitude,
-          lng: position.coords.longitude
-        },
-        zoom: 18
-      })
-    })
-  }
+
 
   locateUser() {
     this._googleMaps.addressToCoords(this.userAddress).subscribe((res: any) => {
