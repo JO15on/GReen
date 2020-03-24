@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { ShareService } from '../services/share.service'
+import { GeoLocateService } from '../services/geolocate.service';
 
 
 @Component({
@@ -10,7 +11,9 @@ import { ShareService } from '../services/share.service'
 })
 export class LandingComponent implements OnInit, OnDestroy {
 
-  constructor(public dialogRef: MatDialogRef<LandingComponent>, private _share : ShareService) { }
+  constructor(public dialogRef: MatDialogRef<LandingComponent>, 
+              private _share : ShareService,
+              private _geoLocate: GeoLocateService) { }
 
   ngOnInit(): void {
   }
@@ -21,6 +24,10 @@ export class LandingComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this._share.closingDialog();
+  }
+
+  geoLocateUser() {
+    this._geoLocate.geoLocateUser()
   }
 
 }

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { GetRoutesService } from './get-routes.service';
+import { ShareService } from './share.service';
 
 
 @Injectable({
@@ -7,27 +8,37 @@ import { GetRoutesService } from './get-routes.service';
 })
 export class GetPickupDateService {
 
-  constructor(private _getRoutes: GetRoutesService) { }
+  constructor(private _getRoutes: GetRoutesService, private _share: ShareService) { }
 
+  refuseRouteInfo: any
   refusePickupDate: Date
+
+  recycleRouteInfo: any
   recyclePickupDate: Date
+
+  userCoords: any
+  
 
   getRoute(coords: any, isRefuse: boolean) {
     const mappedRoutes = this._getRoutes.getRoutes(isRefuse);
     const location     = new google.maps.LatLng(coords.lat, coords.lng);
 
     let userRoute = mappedRoutes.filter(route => {
-      const poly = new google.maps.Polygon({ paths: route.coords });
-      return google.maps.geometry.poly.containsLocation(location, poly);
+        const poly = new google.maps.Polygon({ paths: route.coords });
+        return google.maps.geometry.poly.containsLocation(location, poly);
     });
-
+    
     const userPickUp = this.getNextPickUp(userRoute[0].info, isRefuse);
-
+    const userRouteInfo = userRoute[1] ? userRoute[1].info : userRoute[0].info
+    
     if (isRefuse) {
+      this.refuseRouteInfo = userRouteInfo
       this.refusePickupDate = userPickUp;
     } else {
+      this.recycleRouteInfo = userRouteInfo
       this.recyclePickupDate = userPickUp;
     }
+    return userPickUp
   }
 
   getNextPickUp (routeInfo, isRefuseData) {

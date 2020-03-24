@@ -5,7 +5,7 @@
         <p>Would you like to use location services to customize your 
             <span>GR</span>een experience today?</p>
         <div class="yesNo">
-            <button class="yes" (click)='exitDialog()'>Yes!</button>
+            <button class="yes" (click)='exitDialog(); geoLocateUser()'>Yes!</button>
             <button class="no" (click)='exitDialog()'>No thanks</button>
         </div>
     </div>
