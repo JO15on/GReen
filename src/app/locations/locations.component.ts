@@ -4,6 +4,7 @@ import { ShareService } from '../services/share.service';
 import { GetRoutesService } from '../services/get-routes.service';
 import { MapInfoWindow } from '@angular/google-maps';
 import { RecycleCentersService } from '../services/recycle-centers.service';
+import { CategoriesService } from '../services/categories.service';
 
 
 @Component({
@@ -35,7 +36,8 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
   constructor(
     private _share: ShareService, 
     private _getRoutes: GetRoutesService, 
-    private _recycleCenters: RecycleCentersService) { }
+    private _recycleCenters: RecycleCentersService,
+    private _category: CategoriesService) { }
 
   ngOnInit() {
     this.wantsRefuse = this._share.viewRefuse
@@ -51,7 +53,6 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
       this.center              = res.coords;
       this.zoom                = res.zoom;
       this.isLocationSubmitted = this._share.userSubmittedLocation;
-      console.log(this.infoWindow)
       this.userRouteInfo       = this.getUserPolygon();
     })
   }
@@ -113,6 +114,10 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
         title: center.title
       })
     })
+  }
+
+  getPath(category: string) {
+    return this._category.getPath(category)
   }
 
   ngAfterViewInit() {

@@ -51,12 +51,20 @@
   </map-info-window>  
   
 </google-map>
-
-<button 
-  *ngFor="let category of centerData" 
-  (click)='getMarkers(category)'
-  [id]='getCategoryName(category)'
-  > 
-  {{ getCategoryName(category) }} 
-</button>
+<div class="categories-container">
+  <ng-container *ngFor="let category of centerData">
+    <div class="category-container">
+      <button  
+      (click)='getMarkers(category)'
+      [id]='getCategoryName(category)'
+      [style.background-image]="getPath(getCategoryName(category))" 
+      class='category'
+      changeBackgroundImg> 
+      </button>
+  
+      <p class="category-label">{{ getCategoryName(category) | titlecase}}</p>  
+    </div>
+  </ng-container> 
 </div>
+
+

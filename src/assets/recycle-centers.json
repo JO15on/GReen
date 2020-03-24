@@ -179,7 +179,7 @@
         "label": "Accepts rechargeable batteries."
       }
     ],
-    "electronic_appliances": [
+    "electronics": [
       {
         "title": "Best Buy",
         "position": "3410 Alpine Ave NW",
@@ -230,7 +230,7 @@
         "label": "Accepts working or broken computers/laptops/monitors, software, cameras, working flat-screen televisions (no CRT TV’s), furniture, household goods, clothing, books, etc."
       }
     ],
-    "organic_waste": [
+    "organic waste": [
       {
         "title": "Organicycle",
         "position": "5721 Division Ave South. Suite B",
@@ -270,7 +270,7 @@
         "label": "Accepts new and gently used building materials and home improvement products for resale at discounted prices, including lumber, trim, stain/paint, windows, doors, working appliances, furniture, flooring, etc.  Accepts vehicles for donation."
       }
     ],
-    "plastic": [
+    "plastics": [
       {
         "title": "Meijer",
         "position": "2425 Alpine Ave NW",
