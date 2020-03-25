@@ -1,5 +1,5 @@
   body, html {
-  height: 120vh;
+  height: 100vh;
   margin: 0;
 }
 
@@ -17,7 +17,7 @@
   background-size: cover;
   filter: blur(4px);
   -webkit-filter: blur(4px);
-  transform: scale(1.01);
+  transform: scaleY(1.01);
   display: none;
 }
 
@@ -55,6 +55,7 @@ h2 {
     text-align: center;
     text-decoration: none;
     font-size: 16px;
+    font-weight: 700;
     width: 92%;
     margin: 5px;
 }
@@ -103,8 +104,9 @@ a {
     justify-content: center;
     width: 65%;
     position: relative;
-    top: 1rem;
+    top: 5rem;
     font-size: 1rem;
+    box-shadow: rgb(53, 50, 50) 5px 5px 13px 0px;
   }
 
   .bg_img {

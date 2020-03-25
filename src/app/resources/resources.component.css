@@ -4,7 +4,7 @@ h1, h2, p, a {
 }
 
 body {
-  height: 130vh;
+  height: 100%;
   line-height: 1.2;
 }
 
@@ -76,9 +76,11 @@ button {
 /* desktop styling below  */
 
 @media only screen and (min-width: 600px) {
-body {
+
+  body {
   width: 90%;
-}
+  height: 100vh;
+  }
 
   div {
     justify-content: center;

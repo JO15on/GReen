@@ -12,26 +12,29 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    margin-top: .5em;
+    flex-direction: row;
 }
 
 button {
     display: flex;
     margin: 1em;
     height: 35px;
+    box-shadow: rgb(73, 71, 71) 2px 2px 4px 0px;
+
 }
 
 input {
     display: flex;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     border-radius: 5px;
     height: 23px;
     padding: 5px;
-    width: 80vw;
+    width: 60vw;
     text-align: center;
     margin-left: 1em;
     max-width: 350px;
+    box-shadow: rgb(73, 71, 71) 2px 2px 4px 0px;
+
 }
 
 p {
@@ -43,14 +46,21 @@ p {
 @media only screen and (min-width: 600px){
     .find-route-container {
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: flex-end;
     }
 
     .form-container {
         flex-direction: row;
+
     }
 
     input {
         text-align: left;
+    }
+}
+
+@media only screen and (min-width: 1024px){
+    .find-route-container {
+        margin-right: 4.5em;
     }
 }

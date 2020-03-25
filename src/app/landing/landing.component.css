@@ -1,5 +1,5 @@
 body {
-    height: 50vh;
+    height: 60vh;
     text-align: center;
 }
 
@@ -34,7 +34,7 @@ span {
 
 h3 {
     text-align: center;
-    font-weight: 100;
+    font-weight: 300;
 } 
 
 p {
@@ -49,4 +49,11 @@ button {
 
 img {
     width: 100px;
+}
+
+@media only screen and (min-width: 600px){
+    body {
+    height: 50vh;
+    /* display: flex; */
+}
 }
