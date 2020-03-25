@@ -11,3 +11,8 @@ export interface IMarker {
     position: string;
     label: string;
 }
+
+export interface ILatLng {
+    lat: number;
+    lng: number;
+}

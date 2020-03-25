@@ -11,15 +11,15 @@
     </main>
     
     <footer id="footer">
-        <a class="footer-link" routerLink='' routerLinkActive='active'>
+        <a class="footer-link" routerLink='' [ngClass]="{'link-color': onHome}">
             <img class="nav" src="assets/home.png" >Home</a>
-        <a class="footer-link" routerLink="/recycleitems">
+        <a class="footer-link" routerLink="/recycleitems" [ngClass]="{'link-color': onHome}">
             <img class="nav" src="assets/recycle_items.png">Recyclables</a>
-        <a class="footer-link" target="_blank" href="https://www.grandrapidsmi.gov/Services/Request-Trash-Recycling-or-Yard-Waste-Services/Application-to-Request-Waste-Services">
+        <a class="footer-link" target="_blank" [ngClass]="{'link-color': onHome}" href="https://www.grandrapidsmi.gov/Services/Request-Trash-Recycling-or-Yard-Waste-Services/Application-to-Request-Waste-Services">
             <img class="nav" src="assets/order.png">Order Service</a>
-        <a class="footer-link" routerLink="/locations">
+        <a class="footer-link" routerLink="/locations" [ngClass]="{'link-color': onHome}">
             <img class="nav" src="assets/locations.png">Locations</a>
-        <a class="footer-link" routerLink="/resources">
+        <a class="footer-link" routerLink="/resources" [ngClass]="{'link-color': onHome}">
             <img class="nav"  src="assets/resources.png">Resources</a>
     </footer>
     <div class="footer-space"></div>
