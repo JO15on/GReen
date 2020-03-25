@@ -1,3 +1,7 @@
+body {
+  height: 80vh;
+}
+
 .intro {
   padding: 15px;
 }
