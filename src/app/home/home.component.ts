@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { LandingComponent } from '../landing/landing.component';
@@ -10,7 +10,7 @@ import { GetPickupDateService } from '../services/get-pickup-date.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
 
   openReminder1 : boolean = false;
   imgPath = "url('assets/blue_bridge.JPG')";
@@ -22,13 +22,14 @@ export class HomeComponent implements OnInit {
     private route: ActivatedRoute, 
     private router: Router,
     private dialog: MatDialog,
-    private _exit : ShareService,
+    private _share : ShareService,
     private _getPickupDate: GetPickupDateService) { }
 
   ngOnInit() {
-    if (!this._exit.closeDialog) {
+    if (!this._share.closeDialog) {
       this.dialog.open(LandingComponent);
     }
+    this._share.setHomeView(true)
     // If using current location, run below with userCoords
     const testCoords = { lat: 42.9634,lng: -85.6681 }
     this._getPickupDate.getRoute(testCoords, true);
@@ -47,5 +48,8 @@ export class HomeComponent implements OnInit {
     };
   }
 
+  ngOnDestroy() {
+    this._share.setHomeView(false)
+  }
 
 }

@@ -1,8 +1,8 @@
-import { Component, OnInit, Input, OnDestroy, AfterViewInit, ViewChild } from '@angular/core';
-import { ICoords } from '../interfaces';
+import { Component, OnInit, ViewChild, AfterViewInit, OnDestroy } from '@angular/core';
+import { ICoords, IRoute, ILatLng } from '../interfaces';
 import { ShareService } from '../services/share.service';
 import { GetRoutesService } from '../services/get-routes.service';
-import { MapInfoWindow } from '@angular/google-maps';
+import { MapInfoWindow, MapPolygon } from '@angular/google-maps';
 import { RecycleCentersService } from '../services/recycle-centers.service';
 import { CategoriesService } from '../services/categories.service';
 import { GetPickupDateService } from '../services/get-pickup-date.service';
@@ -16,14 +16,10 @@ import { GetPickupDateService } from '../services/get-pickup-date.service';
 export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
 
   @ViewChild(MapInfoWindow, { static: false }) infoWindow: MapInfoWindow;
-
-  @Input() zoom: number;
-  @Input() center: any;
-  @Input() options: any;
-
-  routes: any;
-  routeNumber: string;
-  routeDay: string;
+  
+  center: ILatLng;
+  zoom: number;
+  routes: IRoute[];
   labelLocation: any;
   userRouteInfo: any;
   centerData: any;
@@ -51,7 +47,6 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
     } else {
       this.routes = this._getRoutes.getRoutes(this.wantsRefuse)
     }
-
     this.subscription = this._share.getLocation().subscribe((res: ICoords) => {
       this.center              = res.coords;
       this.zoom                = res.zoom;
@@ -60,6 +55,8 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
       this.userNextPickup      = this._pickupDate.getRoute(this.center, this.wantsRefuse)
     })
   }
+
+  /***  Methods for Google Map + Polygons ****/
 
   onPolygonClick(polygon: any, event: any, info: any) {
     this.labelLocation = {
@@ -84,7 +81,6 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
     })
     this.labelLocation = location;
     if( this.isLocationSubmitted && this.infoWindow) {
-      // this.userRouteInfo = this.wantsRefuse ? this._pickupDate.refuseRouteInfo : this._pickupDate.recycleRouteInfo
       this.userNextPickup = this.wantsRefuse ? this._pickupDate.refusePickupDate : this._pickupDate.recyclePickupDate
       this.userRouteInfo = userRoute[0].info
       this.userPolygon = userPolygon[0]
@@ -99,11 +95,14 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
     this.ngOnInit()
   }
 
-  getCategoryName(category: any) {
-    return Object.keys(category)[0]
+  ngAfterViewInit() {
+    if (this.isLocationSubmitted) {
+      this.infoWindow.open(this.userPolygon)
+    }
   }
 
-  //animation: google.maps.Animation.DROP - not working
+  /**** Methods for Categories (Should be a separate component) ****/
+
   getMarkers(category) {
     this.markers = []
     let centers: any = Object.values(category)[0];
@@ -112,7 +111,6 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
     centers.map(center => {
       this.markers.push({
         position: center.coords,
-        animation: google.maps.Animation.DROP,
         label: {
           color: '#FFF',
           text: `${i++}`
@@ -126,20 +124,17 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
     })
   }
 
-  scrollToElement($element): void {
-    $element.scrollIntoView({behavior: "smooth", block: "start", inline: "end"});
+  getCategoryName(category: any) {
+    return Object.keys(category)[0]
   }
 
   getPath(category: string) {
     return this._category.getPath(category)
   }
 
-  ngAfterViewInit() {
-    if (this.isLocationSubmitted) {
-      this.infoWindow.open(this.userPolygon)
-    }
+  scrollToElement($element): void {
+    $element.scrollIntoView({behavior: "smooth", block: "start", inline: "end"});
   }
-
 
   ngOnDestroy() {
     this.subscription.unsubscribe()

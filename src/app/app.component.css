@@ -17,6 +17,7 @@ header {
   
 }
 
+
 #footer {
     position: fixed;
     width: 100vw;
@@ -123,6 +124,11 @@ h1 {
     .footer-link {
         font-size: .75rem;
     }
-  }
+}
   
-  
+@media only screen and (min-width: 1024px) {
+    .link-color {
+        color: #FFF !important;
+    }
+
+}

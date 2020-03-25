@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ICoords } from './interfaces';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { ShareService } from './services/share.service';
 
 
 @Component({
@@ -7,12 +7,19 @@ import { ICoords } from './interfaces';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'gr-recycle';
+  onHome: boolean
+  constructor(private _share: ShareService, private cdr: ChangeDetectorRef) {};
 
-  constructor() {};
+
 
   ngOnInit() {
+    this._share.getHomeView().subscribe( onHome => {
+      this.onHome = onHome
+      this.cdr.detectChanges()
+    })
   }
+
 
 };
