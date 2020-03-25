@@ -17,7 +17,7 @@
 
     <div *ngIf="step === 'start-no'" class="title1">
         <h3>Sorry, you missed your bin pickup!</h3>
-        <button><a routerLink=''>OK</a></button>
+        <button routerLink=''>OK</button>
     </div>
 
     <div *ngIf="step === 'start-yes'">
@@ -32,7 +32,7 @@
 
     <div *ngIf="step === 'end-no'" class="title1">
         <h3 class="title1">It's {{newDate | date: 'shortTime'}}, there's still time for your bin to get picked up! Wait until after 3:00pm to report your missed pickup.</h3>
-        <button><a routerLink=''>OK</a></button>
+        <button routerLink=''>OK</button>
     </div>
  
     <div *ngIf="step === 'end-yes'" [formGroup]="reportForm" novalidate>
@@ -93,7 +93,7 @@
 
     <div *ngIf="step === 'end'" class="title1">
         <h3 class="title1">Your reported missing pickup has been submitted to whateverGR@email.com</h3> 
-        <button><a routerLink=''>OK</a></button>
+        <button routerLink=''>OK</button>
     </div>
 </div>
     
