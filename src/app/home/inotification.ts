@@ -3,4 +3,5 @@ export interface Inotification {
     headline: string;
     datePosted: string;
     description: string;
+    url:string;
 }
