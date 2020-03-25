@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { GetRoutesService } from './get-routes.service';
 import { ShareService } from './share.service';
+import { ILatLng, IRoute } from '../interfaces';
+
 
 
 @Injectable({
@@ -19,11 +21,11 @@ export class GetPickupDateService {
   userCoords: any
   
 
-  getRoute(coords: any, isRefuse: boolean) {
+  getRoute(coords: ILatLng, isRefuse: boolean) {
     const mappedRoutes = this._getRoutes.getRoutes(isRefuse);
     const location     = new google.maps.LatLng(coords.lat, coords.lng);
 
-    let userRoute = mappedRoutes.filter(route => {
+    let userRoute = mappedRoutes.filter((route: IRoute) => {
         const poly = new google.maps.Polygon({ paths: route.coords });
         return google.maps.geometry.poly.containsLocation(location, poly);
     });
@@ -41,7 +43,7 @@ export class GetPickupDateService {
     return userPickUp
   }
 
-  getNextPickUp (routeInfo, isRefuseData) {
+  getNextPickUp (routeInfo: any, isRefuseData: boolean) {
     const days        = ["sunday","monday","tuesday","wednesday","thursday","friday","saturday"]
     const index       = days.findIndex(day => routeInfo.day.toLowerCase() === day)
     const pickUpDate  = new Date()
@@ -66,7 +68,7 @@ export class GetPickupDateService {
     } 
   }
 
-  getPickUpDate (pickUpDate, daysFromRoute1) {
+  getPickUpDate (pickUpDate: Date, daysFromRoute1: number) {
     const oneDay          = 1000*60*60*24; 
     const startingDate    = new Date(2020,2,23);
     const diffDays        = (pickUpDate.getTime() - startingDate.getTime()) / oneDay;
@@ -81,7 +83,7 @@ export class GetPickupDateService {
     return pickUpDate
   }
 
-  getDaysFromRoute1 (routeNum) {
+  getDaysFromRoute1 (routeNum: string) {
     switch (routeNum) {
         case '1':
             return 0

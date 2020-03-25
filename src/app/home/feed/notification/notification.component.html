@@ -1,11 +1,13 @@
 <div class="notification-container">
-    <div class="top">
-        <img class="icon" src="{{notification.icon}}">
+    <div class="top-container">
+        <div class="top">
+            <img class="icon" src="{{notification.icon}}">
+        </div>
+        <div class="bottom">
+            <h2 class="headline">{{notification.headline}}</h2>
+            <p class="datePosted">{{notification.datePosted}}</p>
+            <p>{{notification.description}}</p>
+        </div>
     </div>
-    <div class="bottom">
-        <h2 class="headline">{{notification.headline}}</h2>
-        <p class="datePosted">{{notification.datePosted}}</p>
-        <p>{{notification.description}}</p>
-        <a class="learn-more">Learn More</a>
-    </div>
+    <a class="learn-more">Learn More</a>
 </div>
