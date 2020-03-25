@@ -86,9 +86,14 @@ h3 {
     margin-top: 0;
 }
 
-.recycle-center-info button {
+.recycle-center-info a {
     margin: auto;
     padding: .5rem;
+    background-color: #20B874;
+    color: #ffffff;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
 }
 
 

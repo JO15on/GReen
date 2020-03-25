@@ -12,6 +12,7 @@ export class ShareService {
   viewRefuse: boolean = false;
   closeDialog: boolean = false;
   
+  public onHomePage = new BehaviorSubject(false)
   private userLocation = new BehaviorSubject({
     // default map view
     coords: {
@@ -28,9 +29,6 @@ export class ShareService {
   }
 
   setLocation(data: ICoords) {
-
-    // HERE NEEDS TO COMMUNICATE WITH PICK UP
-    
     this.userSubmittedLocation = true;
     this.userLocation.next(data)
   }
@@ -41,6 +39,14 @@ export class ShareService {
 
   setRoutesView(isRefuse: boolean) {
     this.viewRefuse = isRefuse;
+  }
+
+  setHomeView(onHome: boolean) {
+    console.log(this.onHomePage)
+    this.onHomePage.next(onHome)
+  }
+  getHomeView(): Observable<boolean> {
+    return this.onHomePage.asObservable()
   }
 
   

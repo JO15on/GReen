@@ -1,9 +1,10 @@
 
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 720px) {
    div {
     display: flex; 
     flex-direction: row;
+    justify-content: space-evenly;
 }
   }
   
@@ -11,5 +12,7 @@
     div {
         display: flex; 
         flex-direction: row;
+        justify-content: space-evenly;
+        margin: 0 2rem;
     }
   }
