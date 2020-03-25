@@ -15,6 +15,10 @@ header {
   
 }
 
+.active #footer{
+    color: white;
+}
+
 .nav_text{
     width: 68px;
     text-align: center;
