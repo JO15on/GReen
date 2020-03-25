@@ -108,6 +108,7 @@ a {
     position: relative;
     top: 5rem;
     font-size: 1rem;
+    box-shadow: rgb(53, 50, 50) 5px 5px 13px 0px;
   }
 
   .bg_img {

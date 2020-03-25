@@ -39,6 +39,7 @@ p, a {
       
     }
     .top {
+        /* flex: 1; */
         align-self: center;
     }
     h2.headline {
@@ -69,8 +70,17 @@ p, a {
         width: 15rem;
         box-shadow: rgb(53, 50, 50) 5px 5px 13px 0px;
     }
-
+    .icon {
+        width: 125px;
+        height: 125px;
+    }
     .top {
         align-self: center;
     }
+    p {
+        font-size: .5rem;
+    }
+    /* .learn-more {
+
+    } */
 }
