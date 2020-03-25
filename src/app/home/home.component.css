@@ -48,7 +48,7 @@ h2 {
 }
 
 .reportmissing {
-    background-color: #F7635C; /* Red */
+    background-color: #F7635C;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -57,11 +57,11 @@ h2 {
     font-size: 16px;
     font-weight: 700;
     width: 92%;
-    margin: 5px;
+    margin: 5px 5px 80px 5px;
 }
 
 .reportmissing:hover {
-  background-color: #f44336; /* Red */
+  background-color: #f44336; 
 }
 
 a {
