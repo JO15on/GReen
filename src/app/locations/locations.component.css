@@ -4,7 +4,7 @@
 }
 
 .map-container{
-    margin-bottom: 75px;
+    margin: 0 .5rem;
 }
 
 .route {
@@ -13,6 +13,7 @@
 
 .route-info {
     display: flex;
+    text-align: center;
 }
 
 .route-info-container {
@@ -20,6 +21,73 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+
+/**** Recycle Centers ****/
+
+
+.recycle-center-container {
+    margin: 2rem;
+    background-color: #EDF1F5;
+}
+
+h3 {
+    background-color: #DBDBDC;
+    position: relative;
+    text-align: center;
+    padding: 1rem 2rem;
+    margin: 0;
+}
+
+.center-number {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.recycle-center-info {
+    text-align: center;
+    padding: 1rem;
+} 
+
+.xtra-info  {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.xtra-info-category {
+    font-size: 1rem;
+    margin-bottom: .5rem;
+    text-decoration: underline;
+}
+
+.address-info {
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 1.5rem;
+}
+
+.center-address {
+    margin-top: 0;
+}
+
+.recycle-center-info button {
+    margin: auto;
+    padding: .5rem;
+}
+
+
+
+/**** Category Icons ****/
+
+h2 {
+    text-align: center;
 }
 
 .categories-container {
@@ -46,8 +114,16 @@
     margin-top: .5rem;
 }
 
-@media only screen and (min-width: 600px) {
+
+@media screen and (min-width: 480px) {
+    .xtra-info {
+        flex-direction: row;
+    }
+}
+
+@media screen and (min-width: 600px) {
     .content_container {
         width: 90%;
       }
 }
+

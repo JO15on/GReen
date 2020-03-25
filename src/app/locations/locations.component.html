@@ -20,48 +20,73 @@
     </mat-checkbox>
   </div>
 </div>
-
-<google-map
+<div #map class="map-container">
+  <google-map
   id = "mapID"
-  #map
   height="400px"
   width=auto
   [zoom]="zoom"
   [center]="center"
-  [options]="options"
-  >
-  <ng-container *ngIf="markers[0]">
-    <map-marker 
-      *ngFor="let marker of markers"
-      [position]='marker.position'
-      [label]='marker.label'
-      [title]='marker.title'>
-    </map-marker>
+  [options]="options">
+
+    <ng-container *ngIf="markers[0]">
+      <map-marker 
+        *ngFor="let marker of markers"
+        [position]='marker.position'
+        [label]='marker.label'
+        [title]='marker.title'>
+      </map-marker>
+    </ng-container>
+
+    <map-polygon 
+      #poly 
+      *ngFor="let route of routes" 
+      [paths]="route.coords" 
+      (polygonClick)="onPolygonClick(poly, $event, route.info)">
+    </map-polygon>
+    
+    <map-info-window [position]='labelLocation'>
+      <p>Route: {{ userRouteInfo.route }}</p>
+      <p>Pick-Up Day: {{ userRouteInfo.day }}</p>
+    </map-info-window>  
+  </google-map>
+</div>
+
+<div *ngIf="markers[0]" class="center-results">
+  <ng-container *ngFor="let marker of markers; let i = index">
+    <div class="recycle-center-container">
+      <div class="recycle-center-title">
+        <h3><span class="center-number">{{ i + 1 }}.</span>{{marker.title}}</h3>
+      </div>
+      <div class="recycle-center-info">
+        <p>{{ marker.desc }}</p>
+        <div class="xtra-info">
+          <div class="address-info">
+            <h4 class="xtra-info-category">Address</h4>
+            <p class="center-address">{{ marker.address }}</p>
+          </div>
+          <div class="address-info">
+            <h4 class="xtra-info-category">Phone</h4>
+            <p class="center-address">{{ marker.phone }}</p>
+          </div>
+        </div>
+       <button>Go to Website</button>
+      </div>
+    </div>
   </ng-container>
-  <map-polygon 
-    #poly 
-    *ngFor="let route of routes" 
-    [paths]="route.coords" 
-    (polygonClick)="onPolygonClick(poly, $event, route.info)">
-  </map-polygon>
-  
-  <map-info-window [position]='labelLocation'>
-    <p>Route: {{ userRouteInfo.route }}</p>
-    <p>Pick-Up Day: {{ userRouteInfo.day }}</p>
-  </map-info-window>  
-  
-</google-map>
+</div>
+
+<h2>Select a category to see recycling locations</h2>
 <div class="categories-container">
   <ng-container *ngFor="let category of centerData">
     <div class="category-container">
       <button  
-      (click)='getMarkers(category)'
+      (click)='getMarkers(category); scrollToElement(map)'
       [id]='getCategoryName(category)'
       [style.background-image]="getPath(getCategoryName(category))" 
       class='category'
       changeBackgroundImg> 
       </button>
-  
       <p class="category-label">{{ getCategoryName(category) | titlecase}}</p>  
     </div>
   </ng-container> 

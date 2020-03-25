@@ -17,6 +17,16 @@ header {
   
 }
 
+.active #footer{
+    color: white;
+}
+
+.nav_text{
+    width: 68px;
+    text-align: center;
+    color: #000000;
+}
+
 #footer {
     position: fixed;
     width: 100vw;
