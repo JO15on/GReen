@@ -103,19 +103,29 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
     return Object.keys(category)[0]
   }
 
+  //animation: google.maps.Animation.DROP - not working
   getMarkers(category) {
     this.markers = []
     let centers: any = Object.values(category)[0];
+    this.zoom = 11
+    let i = 1
     centers.map(center => {
       this.markers.push({
         position: center.coords,
+        animation: google.maps.Animation.DROP,
         label: {
-          color: 'black',
-          text: center.title
+          color: '#FFF',
+          text: `${i++}`
         },
+        address: center.position,
+        desc: center.label,
         title: center.title
       })
     })
+  }
+
+  scrollToElement($element): void {
+    $element.scrollIntoView({behavior: "smooth", block: "start", inline: "end"});
   }
 
   getPath(category: string) {
