@@ -16,13 +16,19 @@ export class GetRoutesService {
   recycleRoutes: any
 
   getRoutes(wantsRefuse: boolean) {
+    // If statements to prevent redundant data transformation
     if (wantsRefuse) {
+      if(this.refuseRoutes) { 
+        return this.refuseRoutes 
+      }
       this.refuseRoutes = this.makeUsableToGoogle(cityRefuseData, wantsRefuse);
       return this.refuseRoutes
-    } else {
-      this.recycleRoutes = this.makeUsableToGoogle(cityRecycleData, wantsRefuse)
+    }
+    if(this.recycleRoutes) {
       return this.recycleRoutes
     }
+    this.recycleRoutes = this.makeUsableToGoogle(cityRecycleData, wantsRefuse)
+    return this.recycleRoutes
   }
 
   makeUsableToGoogle(data: any, wantsRefuse: boolean) {

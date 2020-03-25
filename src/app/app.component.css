@@ -1,6 +1,12 @@
 body {
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 100vh;
+}
+
+main {
+    flex: 1;
 }
 
 .title {
@@ -15,12 +21,6 @@ header {
   
 }
 
-.nav_text{
-    width: 68px;
-    text-align: center;
-    color: #000000;
-}
-
 #footer {
     position: fixed;
     width: 100vw;
@@ -29,13 +29,15 @@ header {
     margin: 0;
     z-index: 2;
     box-shadow: 8px 0 6px -6px black;
-    background: white
+    background: white;
+  
 }
 
 .footer-link {
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: black;
 }
 
 footer {
@@ -88,30 +90,39 @@ h1 {
 
 @media only screen and (min-width: 600px) {
     #footer {
-        position: sticky;
-        width: 80px;
-        bottom: 25%;
-        left: 100%;
+        position: fixed;
+        width: 1em;
+        top: 14em;
+        bottom: 30%;
+        left: 95%;
         padding: 0;
         margin: 0;
         z-index: 2;
         background-color: transparent;
         box-shadow: 0px 0px 0px 0px;
+    }
+    
+    footer {
+        display: flex;
+        font-size: 10px;
+        text-align: center;
+        margin-top: 10px;
+        flex-direction: column;
+        justify-content: space-between;
+        z-index: 5;
+    }
 
-
-        }
-     footer {
-            display: flex;
-            font-size: 10px;
-            text-align: center;
-            margin-top: 10px;
-            flex-direction: column;
-            justify-content: space-between;
-            z-index: 5;
-        }
-        .footer-space {
+    .footer-space {
         display: none;
-        }
+    }
+
+     .nav {
+        width: 75px;
+    }
+
+    .footer-link {
+        font-size: .75rem;
+    }
   }
   
   

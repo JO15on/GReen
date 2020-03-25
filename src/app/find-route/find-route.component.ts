@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { GoogleMapsService } from '../services/google-maps.service';
 import { ShareService } from '../services/share.service';
 
@@ -12,24 +12,9 @@ export class FindRouteComponent implements OnInit {
   userAddress: string;
   suggestions: any[]
 
-  @Output()
-  submitted = new EventEmitter<any>();
-
   constructor(private _googleMaps: GoogleMapsService, private _share: ShareService) { }
 
   ngOnInit() {
-  }
-
-  geoLocateUser() {
-    navigator.geolocation.getCurrentPosition(position => {
-      this._share.setLocation({
-        coords: {
-          lat: position.coords.latitude,
-          lng: position.coords.longitude
-        },
-        zoom: 18
-      })
-    })
   }
 
   locateUser() {
@@ -46,9 +31,5 @@ export class FindRouteComponent implements OnInit {
     this._googleMaps.autoComplete(location).subscribe((res: any) => {
       this.suggestions = res.predictions
     })
-  }
-
-  submitLocation(){
-    this.submitted.emit();
   }
 }
