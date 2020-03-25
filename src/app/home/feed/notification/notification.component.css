@@ -63,7 +63,7 @@ p, a {
     .notification-container {
         display: flex;
         flex-direction: column;
-        border-radius: 5px;
+        border-radius: 18px;
         background-color: #ffffff;
         border: none;
         padding: 5px;
