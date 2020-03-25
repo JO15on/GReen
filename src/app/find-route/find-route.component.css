@@ -41,14 +41,21 @@ p {
 @media only screen and (min-width: 600px){
     .find-route-container {
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: flex-end;
     }
 
     .form-container {
         flex-direction: row;
+
     }
 
     input {
         text-align: left;
+    }
+}
+
+@media only screen and (min-width: 1024px){
+    .find-route-container {
+        margin-right: 4.5em;
     }
 }
