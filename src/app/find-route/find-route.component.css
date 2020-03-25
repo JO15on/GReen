@@ -12,6 +12,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-top: .5em;
 }
 
 button {
@@ -29,7 +30,6 @@ input {
     width: 80vw;
     text-align: center;
     margin-left: 1em;
-    margin-top: 1em;
     max-width: 350px;
 }
 

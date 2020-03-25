@@ -35,6 +35,7 @@ p, a {
         width: 75%;
         height: 85%;
     }
+    
     .top {
         flex: 1;
         align-self: center;
