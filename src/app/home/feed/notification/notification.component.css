@@ -20,6 +20,7 @@ p, a {
     background-color: #ffffff;
     border: 2px solid #D3D3D3;
     padding: 5px;
+   
 }
 
 
@@ -31,13 +32,27 @@ p, a {
         border-radius: 5px;
         background-color: #ffffff;
         border: 2px solid #D3D3D3;
-        padding: 5px;  
-        width: 75%;
-        height: 85%;
+        padding: 5px; 
+        height: 17rem;
+        width: 11rem;  
+        
+      
     }
     .top {
-        flex: 1;
         align-self: center;
+    }
+    h2.headline {
+        font-size: .75rem;
+        font-weight: bold;
+    
+    }
+    
+    .datePosted {
+        font-weight: bold;
+    }
+    
+    p {
+        font-size: .5rem;
     }
   
    }
@@ -48,13 +63,14 @@ p, a {
         flex-direction: column;
         border-radius: 5px;
         background-color: #ffffff;
-        border: 2px solid #D3D3D3;
+        border: none;
         padding: 5px;
+        height: 20rem;
+        width: 15rem;
+        box-shadow: rgb(53, 50, 50) 5px 5px 13px 0px;
     }
 
     .top {
-        flex: 1;
         align-self: center;
     }
-
-   }
+}

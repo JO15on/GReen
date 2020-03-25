@@ -11,7 +11,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 button {
@@ -26,10 +26,9 @@ input {
     border-radius: 5px;
     height: 23px;
     padding: 5px;
-    width: 80vw;
+    width: 60vw;
     text-align: center;
     margin-left: 1em;
-    margin-top: 1em;
     max-width: 350px;
 }
 

@@ -18,7 +18,7 @@
   background-size: cover;
   filter: blur(4px);
   -webkit-filter: blur(4px);
-  transform: scale(1.01);
+  transform: scaleY(1.01);
   display: none;
 }
 
