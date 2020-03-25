@@ -12,7 +12,7 @@ export class ShareService {
   viewRefuse: boolean = false;
   closeDialog: boolean = false;
   
-  public onHomePage = new BehaviorSubject(true)
+  public onHomePage = new BehaviorSubject(false)
   private userLocation = new BehaviorSubject({
     // default map view
     coords: {
