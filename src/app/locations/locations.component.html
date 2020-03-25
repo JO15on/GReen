@@ -68,10 +68,10 @@
             </div>
             <div class="address-info">
               <h4 class="xtra-info-category">Phone</h4>
-              <p class="center-address">(616) 555-1234</p>
+              <p class="center-address">{{ marker.phone }}</p>
             </div>
           </div>
-        <a>Go to Website</a>
+        <a [href]='marker.website'>Go to Website</a>
         </div>
       </div>
     </ng-container>

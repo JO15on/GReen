@@ -117,7 +117,9 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
         },
         address: center.position,
         desc: center.label,
-        title: center.title
+        title: center.title,
+        phone: center.phone,
+        website: center.website
       })
     })
   }
@@ -136,6 +138,11 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
 
   ngOnDestroy() {
     this.subscription.unsubscribe()
+  }
+
+
+  visitLink() {
+    console.log("test");
   }
 
   /* 
