@@ -119,7 +119,7 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
         desc: center.label,
         title: center.title,
         phone: center.phone,
-        website: center.url
+        website: center.website
       })
     })
   }
