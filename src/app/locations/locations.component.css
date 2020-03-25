@@ -1,3 +1,5 @@
+  
+
 #mapID {
     height: 500px;
     width: 100%;
@@ -129,8 +131,8 @@ h2 {
 }
 
 @media screen and (min-width: 600px) {
-    .content_container {
-        width: 90%;
-      }
-}
+    body{
+        width: 90vw;
+        }  
 
+    }
