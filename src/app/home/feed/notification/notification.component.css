@@ -32,12 +32,13 @@ p, a {
         border-radius: 5px;
         background-color: #ffffff;
         border: 2px solid #D3D3D3;
-        padding: 5px;  
-        height: 85%;
-        width: 75%;
+        padding: 5px; 
+        height: 17rem;
+        width: 11rem;  
+        
+      
     }
     .top {
-        flex: 1;
         align-self: center;
     }
     h2.headline {
@@ -62,12 +63,14 @@ p, a {
         flex-direction: column;
         border-radius: 5px;
         background-color: #ffffff;
-        border: 2px solid #D3D3D3;
+        border: none;
         padding: 5px;
+        height: 20rem;
+        width: 15rem;
+        box-shadow: rgb(53, 50, 50) 5px 5px 13px 0px;
     }
 
     .top {
-        flex: 1;
         align-self: center;
     }
 }
