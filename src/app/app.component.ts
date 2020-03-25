@@ -9,7 +9,7 @@ import { ShareService } from './services/share.service';
 })
 export class AppComponent implements OnInit {
   title = 'gr-recycle';
-  onHome: boolean = true;
+  onHome: boolean
   constructor(private _share: ShareService, private cdr: ChangeDetectorRef) {};
 
 

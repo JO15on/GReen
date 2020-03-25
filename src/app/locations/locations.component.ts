@@ -1,8 +1,8 @@
-import { Component, OnInit, Input, ViewChild, AfterViewInit, OnDestroy } from '@angular/core';
-import { ICoords, ILatLng } from '../interfaces';
+import { Component, OnInit, ViewChild, AfterViewInit, OnDestroy } from '@angular/core';
+import { ICoords, IRoute, ILatLng } from '../interfaces';
 import { ShareService } from '../services/share.service';
 import { GetRoutesService } from '../services/get-routes.service';
-import { MapInfoWindow } from '@angular/google-maps';
+import { MapInfoWindow, MapPolygon } from '@angular/google-maps';
 import { RecycleCentersService } from '../services/recycle-centers.service';
 import { CategoriesService } from '../services/categories.service';
 import { GetPickupDateService } from '../services/get-pickup-date.service';
@@ -19,7 +19,7 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
   
   center: ILatLng;
   zoom: number;
-  routes: any;
+  routes: IRoute[];
   labelLocation: any;
   userRouteInfo: any;
   centerData: any;
@@ -47,7 +47,6 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
     } else {
       this.routes = this._getRoutes.getRoutes(this.wantsRefuse)
     }
-
     this.subscription = this._share.getLocation().subscribe((res: ICoords) => {
       this.center              = res.coords;
       this.zoom                = res.zoom;
