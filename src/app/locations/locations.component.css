@@ -1,3 +1,5 @@
+  
+
 #mapID {
     height: 500px;
     width: 100%;
@@ -30,6 +32,11 @@
 .recycle-center-container {
     margin: 2rem;
     background-color: #EDF1F5;
+    border-radius: .5rem;
+}
+
+.recycle-center-container:hover {
+    box-shadow: 0px 0px 10px #AAA;
 }
 
 h3 {
@@ -38,6 +45,8 @@ h3 {
     text-align: center;
     padding: 1rem 2rem;
     margin: 0;
+    border-top-left-radius: .5rem;
+    border-top-right-radius: .5rem;
 }
 
 .center-number {
@@ -94,6 +103,7 @@ h2 {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    margin-bottom: 5rem;
 }
 
 .category-container {
@@ -122,8 +132,8 @@ h2 {
 }
 
 @media screen and (min-width: 600px) {
-    .content_container {
-        width: 90%;
-      }
-}
+    body{
+        width: 90vw;
+        }  
 
+    }

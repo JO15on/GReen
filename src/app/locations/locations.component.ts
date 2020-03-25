@@ -145,6 +145,11 @@ export class LocationsComponent implements OnInit, OnDestroy, AfterViewInit {
     this.subscription.unsubscribe()
   }
 
+
+  visitLink() {
+    console.log("test");
+  }
+
   /* 
   To Do: 
     1. Get Next Pick up date displaying instead of route day
