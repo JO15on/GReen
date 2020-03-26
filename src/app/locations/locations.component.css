@@ -87,8 +87,9 @@ h3 {
 }
 
 .recycle-center-info a {
-    margin: auto;
-    padding: .5rem;
+    display: inline-block;
+    margin:  .5rem auto;
+    padding: .75em;
     background-color: #20B874;
     color: #ffffff;
     border-radius: 5px;
