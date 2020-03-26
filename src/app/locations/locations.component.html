@@ -51,26 +51,6 @@
     </google-map>
   </div>
 
-<<<<<<< HEAD
-<div *ngIf="markers[0]" class="center-results">
-  <ng-container *ngFor="let marker of markers; let i = index">
-    <div class="recycle-center-container">
-      <div class="recycle-center-title">
-        <h3><span class="center-number">{{ i + 1 }}.</span>{{marker.title}}</h3>
-      </div>
-      <div class="recycle-center-info">
-        <p>{{ marker.desc }}</p>
-        <div class="xtra-info">
-          <div class="address-info">
-            <h4 class="xtra-info-category">Address</h4>
-            <p class="center-address">{{ marker.address }}</p>
-          </div>
-          <div class="address-info">
-            <h4 class="xtra-info-category">Phone</h4>
-            <p class="center-address">{{ marker.phone }}</p>
-=======
-  <!-- Recycling Locations Section (should be child component) -->
-
   <div *ngIf="markers[0]" class="center-results">
     <ng-container *ngFor="let marker of markers; let i = index">
       <div class="recycle-center-container">
@@ -86,16 +66,11 @@
             </div>
             <div class="address-info">
               <h4 class="xtra-info-category">Phone</h4>
-              <p class="center-address">(616) 555-1234</p>
+              <p class="center-address">{{ marker.phone }}</p>
             </div>
->>>>>>> d1bd310e690d6aaf94171c920fdc592330b2a586
+            <a>Go to Website</a>
           </div>
-        <a>Go to Website</a>
         </div>
-<<<<<<< HEAD
-       <button (click)="visitLink()" target="_blank">Go to Website</button>
-=======
->>>>>>> d1bd310e690d6aaf94171c920fdc592330b2a586
       </div>
     </ng-container>
   </div>
