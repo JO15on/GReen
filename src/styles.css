@@ -16,7 +16,9 @@ body {
 .mat-checkbox-frame {
     border-color: #20B874;
 }
-
+.mat-checkbox-layout {
+    margin-top: 1rem;
+}
 .mat-dialog-container {
     padding: 24px;
     border-radius: 16px;
