@@ -2,18 +2,22 @@
     <div class="bg_img" [style.background-image]="imgPath"></div>
 
     <div class="content_container">
-        <app-find-route class="find-route-component" (submitted)="openReminder()"></app-find-route>
-        <div>
-            <div *ngIf="openReminder1" class="notification-container">
+        <div class="enter-address">
+            <app-find-route class="find-route-component" (submitted)="openReminder()"></app-find-route>
+            <div class="notification-container">
                 <div class="top"> 
-                    <img class="icon" src="">
+                    <img class="icon" src="/assets/pickup_time.png">
                 </div>
                 <div class="bottom">
-                    <h2>Welcome! Your Address is part of </h2>
-                    <h2>Refuse Pickup: </h2>
-                    <h2>Recycling Pickup: Every other </h2>
+                    <!-- <h2>Welcome! Your Address is part of Route {{  }}</h2> -->
+                    <div *ngIf="submittedLocation; else default">
+                        <h2>Refuse Pickup {{ refusePickupDate | date: "EEEE, MMMM d"  }}</h2>
+                        <h2>Recycling Pickup: {{ recyclePickupDate | date: "EEEE, MMMM d" }} </h2>
+                    </div>
+                    <ng-template #default>Enter a location to see your next pickup dates!</ng-template>
                 </div>
             </div>
+        </div>
         <section> 
             <app-feed></app-feed>
         </section>
@@ -21,7 +25,7 @@
             <button class="reportmissing" routerLink="/reportmissing">Report Missed Pickup</button>
         </div>
     </div>   
-    </div> 
+   
 </body>
 
 

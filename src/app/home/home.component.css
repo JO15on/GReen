@@ -68,7 +68,10 @@ a {
     margin: 5px;
     font-size: 12px;
 }
+.icon {
+  width: 100px;
 
+}
 @media only screen and (min-width: 600px) {
   .content_container {
     top: 400px;
@@ -89,6 +92,12 @@ a {
     background-image: none;
     
   }
+  .enter-address {
+    display: flex; 
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-content: center;
+  }
 }
 
 @media only screen and (min-width: 1024px){
@@ -108,7 +117,9 @@ a {
     font-size: 1rem;
     box-shadow: rgb(53, 50, 50) 5px 5px 13px 0px;
   }
-
+  .notification-container {
+    width: 35vw;
+  }
   .bg_img {
     display: block;
   }

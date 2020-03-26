@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   isDialogClosed: boolean = false;
   refusePickupDate: Date;
   recyclePickupDate: Date;
+  submittedLocation: boolean;
 
   constructor(
     private route: ActivatedRoute, 
@@ -29,13 +30,16 @@ export class HomeComponent implements OnInit, OnDestroy {
     if (!this._share.closeDialog) {
       this.dialog.open(LandingComponent);
     }
-    this._share.setHomeView(true)
+    this._share.setHomeView(true);
+    this._share.getLocation().subscribe((coords) => {
+      this.submittedLocation = this._share.userSubmittedLocation;
+      this._getPickupDate.getRoute(coords.coords, true);
+      this._getPickupDate.getRoute(coords.coords, false);
+      this.refusePickupDate = this._getPickupDate.refusePickupDate;
+      this.recyclePickupDate = this._getPickupDate.recyclePickupDate;
+      // this.userRouteInfo = this._getPickupDate.refuseRouteInfo;
+    });
     // If using current location, run below with userCoords
-    const testCoords = { lat: 42.9634,lng: -85.6681 }
-    this._getPickupDate.getRoute(testCoords, true);
-    this._getPickupDate.getRoute(testCoords, false);
-    this.refusePickupDate = this._getPickupDate.refusePickupDate;
-    this.recyclePickupDate = this._getPickupDate.recyclePickupDate;
   }
 
   showFeed() {
