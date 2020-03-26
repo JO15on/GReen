@@ -106,6 +106,10 @@ h3 {
     text-align: center;
 }
 
+.recycle-center-info a:hover {
+    background-color: #178553;
+}
+
 
 
 /**** Category Icons ****/
