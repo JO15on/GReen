@@ -6,6 +6,11 @@ body {
   padding: 15px;
 }
 
+h2 {
+  display: flex;
+  justify-content: center;
+}
+
 p {
    font-size: 14px;
 }
