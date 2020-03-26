@@ -14,11 +14,8 @@
                 <button [style.background-image]="getPath(categoryName)" changeBackgroundImg
                     (click)="scrollToElement(section); catSelected(categoryName)" [id]="categoryName" class="category">
                 </button>
-
-
                 <span class="category_title">{{ categoryName | titlecase }}</span>
             </div>
-
         </ng-container>
     </div>
 
