@@ -66,4 +66,8 @@ img {
     height: 50vh;
     /* display: flex; */
 }
+.bottom {
+    margin: 2rem auto 0 auto;
+}
+
 }
