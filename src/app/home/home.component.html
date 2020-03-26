@@ -3,18 +3,24 @@
 
     <div class="content_container">
         <div class="enter-address">
-            <app-find-route class="find-route-component"></app-find-route>
+            <div class="find-route-container">
+                <app-find-route class="find-route-component"></app-find-route>
+            </div>
             <div class="notification-container">
                 <div class="top"> 
-                    <img class="icon" src="/assets/pickup_time.png">
+                    <img class="icon" src="assets/pickup_time.png">
                 </div>
                 <div class="bottom">
-                    <!-- <h2>Welcome! Your Address is part of Route {{  }}</h2> -->
                     <div *ngIf="submittedLocation; else default">
-                        <h2>Refuse Pickup {{ refusePickupDate | date: "EEEE, MMMM d"  }}</h2>
-                        <h2>Recycling Pickup: {{ recyclePickupDate | date: "EEEE, MMMM d" }} </h2>
+                        <h2>Welcome! </h2>
+                        <p><b>Refuse Pickup:</b> {{ refusePickupDate | date: "EEEE, MMMM d"  }}</p>
+                        <p><b>Recycling Pickup:</b> {{ recyclePickupDate | date: "EEEE, MMMM d" }} </p>
                     </div>
-                    <ng-template #default>Enter a location to see your next pickup dates!</ng-template>
+                    <ng-template #default>
+                        <h2>Welcome! </h2>
+                        <p>Enter a location to see your next pickup dates!</p>
+                    </ng-template>
+
                 </div>
             </div>
         </div>
