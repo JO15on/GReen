@@ -17,8 +17,6 @@ export class GetPickupDateService {
 
   recycleRouteInfo: any
   recyclePickupDate: Date
-
-  userCoords: any
   
 
   getRoute(coords: ILatLng, isRefuse: boolean) {

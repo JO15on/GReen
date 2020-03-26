@@ -5,11 +5,12 @@ body {
 .intro {
   padding: 15px;
 }
- p {
-   font-size: 14px;
- }
 
-  #scroll_up {
+p {
+   font-size: 14px;
+}
+
+#scroll_up {
   display: flex; 
   flex-wrap: wrap;
   justify-content: center;  
@@ -150,22 +151,26 @@ button {
   .category {
     width: 150px;
     height: 150px;
-}
-.category_title {
-  font-size: 16px;
-}
+  }
+  .category_title {
+    font-size: 16px;
+  }
 
-.content_container {
-  width: 90%;
-}
+  .content_container {
+    width: 90%;
+  }
+
+  #scroll_up{
+    margin-bottom: 4rem;
+  }
 }
 
 @media only screen and (min-width: 1024px){
   .category {
     width: 150px;
     height: 150px;
-}
-.category_title {
-  font-size: 18px;
-}
+  }
+  .category_title {
+    font-size: 18px;
+  }
 }
