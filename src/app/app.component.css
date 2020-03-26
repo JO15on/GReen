@@ -50,6 +50,7 @@ footer {
 .footer-space {
     height: 80px;
     background-color: #ffffff;
+    z-index: -2;
 }
 
 .nav {
