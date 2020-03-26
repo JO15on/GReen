@@ -51,6 +51,8 @@
     </google-map>
   </div>
 
+  <!-- Recycling Locations Section (should be child component) -->
+
   <div *ngIf="markers[0]" class="center-results">
     <ng-container *ngFor="let marker of markers; let i = index">
       <div class="recycle-center-container">
@@ -68,9 +70,9 @@
               <h4 class="xtra-info-category">Phone</h4>
               <p class="center-address">{{ marker.phone }}</p>
             </div>
-            <a>Go to Website</a>
           </div>
         </div>
+        <a [href]='marker.website'>Go to Website</a>
       </div>
     </ng-container>
   </div>
