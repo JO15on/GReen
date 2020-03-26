@@ -1,4 +1,4 @@
-  body {
+body {
   height: 100vh;
   margin: 0;
 }
@@ -6,7 +6,9 @@
 * {
   box-sizing: border-box;
 }
-
+.enter-address {
+  margin-top: 1rem;
+}
 .bg_img {
   width: 100%;
   top: 0; 
@@ -46,7 +48,7 @@ h2 {
 .button_container {
   display: flex;
   justify-content: center;
-  width: 100vw;
+
 }
 
 .reportmissing {
@@ -80,14 +82,7 @@ a {
     display: flex;
    justify-content: center;
   }
-  .content_container {
-    top: 400px;
-    width: 90%;
-  }
-
-  .button_container{
-    width: 95%;
-  }
+  
   .notification-container{
     width: 40vw;
 
@@ -108,39 +103,47 @@ a {
     display: flex; 
     flex-direction: row-reverse;
     align-content: center;
-    width: 90%;
+    justify-content: space-between;
   }
   .bottom {
     font-size: .5rem;
+    justify-content: center;
   }
  
 }
 @media only screen and (min-width: 720px){
   .notification-container{
-    width: 40vw;
-    margin: 0;
     padding: 0;
+  }
+
+  .even_bigger_container {
+     display: flex; 
+    justify-content: center;
+    align-items: center;
+  }
+ .content_container {
+align-items: space-between;
+  flex-direction: column;
+width: 85%
   }
 }
 
 @media only screen and (min-width: 1024px){
+.content_container {
+  width: 80vw; 
+  margin: auto;
 
+}
   .enter-address {
-    margin-top: 5rem;
+    margin-top: 2rem;
   }
-  .content_container{
-    position: absolute;
-    z-index: 2;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
+  
   .reportmissing {
     display: flex;
     justify-content: center;
     width: 65%;
     position: relative;
-    top: 5rem;
+    top: 2rem;
     font-size: 1rem;
     box-shadow: rgb(53, 50, 50) 5px 5px 13px 0px;
   }
@@ -149,7 +152,6 @@ a {
     border: none;
     box-shadow: rgb(53, 50, 50) 5px 5px 13px 0px;
     border-radius: 20px;
-    margin: auto;
   
   }
   h2 {

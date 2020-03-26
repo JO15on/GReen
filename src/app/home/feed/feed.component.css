@@ -4,7 +4,7 @@
    div {
     display: flex; 
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
   }
   
@@ -12,7 +12,6 @@
     div {
         display: flex; 
         flex-direction: row;
-        justify-content: space-evenly;
-        margin: 0 2rem;
+        justify-content: space-between;
     }
   }
