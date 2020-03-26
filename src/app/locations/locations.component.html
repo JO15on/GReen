@@ -2,8 +2,14 @@
 <body>
   <div class="route-info-container">
     <div *ngIf="isLocationSubmitted" class="route-info">
-      <h2 class="route"><strong>Route:</strong> {{ userRouteInfo.route }}</h2>
-      <h2><strong>Next Pick-Up:</strong> {{ userNextPickup | date: "EEEE, MMMM d"}}</h2>    
+      <div class="route-text-container">
+        <p>Route:</p>
+        <h2>{{ userRouteInfo.route }}</h2>
+      </div>
+      <div class="route-text-container">
+        <p>Next Pick-Up:</p>
+        <h2>{{ userNextPickup | date: "EEEE, MMMM d"}}</h2>    
+      </div>
     </div>
     <div *ngIf="!isLocationSubmitted" class="route-info">
       <h2>Enter a Location to See Route Info</h2>
@@ -20,6 +26,7 @@
       </mat-checkbox>
     </div>
   </div>
+
   <div #map class="map-container">
     <google-map
     id = "mapID"
