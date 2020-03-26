@@ -56,11 +56,15 @@ p {
 
     input {
         text-align: left;
+        width: 25vw;
     }
+    
 }
 
 @media only screen and (min-width: 1024px){
-    .find-route-container {
-        margin-right: 4.5em;
+   
+    input {
+        text-align: left;
+        width: 25vw;
     }
 }
