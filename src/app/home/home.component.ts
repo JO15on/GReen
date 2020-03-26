@@ -12,7 +12,6 @@ import { GetPickupDateService } from '../services/get-pickup-date.service';
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
-  openReminder1 : boolean = false;
   imgPath = "url('assets/blue_bridge.JPG')";
   isDialogClosed: boolean = false;
   refusePickupDate: Date;
@@ -39,17 +38,10 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.recyclePickupDate = this._getPickupDate.recyclePickupDate;
       // this.userRouteInfo = this._getPickupDate.refuseRouteInfo;
     });
-    // If using current location, run below with userCoords
   }
 
   showFeed() {
     this.router.navigate(['feed'], {relativeTo: this.route});
-  }
-
-  openReminder(){
-    if(this.openReminder1 === false){
-      this.openReminder1 = true;
-    };
   }
 
   ngOnDestroy() {

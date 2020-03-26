@@ -18,8 +18,6 @@ export class GetPickupDateService {
   recycleRouteInfo: any
   recyclePickupDate: Date
 
-  // userCoords: any
-  
 
   getRoute(coords: ILatLng, isRefuse: boolean) {
     const mappedRoutes = this._getRoutes.getRoutes(isRefuse);
