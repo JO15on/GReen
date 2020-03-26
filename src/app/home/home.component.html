@@ -3,15 +3,17 @@
 
     <div class="content_container">
         <div class="enter-address">
-            <app-find-route class="find-route-component" (submitted)="openReminder()"></app-find-route>
+            <div class="find-route-container">
+                      <app-find-route class="find-route-component" (submitted)="openReminder()"></app-find-route>
+            </div>
             <div class="notification-container">
                 <div class="top"> 
                     <img class="icon" src="/assets/pickup_time.png">
                 </div>
                 <div class="bottom">
-                    <h2>Welcome! Your Address is part of </h2>
-                    <h2>Refuse Pickup: </h2>
-                    <h2>Recycling Pickup: Every other </h2>
+                    <h2>Welcome! </h2>
+                    <p><b>Refuse: </b>Pickup is every "FRIDAY" </p>
+                    <p><b>Recycling: </b>Pickup is every other "FRIDAY" </p>
                 </div>
             </div>
 
