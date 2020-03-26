@@ -9,14 +9,15 @@
                     <img class="icon" src="/assets/pickup_time.png">
                 </div>
                 <div class="bottom">
-                    <h2>Welcome! Your Address is part of </h2>
-                    <h2>Refuse Pickup: </h2>
-                    <h2>Recycling Pickup: Every other </h2>
+                    <!-- <h2>Welcome! Your Address is part of Route {{  }}</h2> -->
+                    <div *ngIf="submittedLocation; else default">
+                        <h2>Refuse Pickup {{ refusePickupDate | date: "EEEE, MMMM d"  }}</h2>
+                        <h2>Recycling Pickup: {{ recyclePickupDate | date: "EEEE, MMMM d" }} </h2>
+                    </div>
+                    <ng-template #default>Enter a location to see your next pickup dates!</ng-template>
                 </div>
             </div>
-
         </div>
-             
         <section> 
             <app-feed></app-feed>
         </section>
