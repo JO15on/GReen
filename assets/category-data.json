@@ -41,7 +41,8 @@
         {
         "itemName": "Batteries (rechargeable), Household",
         "description": "Rechargeable batteries should always be recycled.  A rechargeable battery may contain heavy metals such as lead, cadmium, and nickel.  Examples of rechargeable batteries include nickel cadmium (Ni-Cd), lithium ion (Li-ion), nickel metal hydride (Ni-MH), small sealed lead acid (SSLA/PB, up to 11 pounds), and nickel zinc (Ni-Zn).",
-        "dropOffLocations": "TBD" 
+        "dropOffLocations": "TBD" ,
+        "img": "assets/batteries.png"
         },
         {
         "itemName": "Automotive Batteries",
@@ -102,7 +103,8 @@
         {
         "itemName": "Plastics",
         "description": "Clean, empty hard plastics that are stamped with a recycling symbol (#1-7) can be placed in your bin. These items include plastic bottles, cups, containers, tubs, and jugs. Before you place any of these items in your bin, please be sure to rinse/clean the plastic item (labels can be left on) and put the cap back on.",
-        "dropOffLocations": "TBD" 
+        "dropOffLocations": "TBD",
+        "img": "assets/plastics_example.png"
         },
         {
         "itemName": "Foam & Packaging Materials",
@@ -116,7 +118,8 @@
         {
         "itemName": "Glass Bottles & Jars",
         "description": "Clear and colored food or beverage glasses, bottles, or jars are all eligible for recycling. (This does not include glass bakeware, mirrors, windowpanes, lightbulbs, or auto glass). Separate the lid, cap or cork from the container. If the lids are plastic or metal and as large or larger than a milk jug cap, you can place the lid in the recycling bin as well. If not, discard in the trash. Make sure the bottles are rinsed well before you place them in your recycle bin. For these items, labels CAN be left on!",
-        "dropOffLocations": "TBD" 
+        "dropOffLocations": "TBD",
+        "img": "assets/glass.png"
         },
         {
         "itemName": "Light Bulbs",
