@@ -22,7 +22,6 @@
 }
 
 .top {
-  flex: 1;
   align-self: center;
 }
 
@@ -106,12 +105,8 @@ a {
   .enter-address {
     display: flex; 
     flex-direction: row-reverse;
-    justify-content: space-between;
     align-content: center;
     width: 90%;
-    margin: auto;
-    margin-left: 20px;
-    margin-top: 1rem;
   }
   .bottom {
     font-size: .5rem;
