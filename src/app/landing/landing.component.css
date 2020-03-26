@@ -25,19 +25,21 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    margin-top: 25px;
 }
 
 .city {
-    color: green;
+    font-weight: 700;
 }
 
-span {
-    font-weight: 900;
+.gr {
+    color: #20B874;
+    font-weight: 500;
 }
 
 h3 {
     text-align: center;
-    font-weight: 300;
+    font-weight: 700;
 } 
 
 p {
@@ -48,6 +50,7 @@ button {
     height: 40px;
     border-radius: 5px;
     width: 90px;
+    font-weight: 500;
 }
 
 img {
