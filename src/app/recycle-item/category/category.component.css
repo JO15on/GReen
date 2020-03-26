@@ -8,6 +8,7 @@ body {
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
 p {
@@ -49,9 +50,14 @@ button {
 
 /*The specific category image*/
 .category {
-    width: 100px;
-    height: 100px;
-
+  width: 100px;
+  height: 100px;
+  max-width: 100%;
+  top: 0; 
+  left: 0;
+  max-height: 100%;
+  background-repeat: no-repeat;
+  background-size: contain; 
 }
 
 /*Aligns the button and the category title together*/
@@ -65,90 +71,6 @@ button {
 /*The title of the category that displays below the icon*/
 .category_title {
   font-size: 14px;
-}
-
-
-/* Categories */
-
-#glass{
-  max-width: 100%;
-  top: 0; 
-  left: 0;
-  max-height: 100%;
-  background-repeat: no-repeat;
-  background-size: contain; 
-}
-
-#paints{
-  max-width: 100%;
-  top: 0; 
-  left: 0;
-  max-height: 100%;
-  background-repeat: no-repeat;
-  background-size: contain; 
-}
-
-#medications{
-  max-width: 100%;
-  top: 0; 
-  left: 0;
-  max-height: 100%;
-  background-repeat: no-repeat;
-  background-size: contain; 
-}
-
-#electronics{
-  max-width: 100%;
-  top: 0; 
-  left: 0;
-  max-height: 100%;
-  background-repeat: no-repeat;
-  background-size: contain; 
-}
-
-#batteries{
-  max-width: 100%;
-  top: 0; 
-  left: 0;
-  max-height: 100%;
-  background-repeat: no-repeat;
-  background-size: contain; 
-}
-
-#textiles{
-  max-width: 100%;
-  top: 0; 
-  left: 0;
-  max-height: 100%;
-  background-repeat: no-repeat;
-  background-size: contain; 
-}
-
-#holiday{
-  max-width: 100%;
-  top: 0; 
-  left: 0;
-  max-height: 100%;
-  background-repeat: no-repeat;
-  background-size: contain; 
-}
-
-#automotive{
-  max-width: 100%;
-  top: 0; 
-  left: 0;
-  max-height: 100%;
-  background-repeat: no-repeat;
-  background-size: contain; 
-}
-
-#plastics{
-  max-width: 100%;
-  top: 0; 
-  left: 0;
-  max-height: 100%;
-  background-repeat: no-repeat;
-  background-size: contain; 
 }
 
 @media only screen and (min-width: 600px) {

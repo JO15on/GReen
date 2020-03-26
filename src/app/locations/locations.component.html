@@ -45,8 +45,8 @@
       </map-polygon>
       
       <map-info-window [position]='labelLocation'>
-        <p>Route: {{ userRouteInfo.route }}</p>
-        <p>Pick-Up:{{ wantsRefuse ? "" : " Every Other" }} {{ userRouteInfo.day }}</p>
+        <p><b>Route </b>: {{ userRouteInfo.route }}</p>
+        <p><b>Pick-up </b>:{{ wantsRefuse ? "" : " Every other" }} {{ userRouteInfo.day | titlecase}}</p>
       </map-info-window>  
     </google-map>
   </div>
@@ -71,8 +71,8 @@
               <p class="center-address">{{ marker.phone }}</p>
             </div>
           </div>
+          <a [href]='marker.website' target="_blank">Go to Website</a>
         </div>
-        <a [href]='marker.website'>Go to Website</a>
       </div>
     </ng-container>
   </div>
