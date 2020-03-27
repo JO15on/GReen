@@ -11,6 +11,7 @@ export class ShareService {
   userSubmittedLocation: boolean = false;
   viewRefuse: boolean = false;
   closeDialog: boolean = false;
+  isLoading: boolean;
   
   public onHomePage = new BehaviorSubject(false)
   private userLocation = new BehaviorSubject({
@@ -48,6 +49,11 @@ export class ShareService {
   getHomeView(): Observable<boolean> {
     return this.onHomePage.asObservable()
   }
+
+  setLoadingScreen() {
+    this.isLoading = true;
+  }
+  get
 
   
 

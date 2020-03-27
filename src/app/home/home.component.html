@@ -11,16 +11,18 @@
                     <img class="icon" src="assets/pickup_time.png">
                 </div>
                 <div class="bottom">
-                    <div *ngIf="submittedLocation; else default">
+                    <div *ngIf="submittedLocation">
                         <h2>Welcome! </h2>
                         <p><b>Refuse Pickup:</b> {{ refusePickupDate | date: "EEEE, MMMM d"  }}</p>
                         <p><b>Recycling Pickup:</b> {{ recyclePickupDate | date: "EEEE, MMMM d" }} </p>
                     </div>
-                    <ng-template #default>
-                        <h2>Welcome! </h2>
+                    <div *ngIf="!isLoading && !submittedLocation">
+                        <h2>Welcome!</h2>
                         <p>Enter a location to see your next pickup dates!</p>
-                    </ng-template>
-
+                    </div>
+                    <div *ngIf="isLoading && !submittedLocation">
+                        <h2>Getting Your Routes...</h2>
+                    </div>
                 </div>
             </div>
         </div>

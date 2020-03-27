@@ -47,7 +47,7 @@ p, a {
 
 
 
-@media only screen and (min-width: 720px) {
+@media only screen and (min-width: 760px) {
     .notification-container {
         display: flex;
         flex-direction: column;

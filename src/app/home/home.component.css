@@ -80,13 +80,14 @@ a {
 
   .find-route-component, .find-route-container {
     display: flex;
-   justify-content: center;
+    justify-content: center;
   }
   
   .notification-container{
     width: 40vw;
 
   }
+
   .reportmissing {
     width: 65%;
     font-size: 12px;
@@ -99,19 +100,22 @@ a {
     background-image: none;
     
   }
+
   .enter-address {
     display: flex; 
     flex-direction: row-reverse;
     align-content: center;
     justify-content: space-between;
   }
+
   .bottom {
     font-size: .5rem;
     justify-content: center;
+    margin-left: 2rem;
   }
  
 }
-@media only screen and (min-width: 720px){
+@media only screen and (min-width: 600px){
   .notification-container{
     padding: 0;
   }

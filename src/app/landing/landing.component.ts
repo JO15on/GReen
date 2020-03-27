@@ -27,6 +27,8 @@ export class LandingComponent implements OnInit, OnDestroy {
   }
 
   geoLocateUser() {
+    this.dialogRef.close(true)
+    this._share.setLoadingScreen()
     this._geoLocate.geoLocateUser()
   }
 

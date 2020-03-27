@@ -20,3 +20,7 @@ img {
 .item-container {
     text-align: center;
 }
+
+.item-1 p, .item-2 p {
+    text-align: start;
+}

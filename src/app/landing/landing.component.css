@@ -1,5 +1,5 @@
 body {
-    height: 60vh;
+    height: auto;
     text-align: center;
 }
 
@@ -62,10 +62,7 @@ img {
 }
 
 @media only screen and (min-width: 600px){
-    body {
-    height: 50vh;
-    /* display: flex; */
-}
+
 .bottom {
     margin: 2rem auto 0 auto;
 }

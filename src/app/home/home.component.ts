@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   refusePickupDate: Date;
   recyclePickupDate: Date;
   submittedLocation: boolean;
+  isLoading: boolean;
 
   constructor(
     private route: ActivatedRoute, 
@@ -27,7 +28,11 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     if (!this._share.closeDialog) {
-      this.dialog.open(LandingComponent);
+      const dialogRef = this.dialog.open(LandingComponent);
+      dialogRef.afterClosed().subscribe( data => {
+        this.isLoading = data;
+        console.log(this.isLoading)
+      } )
     }
     this._share.setHomeView(true);
     this._share.getLocation().subscribe((coords) => {
@@ -36,7 +41,6 @@ export class HomeComponent implements OnInit, OnDestroy {
       this._getPickupDate.getRoute(coords.coords, false);
       this.refusePickupDate = this._getPickupDate.refusePickupDate;
       this.recyclePickupDate = this._getPickupDate.recyclePickupDate;
-      // this.userRouteInfo = this._getPickupDate.refuseRouteInfo;
     });
   }
 
